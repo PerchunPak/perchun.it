@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "@vercel/og";
-import { NextRequest } from "next/server";
+import appConfig from "@/lib/config";
 
 export const config = {
   runtime: "experimental-edge",
@@ -10,11 +10,10 @@ const sfPro = fetch(
   new URL("../../styles/SF-Pro-Display-Medium.otf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
-export default async function handler(req: NextRequest) {
+export default async function handler() {
   const [sfProData] = await Promise.all([sfPro]);
 
-  const { searchParams } = req.nextUrl;
-  const title = searchParams.get("title") || "Precedent";
+  const title = appConfig.title;
 
   return new ImageResponse(
     (
@@ -33,7 +32,7 @@ export default async function handler(req: NextRequest) {
       >
         <img
           src={new URL("../../public/logo.png", import.meta.url).toString()}
-          alt="Precedent Logo"
+          alt="My avatar"
           tw="w-20 h-20 mb-4 opacity-95"
         />
         <h1

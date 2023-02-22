@@ -1,7 +1,5 @@
-export { default as LoadingDots } from "./loading-dots";
-export { default as LoadingCircle } from "./loading-circle";
-export { default as LoadingSpinner } from "./loading-spinner";
-export { default as ExpandingArrow } from "./expanding-arrow";
 export { default as Github } from "./github";
-export { default as Twitter } from "./twitter";
-export { default as Google } from "./google";
+export { default as Discord } from "./discord";
+export { default as Telegram } from "./telegram";
+export { default as Email } from "./email";
+export { default as ReadTheDocs } from "./readthedocs";

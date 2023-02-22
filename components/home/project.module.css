@@ -1,0 +1,8 @@
+.project {
+}
+
+.description a {
+  @apply text-[#5B6AAB] hover:text-blue-800;
+  text-decoration: unset;
+  font-weight: normal;
+}
