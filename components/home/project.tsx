@@ -142,7 +142,7 @@ const myProjects: projectInterface[] = [
       </>
     ),
     links: {
-      main: "https://s.perchun.it/src-perchun.it",
+      main: "https://s.perchun.it/src-perchun-it",
       github: "https://github.com/PerchunPak/perchun.it",
     },
   },
