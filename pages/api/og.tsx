@@ -2,10 +2,6 @@
 import { ImageResponse } from "@vercel/og";
 import appConfig from "@/lib/config";
 
-export const config = {
-  runtime: "experimental-edge",
-};
-
 const sfPro = fetch(
   new URL("../../styles/SF-Pro-Display-Medium.otf", import.meta.url),
 ).then((res) => res.arrayBuffer());
