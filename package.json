@@ -30,7 +30,7 @@
     "react": "18.2.x",
     "react-dom": "18.2.x",
     "react-markdown": "8.0.x",
-    "react-wrap-balancer": "0.3.x",
+    "react-wrap-balancer": "0.4.x",
     "sharp": "0.31.x",
     "typescript": "4.9.x",
     "use-debounce": "9.0.x"
