@@ -27,7 +27,6 @@ jobs:
         run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
 
       - uses: actions/cache@v3
-        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
           key: yarn-dependencies-${{ hashFiles('**/yarn.lock') }}
@@ -35,7 +34,6 @@ jobs:
             yarn-dependencies-
       
       - name: Install dependencies
-        if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
         run: yarn install --check-cache
 
       - name: Run Lint
