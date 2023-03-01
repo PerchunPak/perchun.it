@@ -30,7 +30,6 @@ export function Project({ projectName, description, links }: projectInterface) {
     >
       <div className="mx-auto mt-3 flex items-center justify-center space-x-3">
         {projectLinks.map(({ name, title, shortTitle, image }) => {
-          // @ts-expect-error
           const link: string | undefined = links[name];
           if (link === undefined) {
             return;
