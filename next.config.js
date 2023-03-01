@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["lh3.googleusercontent.com"],
   },
   experimental: {
-    runtime: "edge",
+    runtime: "experimental-edge",
   },
 };
 
