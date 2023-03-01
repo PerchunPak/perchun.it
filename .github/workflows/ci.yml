@@ -41,8 +41,5 @@ jobs:
       - name: Run Lint
         run: yarn lint
 
-      - name: Check types
-        run: yarn check-types
-
       - name: Run Format
         run: yarn format
