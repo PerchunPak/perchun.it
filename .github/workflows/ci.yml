@@ -40,4 +40,4 @@ jobs:
         run: yarn lint
 
       - name: Run Format
-        run: yarn format
+        run: yarn format:check
