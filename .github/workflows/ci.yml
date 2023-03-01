@@ -36,7 +36,7 @@ jobs:
       
       - name: Install dependencies
         if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
-        run: yarn install --immutable --check-cache
+        run: yarn install --check-cache
 
       - name: Run Lint
         run: yarn lint
