@@ -4196,6 +4196,7 @@ __metadata:
     postcss: 8.4.x
     prettier: 2.8.x
     prettier-plugin-tailwindcss: 0.2.x
+    prop-types: 15.8.x
     react: 18.2.x
     react-dom: 18.2.x
     react-markdown: 8.0.x
@@ -4440,7 +4441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.0.0, prop-types@npm:^15.8.1":
+"prop-types@npm:15.8.x, prop-types@npm:^15.0.0, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:

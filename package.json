@@ -27,6 +27,7 @@
     "lucide-react": "~0.118.0",
     "ms": "2.1.x",
     "next": "13.2.x",
+    "prop-types": "15.8.x",
     "react": "18.2.x",
     "react-dom": "18.2.x",
     "react-markdown": "8.0.x",
