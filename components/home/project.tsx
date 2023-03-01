@@ -1,4 +1,4 @@
-import styles from "./project.module.css";
+import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
 import Link from "next/link";
 import { ReactNode } from "react";
