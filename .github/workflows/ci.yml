@@ -34,7 +34,7 @@ jobs:
             yarn-dependencies-
       
       - name: Install dependencies
-        run: yarn install --check-cache
+        run: yarn install
 
       - name: Run Lint
         run: yarn lint
