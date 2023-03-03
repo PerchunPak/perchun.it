@@ -2374,7 +2374,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -3282,12 +3282,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:~0.119.0":
-  version: 0.119.0
-  resolution: "lucide-react@npm:0.119.0"
+"lucide-react@npm:~0.121.0":
+  version: 0.121.0
+  resolution: "lucide-react@npm:0.121.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 290e3f018daeab1801e9557ac9955064079031d4c5876326644d8a79e88ee5618cc7dcb24c57f7056c937978ac925c740259ed7c5f168ac309015d7d6c5ea289
+  checksum: a7b3e87a3cfc0180db009adc6c5b1103ed547391aab31577ac987a43cc15d44a58350332504b8021bddf81f03acfcb73771730506acc4ade403e1defef16af21
   languageName: node
   linkType: hard
 
@@ -4190,7 +4190,7 @@ __metadata:
     eslint-config-next: 13.2.x
     focus-trap-react: 10.1.x
     framer-motion: 10.0.x
-    lucide-react: ~0.119.0
+    lucide-react: ~0.121.0
     ms: 2.1.x
     next: 13.2.x
     postcss: 8.4.x
@@ -4745,7 +4745,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -4758,7 +4758,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -5449,11 +5449,11 @@ __metadata:
 
 "typescript@patch:typescript@4.9.x#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=a1c5e5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
+  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
   languageName: node
   linkType: hard
 
