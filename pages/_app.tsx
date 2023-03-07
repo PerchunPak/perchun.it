@@ -2,8 +2,8 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Provider as RWBProvider } from "react-wrap-balancer";
 import cx from "classnames";
-import localFont from "@next/font/local";
-import { Inter } from "@next/font/google";
+import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 
 const sfPro = localFont({
