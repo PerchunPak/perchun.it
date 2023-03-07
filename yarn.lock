@@ -131,13 +131,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/font@npm:13.2.x":
-  version: 13.2.3
-  resolution: "@next/font@npm:13.2.3"
-  checksum: 241baec8c441448df2d7e7755eca4876e018a874555ddd22816585b50f03eac357f15576762ad1011b4a4c245e7dba9675ae7ec4289196943a51bc25fa203863
-  languageName: node
-  linkType: hard
-
 "@next/swc-android-arm-eabi@npm:13.2.3":
   version: 13.2.3
   resolution: "@next/swc-android-arm-eabi@npm:13.2.3"
@@ -4166,7 +4159,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "perchun.it@workspace:."
   dependencies:
-    "@next/font": 13.2.x
     "@radix-ui/react-popover": 1.0.x
     "@radix-ui/react-tooltip": 1.0.x
     "@tailwindcss/forms": 0.5.x

@@ -12,7 +12,6 @@
     "check-types": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "@next/font": "13.2.x",
     "@radix-ui/react-popover": "1.0.x",
     "@radix-ui/react-tooltip": "1.0.x",
     "@types/node": "18.14.x",
