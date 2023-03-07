@@ -2271,29 +2271,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"focus-trap-react@npm:10.1.x":
-  version: 10.1.0
-  resolution: "focus-trap-react@npm:10.1.0"
-  dependencies:
-    focus-trap: ^7.3.1
-    tabbable: ^6.1.1
-  peerDependencies:
-    prop-types: ^15.8.1
-    react: ">=16.3.0"
-    react-dom: ">=16.3.0"
-  checksum: 8f6901d8909057a19929add61160086e18c5b55259ab2d3e088b7a6f09b3af452fb39b0e8b86b7d8846c986508432560bf8e6d837c74395b9066e95ce9fa4b61
-  languageName: node
-  linkType: hard
-
-"focus-trap@npm:^7.3.1":
-  version: 7.3.1
-  resolution: "focus-trap@npm:7.3.1"
-  dependencies:
-    tabbable: ^6.1.1
-  checksum: 88f5166fd80ff3d3ef617170385bf7902801ff38cd153af8d57977a67a66e7e3d154bee86c22b2ff3105ab5da4017186b377f1240da48c7ed26874830b3479b8
-  languageName: node
-  linkType: hard
-
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -4179,7 +4156,6 @@ __metadata:
     concurrently: 7.6.x
     eslint: 8.36.x
     eslint-config-next: 13.2.x
-    focus-trap-react: 10.1.x
     framer-motion: 10.2.x
     lucide-react: ~0.125.0
     ms: 2.1.x
@@ -5200,13 +5176,6 @@ __metadata:
     "@pkgr/utils": ^2.3.1
     tslib: ^2.5.0
   checksum: 8a9560e5d8f3d94dc3cf5f7b9c83490ffa30d320093560a37b88f59483040771fd1750e76b9939abfbb1b5a23fd6dfbae77f6b338abffe7cae7329cd9b9bb86b
-  languageName: node
-  linkType: hard
-
-"tabbable@npm:^6.1.1":
-  version: 6.1.1
-  resolution: "tabbable@npm:6.1.1"
-  checksum: 348639497262241ce8e0ccb0664ea582a386183107299ee8f27cf7b56bc84f36e09eaf667d3cb4201e789634012a91f7129bcbd49760abe874fbace35b4cf429
   languageName: node
   linkType: hard
 
