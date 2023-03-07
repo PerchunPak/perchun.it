@@ -1,15 +1,13 @@
 {
-    "name": "perchun.it",
-    "build": {
-      "dockerfile": "Dockerfile",
-      "context": ".."
-    },
-    "customizations": {
-        "vscode": {
-            "extensions": [
-		        "dsznajder.es7-react-js-snippets"
-            ]
-        }
-    },
-    "postCreateCommand": "yarn && yarn install"
+  "name": "perchun.it",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dsznajder.es7-react-js-snippets"]
+    }
+  },
+  "postCreateCommand": "yarn && yarn install"
 }
