@@ -3276,12 +3276,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:~0.123.0":
-  version: 0.123.0
-  resolution: "lucide-react@npm:0.123.0"
+"lucide-react@npm:~0.124.0":
+  version: 0.124.0
+  resolution: "lucide-react@npm:0.124.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 6ec73073064edee9792b96e25ca2e9c1ead990f49c267d42ac45314791312dce38715e27ce320c09280eeac233f43ea5d1c0f74d0c11c18565e27af52eec9eb8
+  checksum: c8d5a401fefa57e4eb0473b220106b51446599474726bcbd6e948c59abc6860de8db903bfe02cec2f1e5a3edc0a068a918246d68784e7f65418fa7d47c255bc9
   languageName: node
   linkType: hard
 
@@ -4184,7 +4184,7 @@ __metadata:
     eslint-config-next: 13.2.x
     focus-trap-react: 10.1.x
     framer-motion: 10.0.x
-    lucide-react: ~0.123.0
+    lucide-react: ~0.124.0
     ms: 2.1.x
     next: 13.2.x
     postcss: 8.4.x
