@@ -1,6 +1,5 @@
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
-import Link from "next/link";
 import { ReactNode } from "react";
 import { Github, ReadTheDocs } from "@/components/shared/icons";
 
@@ -53,7 +52,7 @@ export function Project({ projectName, description, links }: projectInterface) {
             );
           }
           return (
-            <Link
+            <a
               key={name}
               className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
               href={link}
@@ -62,7 +61,7 @@ export function Project({ projectName, description, links }: projectInterface) {
             >
               {image}
               {linkTitle}
-            </Link>
+            </a>
           );
         })}
       </div>
@@ -122,7 +121,7 @@ const myProjects: projectInterface[] = [
     description: (
       <>
         As I{"'"}m in Czechia now, I need to learn Czech fastly. This is why I
-        created an addon for <Link href="https://apps.ankiweb.net">Anki</Link>!
+        created an addon for <a href="https://apps.ankiweb.net">Anki</a>!
         For me, the addon helps learning and adding new words.
       </>
     ),
@@ -137,7 +136,7 @@ const myProjects: projectInterface[] = [
     description: (
       <>
         My first Frontend project, written in{" "}
-        <Link href="https://nextjs.org">Next.js 13</Link>! There is nothing to
+        <a href="https://nextjs.org">Next.js 13</a>! There is nothing to
         describe, because you are looking at the result right now.
       </>
     ),

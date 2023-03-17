@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Link from "next/link";
 
 export const config: {
   title: string;
@@ -17,14 +16,14 @@ export const config: {
   aboutMe: (
     <>
       Hello there! I{"'"}m 15 years old Junior+ Backend/Software developer from{" "}
-      <Link href="https://s.perchun.it/ukraine" className="description-link">
+      <a href="https://s.perchun.it/ukraine" className="description-link">
         Ukraine
-      </Link>
+      </a>
       .<br />
       Below you can find some of my main projects. They{"'"}re all available on{" "}
-      <Link href="https://s.perchun.it/github" className="description-link">
+      <a href="https://s.perchun.it/github" className="description-link">
         my GitHub
-      </Link>
+      </a>
       !
     </>
   ),

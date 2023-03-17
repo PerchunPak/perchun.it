@@ -42,14 +42,14 @@ export default function Layout({ children }: { children: ReactNode }) {
         </Tooltip>{" "}
         on base of{" "}
         <Tooltip content="Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project.">
-          <Link
+          <a
             className="footer-link"
             href="https://precedent.dev"
             target="_blank"
             rel="noopener noreferrer"
           >
             Precedent
-          </Link>
+          </a>
         </Tooltip>
       </div>
     </>
