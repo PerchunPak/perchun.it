@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
-  experimental: {
-    runtime: "experimental-edge",
-  },
 };
 
 module.exports = nextConfig;
