@@ -7,7 +7,6 @@ import {
   useMemo,
 } from "react";
 import { projectInterface } from "@/lib/projects-info";
-import Balancer from "react-wrap-balancer";
 import ReactMarkdown from "react-markdown";
 
 function ProjectModal({
@@ -22,16 +21,16 @@ function ProjectModal({
   return (
     <Modal showModal={showProjectModal} setShowModal={setShowProjectModal}>
       <div className="w-full overflow-hidden md:max-w-md md:rounded-2xl md:border md:border-gray-100 md:shadow-xl">
-        <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 text-center md:px-16">
+        <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
-          <Balancer className="text-sm text-gray-500">
+          <div className="text-sm text-gray-500 hyphens-auto break-words">
             <p>{project.longDescription.text}</p>
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
                 )
               : null}
-          </Balancer>
+          </div>
         </div>
       </div>
     </Modal>
