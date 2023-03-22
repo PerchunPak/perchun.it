@@ -74,10 +74,10 @@ const projectsInfo: projectInterface[] = [
     ),
     longDescription: {
       text:
-        "I believe that every programmer should have their own domain, and maybe a website on it." +
+        "I believe that every programmer should have their own domain, and maybe a website on it. " +
         "It's incredibly convenient to keep some of your personal things there (for example, running " +
-        "projects or your portfolio/resume). So I recently bought a domain, perchun.it, and to fill my homepage " +
-        "with something, I wrote my portfolio site.",
+        "projects or your portfolio/resume). So I recently bought a domain, [perchun.it](https://perchun.it), " +
+        "and to fill my homepage with something, I wrote my portfolio site.",
       technologies: [
         {
           name: "Next.js 13",
@@ -85,24 +85,64 @@ const projectsInfo: projectInterface[] = [
             "framework for React, which removes *a lot* of unnecessary work for developers",
           link: "https://nextjs.org",
         },
-        { name: "TypeScript" },
-        { name: "Precedent.dev", description: "template" },
-        { name: "Tailwind CSS", description: "a new approach to CSS" },
+        { name: "TypeScript", link: "https://www.typescriptlang.org" },
+        {
+          name: "Precedent.dev",
+          description: "template",
+          link: "https://precedent.dev",
+        },
+        {
+          name: "Tailwind CSS",
+          description: "a new approach to CSS",
+          link: "https://tailwindcss.com",
+        },
       ],
     },
     links: {
       github: "https://s.perchun.it/src-perchun-it",
     },
   },
-  // {
-  //   name: "the-war-tracker-bot",
-  //   description:
-  //     "The Telegram bot that doom-scrolls through the war news for you!",
-  //   links: {
-  //     github: "https://s.perchun.it/the-war-tracker-bot",
-  //     readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
-  //   },
-  // },
+  {
+    name: "the-war-tracker-bot",
+    description:
+      "The Telegram bot that doom-scrolls through the war news for you!",
+    longDescription: {
+      text:
+        "I'm a person who often finds myself doomscrolling, and I'm not a big fan of it. " +
+        "But I really want to follow the latest news in Ukraine (more specifically, about the war). " +
+        "Instead of following hundreds of telegram channels - I can finally use this bot! " +
+        "This bot follows a bunch of telegram channels and sends you the news you need!\n" +
+        "Example: When I saw the news that a missile had landed in Poland, I wanted to follow the news, " +
+        "but I didn't want to scroll through the night.\n" +
+        "I'm sure this happens with a lot of news. At the time, I wanted a channel that reported " +
+        'only the most important news - but this has its drawbacks. The line of "importance" ' +
+        "is subjective for everyone, and such a channel would require the authors to reveal a lot of " +
+        "their thoughts, which I didn't want, so I didn't create something like that.",
+      technologies: [
+        {
+          name: "Next.js 13",
+          description:
+            "framework for React, which removes *a lot* of unnecessary work for developers",
+          link: "https://nextjs.org",
+        },
+        { name: "TypeScript", link: "https://www.typescriptlang.org" },
+        {
+          name: "Precedent.dev",
+          description: "template",
+          link: "https://precedent.dev",
+        },
+        {
+          name: "Tailwind CSS",
+          description: "a new approach to CSS",
+          link: "https://tailwindcss.com",
+        },
+      ],
+    },
+    links: {
+      github: "https://s.perchun.it/the-war-tracker-bot",
+      readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
+    },
+  },
   // {
   //   name: "pinger-bot",
   //   description:

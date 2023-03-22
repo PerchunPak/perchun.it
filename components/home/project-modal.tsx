@@ -23,7 +23,7 @@ function ProjectModal({
       <div className="w-full overflow-hidden md:max-w-md md:rounded-2xl md:border md:border-gray-100 md:shadow-xl">
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
-          <div className="text-sm text-gray-500 hyphens-auto break-words">
+          <div className="break-words text-justify text-sm text-gray-500 hyphens-auto">
             <p>{project.longDescription.text}</p>
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
@@ -92,6 +92,24 @@ function parseTechnologiesFromProject(
       </ReactMarkdown>
     </div>
   );
+}
+
+function parseMarkdown(text: string) {
+  return <ReactMarkdown
+    components={{
+      a: ({ node, ...props }) => (
+        <a
+          {...props}
+          className="underline transition-colors hover:text-blue-800"
+        />
+      ),
+      strong: ({ node, ...props }) => (
+        <strong {...props} className="font-bold" />
+      ),
+    }}
+  >
+    {text}
+  </ReactMarkdown>
 }
 
 export function useProjectModal(project: projectInterface) {

@@ -41,6 +41,6 @@ module.exports = {
       addVariant("radix-side-top", '&[data-side="top"]');
       addVariant("radix-side-bottom", '&[data-side="bottom"]');
     }),
-    require('@vivgui/tailwindcss-hyphens'),
+    require("@vivgui/tailwindcss-hyphens"),
   ],
 };
