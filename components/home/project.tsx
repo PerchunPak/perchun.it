@@ -121,8 +121,8 @@ const myProjects: projectInterface[] = [
     description: (
       <>
         As I{"'"}m in Czechia now, I need to learn Czech fastly. This is why I
-        created an addon for <a href="https://apps.ankiweb.net">Anki</a>!
-        For me, the addon helps learning and adding new words.
+        created an addon for <a href="https://apps.ankiweb.net">Anki</a>! For
+        me, the addon helps learning and adding new words.
       </>
     ),
     links: {
