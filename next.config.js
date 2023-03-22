@@ -7,6 +7,9 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
+  sentry: {
+    tunnelRoute: "/bugs-report",
+  },
 };
 
 module.exports = withSentryConfig(

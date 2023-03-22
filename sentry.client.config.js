@@ -25,5 +25,4 @@ Sentry.init({
   replaysOnErrorSampleRate: 1.0,
 
   integrations: [new Sentry.Replay()],
-  tunnel: "/api/sentry-tunnel",
 });
