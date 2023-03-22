@@ -12,8 +12,6 @@
     "check-types": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "@honeybadger-io/js": "~5.1.5-alpha",
-    "@honeybadger-io/webpack": "5.1.x",
     "@radix-ui/react-popover": "1.0.x",
     "@radix-ui/react-tooltip": "1.0.x",
     "@types/node": "18.15.x",
@@ -35,8 +33,7 @@
     "react-wrap-balancer": "0.4.x",
     "sharp": "0.31.x",
     "typescript": "5.0.x",
-    "use-debounce": "9.0.x",
-    "webpack": ">=4.0.0"
+    "use-debounce": "9.0.x"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.x",
