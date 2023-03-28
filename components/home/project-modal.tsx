@@ -23,12 +23,15 @@ function ProjectModal({
       <div className="w-full overflow-hidden md:max-w-md md:rounded-2xl md:border md:border-gray-100 md:shadow-xl">
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
-          <div className="break-words text-justify text-sm text-gray-500 hyphens-auto">
+          <div className="break-words text-justify text-sm text-gray-500 hyphens-auto whitespace-pre-wrap">
             <p>{project.longDescription.text}</p>
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
                 )
+              : null}
+            {project.longDescription.additional !== undefined
+              ? <Markdown text={project.longDescription.additional} />
               : null}
           </div>
         </div>
@@ -75,26 +78,12 @@ function parseTechnologiesFromProject(
       <strong className="font-medium">
         Technologies that I have used here:
       </strong>{" "}
-      <ReactMarkdown
-        components={{
-          a: ({ node, ...props }) => (
-            <a
-              {...props}
-              className="underline transition-colors hover:text-blue-800"
-            />
-          ),
-          strong: ({ node, ...props }) => (
-            <strong {...props} className="font-bold" />
-          ),
-        }}
-      >
-        {result + "."}
-      </ReactMarkdown>
+      <Markdown text={result + "."} />
     </div>
   );
 }
 
-function parseMarkdown(text: string) {
+function Markdown({text}: {text: string}) {
   return <ReactMarkdown
     components={{
       a: ({ node, ...props }) => (

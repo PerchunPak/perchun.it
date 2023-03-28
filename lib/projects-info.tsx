@@ -11,6 +11,7 @@ export interface projectInterface {
       | { name: string; description?: string; link?: string }
       | string
     )[];
+    additional?: string;
   };
   links: {
     [key: string]: string;
@@ -120,21 +121,15 @@ const projectsInfo: projectInterface[] = [
         "their thoughts, which I didn't want, so I didn't create something like that.",
       technologies: [
         {
-          name: "Next.js 13",
+          name: "Telethon",
           description:
-            "framework for React, which removes *a lot* of unnecessary work for developers",
-          link: "https://nextjs.org",
-        },
-        { name: "TypeScript", link: "https://www.typescriptlang.org" },
-        {
-          name: "Precedent.dev",
-          description: "template",
-          link: "https://precedent.dev",
+            "library for connecting to Telegram with MTProto protocol, which is what use mobile apps",
+          link: "https://pypi.org/project/Telethon/",
         },
         {
-          name: "Tailwind CSS",
-          description: "a new approach to CSS",
-          link: "https://tailwindcss.com",
+          name: "Redis",
+          description: "key-value database, mostly used for caching",
+          link: "https://redis.io",
         },
       ],
     },
@@ -143,23 +138,138 @@ const projectsInfo: projectInterface[] = [
       readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
     },
   },
-  // {
-  //   name: "pinger-bot",
-  //   description:
-  //     "Discord bot to ping (and collect statistics of) Minecraft servers, which is my main project, where I test new tools, or even architectures.",
-  //   links: {
-  //     github: "https://s.perchun.it/pinger-bot",
-  //     readTheDocs: "https://pinger-bot.readthedocs.io",
-  //   },
-  // },
-  // {
-  //   name: "python-template",
-  //   description:
-  //     "Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!",
-  //   links: {
-  //     github: "https://s.perchun.it/py-template",
-  //   },
-  // },
+  {
+    name: "pinger-bot",
+    description:
+      "Discord bot to ping (and collect statistics of) Minecraft servers, which is my main project, where I test new tools, or even architectures.",
+      longDescription: {
+        text:
+          "It's my longest project that's still being supported. I started writing it when I have first started " +
+          "programming. It's a Discord bot that receives public information from Minecraft servers and can " +
+          "generate statistics on the number of players. But this is not the most important thing, the most " +
+          "important thing is that it is my testing ground for new ideas and libraries. I often find interesting " +
+          "tools or even ecosystem sites and test them with this bot.",
+        technologies: [
+          {
+            name: "Hikari-py",
+            description:
+              "library for connecting to Discord",
+            link: "https://www.hikari-py.dev/",
+          },
+          {
+            name: "APScheduler",
+            description: "for collecting statistics once in a while",
+            link: "https://pypi.org/project/APScheduler/",
+          },
+          {
+            name: "mcstatus",
+            description: "for getting data from servers",
+            link: "https://mcstatus.readthedocs.io/",
+          },
+          {
+            name: "SQLAlchemy ORM",
+            description: "for connecting to the database (I currently support [SQLite](https://sqlite.org/), [MySQL](https://www.mysql.com/) and [PostgreSQL](https://postgresql.org))",
+            link: "https://sqlalchemy.org/",
+          },
+          {
+            name: "alembic",
+            description: "for database migrations",
+            link: "https://alembic.sqlalchemy.org/",
+          },
+          {
+            name: "matplotlib",
+            description: "for creating statistics graphs",
+            link: "https://matplotlib.org/",
+          },
+          {
+            name: "gettext",
+            description: "for translating into different languages",
+            link: "https://docs.python.org/3/library/gettext.html",
+          },
+          {
+            name: "Babel",
+            description: "for helping in translating",
+            link: "https://babel.pocoo.org/",
+          },
+          {
+            name: "Docker",
+            description: "for running on my server",
+            link: "https://docker.com/",
+          },
+        ],
+      },
+    links: {
+      github: "https://s.perchun.it/pinger-bot",
+      readTheDocs: "https://pinger-bot.readthedocs.io",
+    },
+  },
+  {
+    name: "python-template",
+    description:
+      "Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!",
+      longDescription: {
+        text:
+          "I spend little time creating a new project. It's all thanks to this project - it's my personal template. It contains a set of the best tools I've found in all my experience.",
+        technologies: [
+          {
+            name: "cookiecutter",
+            description:
+              "for easy template creation",
+            link: "https://github.com/cookiecutter/cookiecutter#readme",
+          },
+          {
+            name: "lice",
+            description: "for generating the project license",
+            link: "https://pypi.org/project/lice/",
+          },
+          {
+            name: "cruft",
+            description: "for auto-updating template",
+            link: "https://cruft.github.io/cruft/",
+          },
+          {
+            name: "OmegaConf",
+            description: "for configuration files with Yaml",
+            link: "https://omegaconf.readthedocs.io/",
+          },
+          {
+            name: "structlog",
+            description: "for beautiful and structed logging",
+            link: "https://structlog.org",
+          },
+          {
+            name: "mypy",
+            description: "linter for supporting statically typed Python",
+            link: "https://www.mypy-lang.org/",
+          },
+          {
+            name: "poetry",
+            description: "advanced package manager, my favorite tool",
+            link: "https://python-poetry.org/",
+          },
+          {
+            name: "Github Actions",
+            description: "for running automatic testing on every commit",
+            link: "https://github.com/features/actions",
+          },
+          {
+            name: "pytest",
+            description: "for testing with easy-to-write and use unit-tests",
+            link: "https://pytest.org/",
+          },
+          "QA with [flake8](https://flake8.pycqa.org/) and about five addons to it",
+          {
+            name: "Sphinx",
+            description: "for generating documentation from [.RST](https://en.wikipedia.org/wiki/ReStructuredText) files",
+            link: "https://python-poetry.org/",
+          },
+          // todo add more
+        ],
+      },
+    links: {
+      github: "https://s.perchun.it/py-template",
+    },
+  },
   // {
   //   name: "mcstatus",
   //   description:
