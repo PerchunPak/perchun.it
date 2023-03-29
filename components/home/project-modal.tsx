@@ -23,16 +23,16 @@ function ProjectModal({
       <div className="w-full overflow-hidden md:max-w-md md:rounded-2xl md:border md:border-gray-100 md:shadow-xl">
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
-          <div className="break-words text-justify text-sm text-gray-500 hyphens-auto whitespace-pre-wrap">
+          <div className="text-sm text-gray-500">
             <p>{project.longDescription.text}</p>
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
                 )
               : null}
-            {project.longDescription.additional !== undefined
-              ? <Markdown text={project.longDescription.additional} />
-              : null}
+            {project.longDescription.additional !== undefined ? (
+              <Markdown text={project.longDescription.additional} />
+            ) : null}
           </div>
         </div>
       </div>
@@ -49,11 +49,7 @@ function parseTechnologiesFromProject(
   let result = "";
 
   for (let i = 0; i < technologies.length; i++) {
-    if (i !== 0 && i === technologies.length - 1) {
-      result += " and ";
-    } else if (i !== 0) {
-      result += ", ";
-    }
+    result += "\n - ";
 
     let technology = technologies[i];
     if (typeof technology === "string") {
@@ -68,9 +64,14 @@ function parseTechnologiesFromProject(
       }
 
       if (technology.description !== undefined) {
-        result += ` (${technology.description})`;
+        if (technology.description.startsWith("for")) {
+          result += ` ${technology.description}`;
+        } else {
+          result += ` - ${technology.description}`;
+        }
       }
     }
+    result += ".";
   }
 
   return (
@@ -78,27 +79,32 @@ function parseTechnologiesFromProject(
       <strong className="font-medium">
         Technologies that I have used here:
       </strong>{" "}
-      <Markdown text={result + "."} />
+      <Markdown text={result} />
     </div>
   );
 }
 
-function Markdown({text}: {text: string}) {
-  return <ReactMarkdown
-    components={{
-      a: ({ node, ...props }) => (
-        <a
-          {...props}
-          className="underline transition-colors hover:text-blue-800"
-        />
-      ),
-      strong: ({ node, ...props }) => (
-        <strong {...props} className="font-bold" />
-      ),
-    }}
-  >
-    {text}
-  </ReactMarkdown>
+function Markdown({ text }: { text: string }) {
+  return (
+    <ReactMarkdown
+      components={{
+        a: ({ node, ...props }) => (
+          <a
+            {...props}
+            className="underline transition-colors hover:text-blue-800"
+          />
+        ),
+        strong: ({ node, ...props }) => (
+          <strong {...props} className="font-bold" />
+        ),
+        ul: ({ node, ...props }) => (
+          <ul {...props} className="mt-2 list-inside list-disc space-y-2" />
+        ),
+      }}
+    >
+      {text}
+    </ReactMarkdown>
+  );
 }
 
 export function useProjectModal(project: projectInterface) {
