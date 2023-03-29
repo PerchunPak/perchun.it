@@ -42,7 +42,7 @@
     "@tailwindcss/typography": "0.5.x",
     "@types/ms": "0.7.x",
     "autoprefixer": "10.4.x",
-    "concurrently": "7.6.x",
+    "concurrently": "8.0.x",
     "postcss": "8.4.x",
     "prettier": "2.8.x",
     "prettier-plugin-tailwindcss": "0.2.x",
