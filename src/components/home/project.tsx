@@ -1,6 +1,6 @@
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Github, ReadTheDocs } from "@/components/shared/icons";
 
 export interface projectInterface {

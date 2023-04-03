@@ -1,8 +1,14 @@
 # Sentry
 .sentryclirc
 
-# Created by https://www.toptal.com/developers/gitignore/api/linux,windows,visualstudiocode,webstorm,nextjs,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,visualstudiocode,webstorm,nextjs,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/yarn,linux,windows,webstorm,visualstudiocode,astro,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=yarn,linux,windows,webstorm,visualstudiocode,astro,react
+
+### Astro ###
+# Gitignore template for Astro projects
+# Ignore content collection generated files
+.astro
+dist/
 
 ### Linux ###
 *~
@@ -19,41 +25,21 @@
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-### NextJS ###
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
 
-# testing
-/coverage
+node_modules
+bower_components
 
-# next.js
-/.next/
-/out/
+*.sublime*
 
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# local env files
-.env*.local
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+psd
+thumb
+sketch
 
 ### VisualStudioCode ###
 .vscode/*
@@ -226,4 +212,4 @@ $RECYCLE.BIN/
 # and uncomment the following lines
 .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,windows,visualstudiocode,webstorm,nextjs,yarn
+# End of https://www.toptal.com/developers/gitignore/api/yarn,linux,windows,webstorm,visualstudiocode,astro,react

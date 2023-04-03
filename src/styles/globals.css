@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+  }
+}
+
 .description-link {
   @apply text-[#5B6AAB] hover:text-blue-800;
 }

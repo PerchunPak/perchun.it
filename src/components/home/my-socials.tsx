@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import config from "@/lib/config";
 import { Discord, Email, Github, Telegram } from "@/components/shared/icons";
 import useWindowSize from "@/lib/hooks/use-window-size";

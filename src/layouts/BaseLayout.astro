@@ -1,0 +1,78 @@
+---
+import "@/styles/globals.css";
+import { Provider as RWBProvider } from "react-wrap-balancer";
+import "@fontsource/inter"
+import config from "@/lib/config";
+import Tooltip from "@/components/shared/tooltip";
+import Header from "@/components/shared/header";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{config.title}</title>
+    <meta name="description" content={config.shortDescription} />
+    <link rel="icon" href="/logo.png" />
+
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content={config.title} />
+    <meta property="og:description" content={config.shortDescription} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@vercel" />
+    <meta name="twitter:creator" content="@steventey" />
+    <meta name="twitter:title" content={config.title} />
+    <meta name="twitter:description" content={config.shortDescription} />
+  </head>
+  <body>
+    <div class="fixed -z-50 h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+
+    <Header client:load >
+      <div class="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto">
+        <a href="/" class="flex items-center font-display text-2xl">
+          <img
+            src="/logo.png"
+            alt="My avatar"
+            width="30"
+            height="30"
+            class="mr-2 rounded-sm"
+          />
+          <p>Perchun</p>
+        </a>
+      </div>
+    </Header>
+
+    <main class="flex w-full flex-col items-center justify-center py-32">
+      <RWBProvider client:load >
+        <main>
+            <slot />
+        </main>
+      </RWBProvider>
+    </main>
+
+    <div class="absolute w-full border-t border-gray-200 bg-white py-5 text-center text-gray-500">
+      Created by
+      <Tooltip content="Hey, it's me!" client:load >
+        <strong class="footer-link">Perchun</strong>
+      </Tooltip>
+      on base of
+      <Tooltip content="Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project." client:load >
+        <a
+          class="footer-link"
+          href="https://precedent.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Precedent
+        </a>
+      </Tooltip>
+    </div>
+
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js" />
+    <noscript>
+      <img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" />
+    </noscript>
+  </body>
+</html>
