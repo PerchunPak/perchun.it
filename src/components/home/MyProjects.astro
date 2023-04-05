@@ -1,11 +1,11 @@
 ---
 import Project from "@/components/home/Project.astro"
-import type { projectInterface } from "@/lib/projects.astro"
+import type { projectInterface } from "@/lib/projects-info.ts"
 
 
 const myProjects: projectInterface[] = [
   {
-    projectName: "czech-plus",
+    name: "czech-plus",
     description:
         "As I'm in Czechia now, I need to learn Czech fastly. This is why I" +
         "created an addon for [Anki](https://apps.ankiweb.net)! For" +
@@ -17,7 +17,7 @@ const myProjects: projectInterface[] = [
     },
   },
   {
-    projectName: "This site!",
+    name: "This site!",
     description:
         "My first Frontend project, written in " +
         "[Next.js](https://nextjs.org)! There is nothing to " +
@@ -28,7 +28,7 @@ const myProjects: projectInterface[] = [
     },
   },
   {
-    projectName: "the-war-tracker-bot",
+    name: "the-war-tracker-bot",
     description:
       "The Telegram bot that doom-scrolls through the war news for you!",
     links: {
@@ -38,7 +38,7 @@ const myProjects: projectInterface[] = [
     },
   },
   {
-    projectName: "pinger-bot",
+    name: "pinger-bot",
     description:
       "Discord bot to ping (and collect statistics of) Minecraft servers, which is my main project, where I test new tools, or even architectures.",
     links: {
@@ -48,7 +48,7 @@ const myProjects: projectInterface[] = [
     },
   },
   {
-    projectName: "python-template",
+    name: "python-template",
     description:
       "Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!",
     links: {
@@ -57,7 +57,7 @@ const myProjects: projectInterface[] = [
     },
   },
   {
-    projectName: "mcstatus",
+    name: "mcstatus",
     description:
       "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I particularly maintain.",
     links: {
@@ -68,7 +68,7 @@ const myProjects: projectInterface[] = [
   },
   // It's still too ToDo for referencing in portfolio
   // {
-  //   projectName: "mcph",
+  //   name: "mcph",
   //   description:
   //     "Minecraft Plugin Helper. Tool for managing Minecraft server's plugins. At now, on making architecture stage.",
   //   links: {
@@ -82,11 +82,9 @@ const myProjects: projectInterface[] = [
 
 {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
 <div class="my-10 flex grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3">
-  {myProjects.map(({ projectName, description, links }) => (
+  {myProjects.map((project) => (
     <Project
-      projectName={projectName}
-      description={description}
-      links={links}
+      project={project}
     />
   ))}
 </div>

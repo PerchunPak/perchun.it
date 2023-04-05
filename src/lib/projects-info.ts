@@ -1,6 +1,5 @@
----
 export interface projectInterface {
-  projectName: string;
+  name: string;
   description: string;
   links: {
     main: string;
@@ -9,23 +8,24 @@ export interface projectInterface {
   };
 }
 
-export const projectLinks: {
+interface projectLinksElement {
   name: string;
   title: string;
   shortTitle: string;
   image: string;
-}[] = [
+}
+
+export const projectLinks: projectLinksElement[] = [
   {
     name: "github",
     title: "Check the GitHub!",
     shortTitle: "GitHub",
-    image: "/icons/github.svg",
+    image: "github",
   },
   {
     name: "readTheDocs",
     title: "See ReadTheDocs!",
     shortTitle: "ReadTheDocs",
-    image: "/icons/readthedocs.svg",
+    image: "readthedocs",
   },
 ];
----

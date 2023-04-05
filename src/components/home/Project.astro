@@ -2,8 +2,8 @@
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
 import type { ReactNode } from "react";
-import type { projectInterface } from "@/lib/projects.astro"
-import { projectLinks } from "@/lib/projects.astro"
+import type { projectInterface } from "@/lib/projects-info.ts"
+import { projectLinks } from "@/lib/projects-info.ts"
 import Icon from "@/components/Icon.astro"
 
 export interface Props {
@@ -15,55 +15,55 @@ const { project } = Astro.props as Props;
 const numberOfProjectLinks = projectLinks.map((e) => e.name).filter((key) => key in project.links).length;
 ---
 
-    <div
-      class={`relative col-span-1 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:scale-[1.02] hover:transition ${styles.project}`}
-      {/*onclick={() => open(project.links.main)}*/}
-    >
-      <div class="mx-auto mt-3 flex items-center justify-center space-x-3">
-        {projectLinks.map((linkInfo) => {
-          // @ts-expect-error
-          const link: string | undefined = links[linkInfo.name];
-          if (link === undefined) {
-            return;
-          }
+<div
+  class={`relative col-span-1 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:scale-[1.02] hover:transition ${styles.project}`}
+>
+  <!-- onclick={() => open(project.links.main)} -->
+  <div class="mx-auto mt-3 flex items-center justify-center space-x-3">
+    {projectLinks.map((linkInfo) => {
+      // @ts-expect-error
+      const link: string | undefined = project.links[linkInfo.name];
+      if (link === undefined) {
+        return;
+      }
 
-          let linkTitle: ReactNode;
-          if (numberOfProjectLinks > 1) {
-            linkTitle = (
-              <>
-                <p class="hidden xl:block">{linkInfo.title}</p>
-                <p class="hidden min-[860px]:block xl:hidden">
-                  {linkInfo.shortTitle}
-                </p>
-              </>
-            );
-          } else {
-            linkTitle = (
-              <>
-                <p class="hidden md:block">{linkInfo.title}</p>
-              </>
-            );
-          }
+      let linkTitle: ReactNode;
+      if (numberOfProjectLinks > 1) {
+        linkTitle = (
+          <>
+            <p class="hidden xl:block">{linkInfo.title}</p>
+            <p class="hidden min-[860px]:block xl:hidden">
+              {linkInfo.shortTitle}
+            </p>
+          </>
+        );
+      } else {
+        linkTitle = (
+          <>
+            <p class="hidden md:block">{linkInfo.title}</p>
+          </>
+        );
+      }
 
-          return (
-            <a
-              class="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name={linkInfo.image} />
-              {linkTitle}
-            </a>
-          );
-        })}
-      </div>
-      <div class="mx-auto max-w-md text-center">
-        <h2 class="mt-6 bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
-          <Balancer client:load >{project.name}</Balancer>
-        </h2>
-        <div class="prose-sm m-3 mt-2 leading-normal text-gray-500 md:prose">
-          <Balancer className={styles.description} client:load >{project.description}</Balancer>
-        </div>
-      </div>
+      return (
+        <a
+          class="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name={linkInfo.image} />
+          {linkTitle}
+        </a>
+      );
+    })}
+  </div>
+  <div class="mx-auto max-w-md text-center">
+    <h2 class="mt-6 bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
+      <Balancer client:load >{project.name}</Balancer>
+    </h2>
+    <div class="prose-sm m-3 mt-2 leading-normal text-gray-500 md:prose">
+      <Balancer className={styles.description} client:load >{project.description}</Balancer>
     </div>
+  </div>
+</div>

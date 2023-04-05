@@ -20,6 +20,7 @@ export default function Modal({
   setShowModal: Dispatch<SetStateAction<boolean>>;
 }) {
   const desktopModalRef = useRef(null);
+  const { isMobile, isDesktop } = useWindowSize();
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -35,7 +36,6 @@ export default function Modal({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [onKeyDown]);
 
-  const { isMobile, isDesktop } = useWindowSize();
 
   return (
     <AnimatePresence>
