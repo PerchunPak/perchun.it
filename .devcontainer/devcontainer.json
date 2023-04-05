@@ -6,7 +6,10 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": ["dsznajder.es7-react-js-snippets"]
+      "extensions": [
+		"dsznajder.es7-react-js-snippets",
+		"astro-build.astro-vscode"
+	]
     }
   },
   "postCreateCommand": "yarn && yarn install"

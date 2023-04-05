@@ -1,0 +1,31 @@
+---
+export interface projectInterface {
+  projectName: string;
+  description: string;
+  links: {
+    main: string;
+    github?: string;
+    readTheDocs?: string;
+  };
+}
+
+export const projectLinks: {
+  name: string;
+  title: string;
+  shortTitle: string;
+  image: string;
+}[] = [
+  {
+    name: "github",
+    title: "Check the GitHub!",
+    shortTitle: "GitHub",
+    image: "/icons/github.svg",
+  },
+  {
+    name: "readTheDocs",
+    title: "See ReadTheDocs!",
+    shortTitle: "ReadTheDocs",
+    image: "/icons/readthedocs.svg",
+  },
+];
+---

@@ -2,7 +2,8 @@
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
 import type { ReactNode } from "react";
-import type { projectInterface } from "@/components/home/MyProjects.astro"
+import type { projectInterface } from "@/lib/projects.astro"
+import { projectLinks } from "@/lib/projects.astro"
 import Icon from "@/components/Icon.astro"
 
 export interface Props {
@@ -11,17 +12,17 @@ export interface Props {
 
 const { project } = Astro.props as Props;
 
-const numberOfProjectLinks = project.links.map((e) => e.name).filter((key) => key in links).length;
+const numberOfProjectLinks = projectLinks.map((e) => e.name).filter((key) => key in project.links).length;
 ---
 
     <div
       class={`relative col-span-1 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:scale-[1.02] hover:transition ${styles.project}`}
-      onclick={() => open(project.links.main)}
+      {/*onclick={() => open(project.links.main)}*/}
     >
       <div class="mx-auto mt-3 flex items-center justify-center space-x-3">
-        {project.links.map((link) => {
+        {projectLinks.map((linkInfo) => {
           // @ts-expect-error
-          const link: string | undefined = links[link.name];
+          const link: string | undefined = links[linkInfo.name];
           if (link === undefined) {
             return;
           }
@@ -30,16 +31,16 @@ const numberOfProjectLinks = project.links.map((e) => e.name).filter((key) => ke
           if (numberOfProjectLinks > 1) {
             linkTitle = (
               <>
-                <p class="hidden xl:block">{link.title}</p>
+                <p class="hidden xl:block">{linkInfo.title}</p>
                 <p class="hidden min-[860px]:block xl:hidden">
-                  {link.shortTitle}
+                  {linkInfo.shortTitle}
                 </p>
               </>
             );
           } else {
             linkTitle = (
               <>
-                <p class="hidden md:block">{link.title}</p>
+                <p class="hidden md:block">{linkInfo.title}</p>
               </>
             );
           }
@@ -51,7 +52,7 @@ const numberOfProjectLinks = project.links.map((e) => e.name).filter((key) => ke
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icon name={link.image} />
+              <Icon name={linkInfo.image} />
               {linkTitle}
             </a>
           );
