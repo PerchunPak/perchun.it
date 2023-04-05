@@ -1,24 +1,23 @@
 ---
-import type { ReactNode } from "react";
 import config from "@/lib/config";
+import Icon from "@/components/Icon.astro"
 
-const mySocials: { name: string; image: ReactNode; link: string }[] = [
-  { name: "GitHub", image: "/icons/github.svg", link: config.linkTo.gitHub },
-  { name: "Discord", image: "/icons/discord.svg", link: config.linkTo.discord },
-  { name: "Telegram", image: "/icons/telegram.svg", link: config.linkTo.telegram },
-  { name: "Email", image: "/icons/email.svg", link: config.linkTo.email },
+const mySocials: { name: string; icon: string; link: string }[] = [
+  { name: "GitHub", icon: "github", link: config.linkTo.gitHub },
+  { name: "Discord", icon: "discord", link: config.linkTo.discord },
+  { name: "Telegram", icon: "telegram", link: config.linkTo.telegram },
+  { name: "Email", icon: "email", link: config.linkTo.email },
 ];
 ---
 
-{mySocials.map(({ name, image, link }) => (
+{mySocials.map(({ name, icon, link }) => (
   <a
     class="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
     href={link}
     target="_blank"
     rel="noopener noreferrer"
   >
-    {image}
-    {/* isDesktop ? <p>My {name}</p> : null */}
-    <p>My {name}</p>
+    <Icon name={icon} />
+    <p class="hidden md:block">My {name}</p>
   </a>
 ))}

@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import config from "@/lib/config";
 import useWindowSize from "@/lib/hooks/use-window-size";
+import type { ReactNode } from "react";
 
-export default function Home() {
+export default function Home({ mySocials, myProjects }: { mySocials: ReactNode, myProjects: ReactNode }) {
   const { isDesktop } = useWindowSize();
 
   return (
@@ -42,10 +43,10 @@ export default function Home() {
           className="mx-auto mt-6 flex items-center justify-center space-x-3"
           variants={FADE_DOWN_ANIMATION_VARIANTS}
         >
-          <slot name="my-socials" />
+          {mySocials}
         </motion.div>
       </motion.div>
-      {/* <slot name="my-projects" /> */}
+      {myProjects}
     </>
   );
 }

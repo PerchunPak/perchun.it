@@ -1,0 +1,128 @@
+---
+import Project from "@/components/home/Project.astro"
+import type { ReactNode } from "react";
+
+export interface projectInterface {
+  projectName: string;
+  description: string | ReactNode;
+  links: {
+    main: string;
+    github?: string;
+    readTheDocs?: string;
+  };
+}
+
+const projectLinks: {
+  name: string;
+  title: string;
+  shortTitle: string;
+  image: ReactNode;
+}[] = [
+  {
+    name: "github",
+    title: "Check the GitHub!",
+    shortTitle: "GitHub",
+    image: "/icons/github.svg",
+  },
+  {
+    name: "readTheDocs",
+    title: "See ReadTheDocs!",
+    shortTitle: "ReadTheDocs",
+    image: "/icons/readthedocs.svg",
+  },
+];
+
+const myProjects: projectInterface[] = [
+  {
+    projectName: "czech-plus",
+    description:
+        "As I{"'"}m in Czechia now, I need to learn Czech fastly. This is why I
+        "created an addon for <a href="https://apps.ankiweb.net">Anki</a>! For
+        "me, the addon helps learning and adding new words.",
+    links: {
+      main: "https://s.perchun.it/czech-plus",
+      github: "https://github.com/PerchunPak/czech-plus",
+      readTheDocs: "https://czech-plus.readthedocs.io",
+    },
+  },
+  {
+    projectName: "This site!",
+    description: (
+      <>
+        My first Frontend project, written in{" "}
+        <a href="https://nextjs.org">Next.js 13</a>! There is nothing to
+        describe, because you are looking at the result right now.
+      </>
+    ),
+    links: {
+      main: "https://s.perchun.it/src-perchun-it",
+      github: "https://github.com/PerchunPak/perchun.it",
+    },
+  },
+  {
+    projectName: "the-war-tracker-bot",
+    description:
+      "The Telegram bot that doom-scrolls through the war news for you!",
+    links: {
+      main: "https://s.perchun.it/the-war-tracker-bot",
+      github: "https://github.com/PerchunPak/the-war-tracker-bot",
+      readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
+    },
+  },
+  {
+    projectName: "pinger-bot",
+    description:
+      "Discord bot to ping (and collect statistics of) Minecraft servers, which is my main project, where I test new tools, or even architectures.",
+    links: {
+      main: "https://s.perchun.it/pinger-bot",
+      github: "https://github.com/PerchunPak/pinger-bot",
+      readTheDocs: "https://pinger-bot.readthedocs.io",
+    },
+  },
+  {
+    projectName: "python-template",
+    description:
+      "Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!",
+    links: {
+      main: "https://s.perchun.it/py-template",
+      github: "https://github.com/PerchunPak/python-template",
+    },
+  },
+  {
+    projectName: "mcstatus",
+    description:
+      "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I particularly maintain.",
+    links: {
+      main: "https://s.perchun.it/mcstatus",
+      github: "https://github.com/py-mine/mcstatus",
+      readTheDocs: "https://mcstatus.readthedocs.io",
+    },
+  },
+  // It's still too ToDo for referencing in portfolio
+  // {
+  //   projectName: "mcph",
+  //   description:
+  //     "Minecraft Plugin Helper. Tool for managing Minecraft server's plugins. At now, on making architecture stage.",
+  //   links: {
+  //     main: "https://s.perchun.it/mcph",
+  //     github: "https://github.com/PerchunPak/mcph",
+  //     readTheDocs: "https://mcph.readthedocs.io",
+  //   },
+  // },
+];
+const numberOfProjectLinks = projectLinks
+    .map((e) => e.name)
+    .filter((key) => key in links).length;
+---
+
+{/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
+<div class="my-10 flex grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3">
+  {myProjects.map(({ projectName, description, links }) => (
+    <Project
+      key={projectName}
+      projectName={projectName}
+      description={description}
+      links={links}
+    />
+  ))}
+</div>

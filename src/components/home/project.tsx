@@ -1,7 +1,6 @@
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
 import type { ReactNode } from "react";
-import { Github, ReadTheDocs } from "@/components/shared/icons";
 
 export interface projectInterface {
   projectName: string;
@@ -105,13 +104,13 @@ const projectLinks: {
     name: "github",
     title: "Check the GitHub!",
     shortTitle: "GitHub",
-    image: <Github />,
+    image: "/icons/github.svg",
   },
   {
     name: "readTheDocs",
     title: "See ReadTheDocs!",
     shortTitle: "ReadTheDocs",
-    image: <ReadTheDocs />,
+    image: "/icons/readthedocs.svg",
   },
 ];
 

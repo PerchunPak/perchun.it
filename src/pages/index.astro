@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import InsertMyProjects from "@/components/home/project";
-import InsertMySocials from "@/components/home/my-socials";
 import MySocials from "@/components/home/MySocials.astro";
+import MyProjects from "@/components/home/MyProjects.astro";
 import Home from "@/react/pages/home";
 ---
 
 <BaseLayout>
-  <Home>
+  <Home client:load >
     <MySocials slot="my-socials" />
+    <MyProjects slot="my-projects" />
   </Home>
 </BaseLayout>
