@@ -5,7 +5,13 @@ import config from "@/lib/config";
 import useWindowSize from "@/lib/hooks/use-window-size";
 import type { ReactNode } from "react";
 
-export default function Home({ mySocials, myProjects }: { mySocials: ReactNode, myProjects: ReactNode }) {
+export default function Home({
+  mySocials,
+  myProjects,
+}: {
+  mySocials: ReactNode;
+  myProjects: ReactNode;
+}) {
   const { isDesktop } = useWindowSize();
 
   return (

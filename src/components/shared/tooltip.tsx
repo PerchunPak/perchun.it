@@ -1,7 +1,8 @@
-import { ReactNode, useState } from "react";
+import { useState } from "react";
+import type { ReactNode } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import useWindowSize from "@/lib/hooks/use-window-size";
-import Leaflet from "./leaflet";
+import Leaflet from "@/components/shared/leaflet";
 import Balancer from "react-wrap-balancer";
 
 export default function Tooltip({

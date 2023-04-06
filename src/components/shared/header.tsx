@@ -1,7 +1,7 @@
 import useScroll from "@/lib/hooks/use-scroll";
-import type {ReactNode} from "react";
+import type { ReactNode } from "react";
 
-export default function Header({children}: {children: ReactNode} ) {
+export default function Header({ children }: { children: ReactNode }) {
   const scrolled = useScroll(50);
 
   return (
@@ -14,5 +14,5 @@ export default function Header({children}: {children: ReactNode} ) {
     >
       {children}
     </div>
-  )
+  );
 }

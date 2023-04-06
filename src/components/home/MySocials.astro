@@ -1,6 +1,6 @@
 ---
 import config from "@/lib/config";
-import Icon from "@/components/Icon.astro"
+import Icon from "../shared/Icon.astro";
 
 const mySocials: { name: string; icon: string; link: string }[] = [
   { name: "GitHub", icon: "github", link: config.linkTo.gitHub },
@@ -10,14 +10,16 @@ const mySocials: { name: string; icon: string; link: string }[] = [
 ];
 ---
 
-{mySocials.map(({ name, icon, link }) => (
-  <a
-    class="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Icon name={icon} />
-    <p class="hidden md:block">My {name}</p>
-  </a>
-))}
+{
+  mySocials.map(({ name, icon, link }) => (
+    <a
+      class="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name={icon} />
+      <p class="hidden md:block">My {name}</p>
+    </a>
+  ))
+}

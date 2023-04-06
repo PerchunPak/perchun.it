@@ -1,4 +1,5 @@
-import { useEffect, useRef, ReactNode, Dispatch, SetStateAction } from "react";
+import { useEffect, useRef, Dispatch, SetStateAction } from "react";
+import type { ReactNode } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 
 export default function Leaflet({
@@ -16,7 +17,6 @@ export default function Leaflet({
       y: 20,
       transition: transitionProps,
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function handleDragEnd(_: any, info: any) {

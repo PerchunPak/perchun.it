@@ -1,15 +1,14 @@
 ---
-import Project from "@/components/home/Project.astro"
-import type { projectInterface } from "@/lib/projects-info.ts"
-
+import Project from "@/components/home/Project.astro";
+import type { projectInterface } from "@/lib/projects-info.ts";
 
 const myProjects: projectInterface[] = [
   {
     name: "czech-plus",
     description:
-        "As I'm in Czechia now, I need to learn Czech fastly. This is why I" +
-        "created an addon for [Anki](https://apps.ankiweb.net)! For" +
-        "me, the addon helps learning and adding new words.",
+      "As I'm in Czechia now, I need to learn Czech fastly. This is why I" +
+      "created an addon for [Anki](https://apps.ankiweb.net)! For" +
+      "me, the addon helps learning and adding new words.",
     links: {
       main: "https://s.perchun.it/czech-plus",
       github: "https://github.com/PerchunPak/czech-plus",
@@ -19,9 +18,9 @@ const myProjects: projectInterface[] = [
   {
     name: "This site!",
     description:
-        "My first Frontend project, written in " +
-        "[Next.js](https://nextjs.org)! There is nothing to " +
-        "describe, because you are looking at the result right now.",
+      "My first Frontend project, written in " +
+      "[Next.js](https://nextjs.org)! There is nothing to " +
+      "describe, because you are looking at the result right now.",
     links: {
       main: "https://s.perchun.it/src-perchun-it",
       github: "https://github.com/PerchunPak/perchun.it",
@@ -80,11 +79,12 @@ const myProjects: projectInterface[] = [
 ];
 ---
 
-{/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-<div class="my-10 flex grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3">
-  {myProjects.map((project) => (
-    <Project
-      project={project}
-    />
-  ))}
+<!--
+here we are animating with Tailwind instead of Framer Motion
+because Framer Motion messes up the z-index for child components
+-->
+<div
+  class="my-10 grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3"
+>
+  {myProjects.map((project) => <Project project={project} />)}
 </div>

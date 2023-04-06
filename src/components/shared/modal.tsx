@@ -36,7 +36,6 @@ export default function Modal({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [onKeyDown]);
 
-
   return (
     <AnimatePresence>
       {showModal && (
