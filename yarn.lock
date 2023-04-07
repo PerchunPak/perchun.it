@@ -147,12 +147,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.2.3":
-  version: 13.2.3
-  resolution: "@next/eslint-plugin-next@npm:13.2.3"
+"@next/eslint-plugin-next@npm:13.3.0":
+  version: 13.3.0
+  resolution: "@next/eslint-plugin-next@npm:13.3.0"
   dependencies:
     glob: 7.1.7
-  checksum: d79674900f60d76ab01ad18f35a84d4dbefb4276df88d757d681c35be04004cd561628ededb68c0d7815cb2da794db4d5dde31b95dfc3124e5106ddd5096009c
+  checksum: 5b8b6e7f3b82db0f6786ffebb50b1a3678cd9b6e6f17422de19bedd0d8f86ddaf8fecc9a75bb669b39b6d76a392806b11cf4f927b1e9efa56edd2beb63ce92e6
   languageName: node
   linkType: hard
 
@@ -2097,11 +2097,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:13.2.x":
-  version: 13.2.3
-  resolution: "eslint-config-next@npm:13.2.3"
+"eslint-config-next@npm:13.3.x":
+  version: 13.3.0
+  resolution: "eslint-config-next@npm:13.3.0"
   dependencies:
-    "@next/eslint-plugin-next": 13.2.3
+    "@next/eslint-plugin-next": 13.3.0
     "@rushstack/eslint-patch": ^1.1.3
     "@typescript-eslint/parser": ^5.42.0
     eslint-import-resolver-node: ^0.3.6
@@ -2116,7 +2116,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 9c265c6eeba4118b95f2d3c84284ee671e2a0acbee7281a6b35877d6b91aa6312d7fc812d98769329719f7df97e251baa04c9f2168586840a906e591e2872325
+  checksum: 19894044c4703977f872e0284a994244a14927a8ee636da299767b88232ef679fd9c889e30f52ceed01a115649cbced8c07d03b270e162745d06b8b2754c3576
   languageName: node
   linkType: hard
 
@@ -2574,7 +2574,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -4495,7 +4495,7 @@ __metadata:
     classnames: 2.3.x
     concurrently: 8.0.x
     eslint: 8.37.x
-    eslint-config-next: 13.2.x
+    eslint-config-next: 13.3.x
     focus-trap-react: 10.1.x
     framer-motion: 10.10.x
     lucide-react: ~0.130.0
@@ -5067,7 +5067,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.7#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -5080,7 +5080,7 @@ __metadata:
 
 "resolve@patch:resolve@^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -5843,7 +5843,7 @@ __metadata:
 
 "typescript@patch:typescript@5.0.x#~builtin<compat/typescript>":
   version: 5.0.2
-  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=a1c5e5"
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=1f5320"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver

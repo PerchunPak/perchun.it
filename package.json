@@ -21,7 +21,7 @@
     "@vercel/og": "1.0.x",
     "classnames": "2.3.x",
     "eslint": "8.37.x",
-    "eslint-config-next": "13.2.x",
+    "eslint-config-next": "13.3.x",
     "focus-trap-react": "10.1.x",
     "framer-motion": "10.10.x",
     "lucide-react": "~0.130.0",
