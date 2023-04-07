@@ -8,12 +8,13 @@ export interface projectInterface {
   description: string | ReactNode;
   links: {
     main: string;
-    github?: string;
-    readTheDocs?: string;
+    github?: boolean;
+    readTheDocs?: boolean;
   };
 }
 
 export function Project({ projectName, description, links }: projectInterface) {
+  const projectNameInLink = projectName === "This site!" ? "perchun.it" : projectName.toLowerCase()
   const numberOfProjectLinks = projectLinks
     .map((e) => e.name)
     .filter((key) => key in links).length;
@@ -21,7 +22,7 @@ export function Project({ projectName, description, links }: projectInterface) {
   return (
     <div
       className={`relative col-span-1 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:scale-[1.02] hover:transition ${styles.project}`}
-      onClick={() => open(links.main)}
+      onClick={() => open(`https://s.perchun.it/${projectNameInLink}/${links.main.toLowerCase()}`)}
       data-links={JSON.stringify(
         Object.keys(links).filter((i) => i !== "main"),
       )}
@@ -30,8 +31,8 @@ export function Project({ projectName, description, links }: projectInterface) {
       <div className="mx-auto mt-3 flex items-center justify-center space-x-3">
         {projectLinks.map(({ name, title, shortTitle, image }) => {
           // @ts-expect-error
-          const link: string | undefined = links[name];
-          if (link === undefined) {
+          const linkValue: string | undefined = links[name];
+          if (linkValue === undefined) {
             return;
           }
           let linkTitle: ReactNode;
@@ -55,7 +56,7 @@ export function Project({ projectName, description, links }: projectInterface) {
             <a
               key={name}
               className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-              href={link}
+              href={`https://s.perchun.it/${projectNameInLink}/${name === "main" ? linkValue : name.toLowerCase()}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -126,9 +127,9 @@ const myProjects: projectInterface[] = [
       </>
     ),
     links: {
-      main: "https://s.perchun.it/czech-plus",
-      github: "https://github.com/PerchunPak/czech-plus",
-      readTheDocs: "https://czech-plus.readthedocs.io",
+      main: "gh",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -141,8 +142,8 @@ const myProjects: projectInterface[] = [
       </>
     ),
     links: {
-      main: "https://s.perchun.it/src-perchun-it",
-      github: "https://github.com/PerchunPak/perchun.it",
+      main: "src",
+      github: true,
     },
   },
   {
@@ -150,9 +151,9 @@ const myProjects: projectInterface[] = [
     description:
       "The Telegram bot that doom-scrolls through the war news for you!",
     links: {
-      main: "https://s.perchun.it/the-war-tracker-bot",
-      github: "https://github.com/PerchunPak/the-war-tracker-bot",
-      readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
+      main: "gh",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -160,9 +161,9 @@ const myProjects: projectInterface[] = [
     description:
       "Discord bot to ping (and collect statistics of) Minecraft servers, which is my main project, where I test new tools, or even architectures.",
     links: {
-      main: "https://s.perchun.it/pinger-bot",
-      github: "https://github.com/PerchunPak/pinger-bot",
-      readTheDocs: "https://pinger-bot.readthedocs.io",
+      main: "gh",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -170,8 +171,8 @@ const myProjects: projectInterface[] = [
     description:
       "Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!",
     links: {
-      main: "https://s.perchun.it/py-template",
-      github: "https://github.com/PerchunPak/python-template",
+      main: "gh",
+      github: true,
     },
   },
   {
@@ -179,9 +180,9 @@ const myProjects: projectInterface[] = [
     description:
       "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I particularly maintain.",
     links: {
-      main: "https://s.perchun.it/mcstatus",
-      github: "https://github.com/py-mine/mcstatus",
-      readTheDocs: "https://mcstatus.readthedocs.io",
+      main: "gh",
+      github: true,
+      readTheDocs: true,
     },
   },
   // It's still too ToDo for referencing in portfolio
@@ -190,9 +191,9 @@ const myProjects: projectInterface[] = [
   //   description:
   //     "Minecraft Plugin Helper. Tool for managing Minecraft server's plugins. At now, on making architecture stage.",
   //   links: {
-  //     main: "https://s.perchun.it/mcph",
-  //     github: "https://github.com/PerchunPak/mcph",
-  //     readTheDocs: "https://mcph.readthedocs.io",
+  //     main: "gh",
+  //     github: true,
+  //     readTheDocs: true,
   //   },
   // },
 ];
