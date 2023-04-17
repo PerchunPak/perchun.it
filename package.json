@@ -23,7 +23,7 @@
     "eslint": "8.38.x",
     "eslint-config-next": "13.3.x",
     "focus-trap-react": "10.1.x",
-    "framer-motion": "10.11.x",
+    "framer-motion": "10.12.x",
     "lucide-react": "~0.144.0",
     "ms": "2.1.x",
     "next": "13.3.x",
