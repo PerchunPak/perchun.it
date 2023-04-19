@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import useWindowSize from "@/lib/hooks/use-window-size";
 import Leaflet from "@/components/shared/leaflet";
-import Balancer from "react-wrap-balancer";
 
 export default function Tooltip({
   children,
@@ -32,9 +31,9 @@ export default function Tooltip({
       {openTooltip && isMobile && (
         <Leaflet setShow={setOpenTooltip}>
           {typeof content === "string" ? (
-            <Balancer className="flex min-h-[150px] w-full items-center justify-center bg-white px-10 text-center text-sm text-gray-700">
+            <div className="flex min-h-[150px] w-full items-center justify-center bg-white px-10 text-center text-sm text-gray-700">
               {content}
-            </Balancer>
+            </div>
           ) : (
             content
           )}
@@ -53,11 +52,11 @@ export default function Tooltip({
             >
               <TooltipPrimitive.Arrow className="fill-current text-white" />
               {typeof content === "string" ? (
-                <Balancer className="p-5">
+                <div className="p-5">
                   <span className="block max-w-xs text-center text-sm text-gray-700">
                     {content}
                   </span>
-                </Balancer>
+                </div>
               ) : (
                 content
               )}

@@ -1,10 +1,9 @@
 ---
 import styles from "@/components/home/project.module.css";
-import Balancer from "react-wrap-balancer";
-import type { ReactNode } from "react";
-import type { projectInterface } from "@/lib/projects-info.ts";
-import { projectLinks } from "@/lib/projects-info.ts";
-import Icon from "../shared/Icon.astro";
+import type { projectInterface } from "@/lib/projects-info";
+import { projectLinks } from "@/lib/projects-info";
+import Icon from "@/components/shared/Icon.astro";
+import Markdown from "@astrojs/markdown-component";
 
 export interface Props {
   project: projectInterface;
@@ -19,8 +18,9 @@ const numberOfProjectLinks = projectLinks
 
 <div
   class={`relative col-span-1 cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white shadow-md hover:scale-[1.02] hover:transition ${styles.project}`}
+  x-data={`{ mainLink: "${project.links.main}" }`}
+  @click="open(mainLink)"
 >
-  <!-- onclick={() => open(project.links.main)} -->
   <div class="mx-auto mt-3 flex items-center justify-center space-x-3">
     {
       projectLinks.map((linkInfo) => {
@@ -30,7 +30,7 @@ const numberOfProjectLinks = projectLinks
           return;
         }
 
-        let linkTitle: ReactNode;
+        let linkTitle: string;
         if (numberOfProjectLinks > 1) {
           linkTitle = (
             <>
@@ -42,9 +42,7 @@ const numberOfProjectLinks = projectLinks
           );
         } else {
           linkTitle = (
-            <>
-              <p class="hidden md:block">{linkInfo.title}</p>
-            </>
+            <p class="hidden md:block">{linkInfo.title}</p>
           );
         }
 
@@ -66,12 +64,12 @@ const numberOfProjectLinks = projectLinks
     <h2
       class="mt-6 bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal"
     >
-      <Balancer client:only="react">{project.name}</Balancer>
+      {project.name}
     </h2>
     <div class="prose-sm m-3 mt-2 leading-normal text-gray-500 md:prose">
-      <Balancer className={styles.description} client:only="react">
-        {project.description}
-      </Balancer>
+      <div class={styles.description}>
+        <Markdown>{project.description}</Markdown>
+      </div>
     </div>
   </div>
 </div>

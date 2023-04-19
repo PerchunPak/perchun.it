@@ -1,6 +1,5 @@
 ---
 import "@/styles/globals.css";
-import { Provider as RWBProvider } from "react-wrap-balancer";
 import "@fontsource/inter";
 import config from "@/lib/config";
 import Tooltip from "@/components/shared/tooltip";
@@ -48,11 +47,9 @@ import Header from "@/components/shared/header";
     </Header>
 
     <main class="flex w-full flex-col items-center justify-center py-32">
-      <RWBProvider client:load>
-        <main>
-          <slot />
-        </main>
-      </RWBProvider>
+      <main>
+        <slot />
+      </main>
     </main>
 
     <div

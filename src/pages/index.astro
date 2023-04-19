@@ -2,12 +2,23 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import MySocials from "@/components/home/MySocials.astro";
 import MyProjects from "@/components/home/MyProjects.astro";
-import Home from "@/react/pages/home";
+import Markdown from "@astrojs/markdown-component";
+import config from "@/lib/config";
 ---
 
 <BaseLayout>
-  <Home client:load>
-    <MySocials slot="my-socials" />
-    <MyProjects slot="my-projects" />
-  </Home>
+  <div class="contents max-w-xl px-5 md:max-w-max xl:px-0">
+    <h1
+      class="bg-gradient-to-br from-black to-stone-500 bg-clip-text px-5 text-center font-display text-4xl font-bold tracking-[0.03em] text-transparent drop-shadow-sm md:text-7xl md:leading-[5rem]"
+    >
+      {config.title}
+    </h1>
+    <div class="mt-6 px-10 text-center text-gray-500 md:text-xl">
+      <Markdown>{config.aboutMe}</Markdown>
+    </div>
+    <div class="mx-auto mt-6 flex items-center justify-center space-x-3">
+      <MySocials />
+    </div>
+  </div>
+  <MyProjects />
 </BaseLayout>

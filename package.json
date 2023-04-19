@@ -14,6 +14,8 @@
     "check-types": "tsc --noEmit --pretty"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.2.1",
+    "@astrojs/markdown-component": "^1.0.3",
     "@astrojs/react": "2.1.x",
     "@astrojs/tailwind": "3.1.x",
     "@fontsource/inter": "4.5.x",
@@ -22,10 +24,12 @@
     "@tailwindcss/forms": "0.5.x",
     "@tailwindcss/line-clamp": "0.4.x",
     "@tailwindcss/typography": "0.5.x",
+    "@types/alpinejs": "^3.0.0",
     "@types/react": "18.0.x",
     "@types/react-dom": "18.0.x",
     "@typescript-eslint/eslint-plugin": "5.57.x",
     "@typescript-eslint/parser": "5.57.x",
+    "alpinejs": "^3.0.0",
     "astro": "2.1.x",
     "autoprefixer": "10.4.x",
     "eslint": "8.37.x",
