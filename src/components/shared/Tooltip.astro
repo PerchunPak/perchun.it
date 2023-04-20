@@ -1,0 +1,20 @@
+---
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import Leaflet from "@/components/shared/leaflet";
+
+export interface Props {
+    content?: string
+}
+---
+
+<div x-data="{ isOpen: false }">
+    <div class="block md:hidden">
+        <button
+            type="button"
+            className="inline-flex sm:hidden"
+            @click="isOpen = true"
+        >
+            <slot />
+        </button>
+    </div>
+</div>

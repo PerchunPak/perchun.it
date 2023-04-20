@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import "@fontsource/inter";
 import config from "@/lib/config";
 import Tooltip from "@/components/shared/tooltip";
-import Header from "@/components/shared/header";
+import Header from "@/components/shared/Header.astro";
 ---
 
 <html lang="en">
@@ -29,7 +29,7 @@ import Header from "@/components/shared/header";
     >
     </div>
 
-    <Header client:load>
+    <Header>
       <div
         class="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto"
       >
@@ -75,8 +75,7 @@ import Header from "@/components/shared/header";
       </Tooltip>
     </div>
 
-    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"
-    ></script>
+    <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js" />
     <noscript>
       <img
         src="https://queue.simpleanalyticscdn.com/noscript.gif"

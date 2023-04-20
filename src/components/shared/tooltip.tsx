@@ -7,11 +7,9 @@ import Leaflet from "@/components/shared/leaflet";
 export default function Tooltip({
   children,
   content,
-  fullWidth,
 }: {
   children: ReactNode;
   content: ReactNode | string;
-  fullWidth?: boolean;
 }) {
   const [openTooltip, setOpenTooltip] = useState(false);
 
@@ -22,7 +20,7 @@ export default function Tooltip({
       {isMobile && (
         <button
           type="button"
-          className={`${fullWidth ? "w-full" : "inline-flex"} sm:hidden`}
+          className="inline-flex sm:hidden"
           onClick={() => setOpenTooltip(true)}
         >
           {children}
