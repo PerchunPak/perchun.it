@@ -20,7 +20,7 @@
     "@types/react-dom": "18.0.x",
     "@vercel/og": "1.0.x",
     "classnames": "2.3.x",
-    "eslint": "8.38.x",
+    "eslint": "8.39.x",
     "eslint-config-next": "13.3.x",
     "focus-trap-react": "10.1.x",
     "framer-motion": "10.12.x",
