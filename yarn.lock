@@ -916,10 +916,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.15.x":
-  version: 18.15.0
-  resolution: "@types/node@npm:18.15.0"
-  checksum: d81372276dd5053b1743338b61a2178ff9722dc609189d01fc7d1c2acd539414039e0e4780678730514390dad3f29c366a28c29e8dbd5b0025651181f6dd6669
+"@types/node@npm:18.16.x":
+  version: 18.16.0
+  resolution: "@types/node@npm:18.16.0"
+  checksum: 63e0042136663b9e85ce503a4c65406cc6621fdba63ea66c74b4b1364a9aa9bdb57cadcb76696abab177f38a819b0fa6ace9e7f1647dcb990aedb1b4bd01012f
   languageName: node
   linkType: hard
 
@@ -4457,7 +4457,7 @@ __metadata:
     "@tailwindcss/line-clamp": 0.4.x
     "@tailwindcss/typography": 0.5.x
     "@types/ms": 0.7.x
-    "@types/node": 18.15.x
+    "@types/node": 18.16.x
     "@types/react": 18.0.x
     "@types/react-dom": 18.0.x
     "@vercel/og": 1.0.x
