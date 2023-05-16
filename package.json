@@ -45,7 +45,7 @@
     "concurrently": "8.0.x",
     "postcss": "8.4.x",
     "prettier": "2.8.x",
-    "prettier-plugin-tailwindcss": "0.2.x",
+    "prettier-plugin-tailwindcss": "0.3.x",
     "tailwindcss": "3.3.x"
   }
 }
