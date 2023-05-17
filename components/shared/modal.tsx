@@ -27,13 +27,13 @@ export default function Modal({
         setShowModal(false);
       }
     },
-    [setShowModal],
+    [],
   );
 
   useEffect(() => {
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
-  }, [onKeyDown]);
+  }, []);
 
   const { isMobile, isDesktop } = useWindowSize();
 
