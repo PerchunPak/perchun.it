@@ -24,14 +24,14 @@ function ProjectModal({
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
           <div className="text-sm text-gray-500">
-            <p>{project.longDescription.text}</p>
+            <Markdown text={project.longDescription.text} className="mt-1" />
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
                 )
               : null}
             {project.longDescription.additional !== undefined ? (
-              <Markdown text={project.longDescription.additional} />
+              <Markdown text={project.longDescription.additional} className="mt-1" />
             ) : null}
           </div>
         </div>
@@ -76,7 +76,7 @@ function parseTechnologiesFromProject(
 
   return (
     <div className="mt-1">
-      <strong className="font-medium">
+      <strong className="font-bold">
         Technologies that I have used here:
       </strong>{" "}
       <Markdown text={result} />
@@ -84,7 +84,7 @@ function parseTechnologiesFromProject(
   );
 }
 
-function Markdown({ text }: { text: string }) {
+function Markdown({ text, className }: { text: string, className?: string }) {
   return (
     <ReactMarkdown
       components={{
@@ -101,6 +101,7 @@ function Markdown({ text }: { text: string }) {
           <ul {...props} className="mt-2 list-inside list-disc space-y-2" />
         ),
       }}
+      className={className}
     >
       {text}
     </ReactMarkdown>

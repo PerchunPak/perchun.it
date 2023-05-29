@@ -252,7 +252,7 @@ const projectsInfo: projectInterface[] = [
         },
         {
           name: "pytest",
-          description: "for testing with easy-to-write and use unit-tests",
+          description: "for testing with easy-to-write unit-tests",
           link: "https://pytest.org/",
         },
         "QA with **[flake8](https://flake8.pycqa.org/)** and about five addons to it",
@@ -272,12 +272,14 @@ const projectsInfo: projectInterface[] = [
   {
     name: "mcstatus",
     description:
-      "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I particularly maintain.",
+      "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I maintain.",
     longDescription: {
       text:
-        "This is a library for receiving data from Minecraft servers. And I, in particular, rewrote the entire system of " +
-        "interaction between the library and users using the latest technologies and standards. Since this rewrite took a lot " +
-        "of time, it so happened that I made many other contributions to this library.",
+        "This is a library for receiving data from Minecraft servers. And I, in particular, " +
+        "[rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction " +
+        "between the library and users using the latest technologies and standards. Since this " +
+        "rewrite took a lot of time, it so happened that I made many other contributions to this " +
+        "library and became a maintainer!",
       technologies: [
         {
           name: "poetry-dynamic-versioning",
@@ -298,10 +300,12 @@ const projectsInfo: projectInterface[] = [
         "all other features from [python-template](https://s.perchun.it/py-template)",
       ],
       additional:
-        "**Features of the library made by me:** Rewriting of response objects to the latest system " +
-        "using the `dataclasses` module, completely new parsing system for server description " +
-        "(MOTD), documentation (almost from scratch), using the `with` block to open and close " +
-        "connections, and about 30 other PRs that are not important enough to mention here.",
+        "**Features of the library made by me:**\n" +
+        "- Rewriting of response objects to the latest system using the [`dataclasses`](https://docs.python.org/3/library/dataclasses.html) module (**[#306](https://github.com/py-mine/mcstatus/pull/306)**).\n" +
+        "- Completely new parsing system for server description (MOTD) (**[#335](https://github.com/py-mine/mcstatus/pull/335)**).\n" +
+        "- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).\n" + 
+        "- Using the `with` block to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).\n" +
+        "- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.",
     },
     links: {
       github: "https://s.perchun.it/mcstatus",
