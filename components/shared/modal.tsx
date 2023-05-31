@@ -35,7 +35,7 @@ export default function Modal({
   }, [onKeyDown]);
 
   const { isMobile, isDesktop } = useWindowSize();
-  
+
   return (
     <AnimatePresence>
       {showModal && (

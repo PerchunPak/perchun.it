@@ -6,7 +6,7 @@ export interface projectInterface {
   name: string;
   description: string | ReactNode;
   longDescription: {
-    text: string;
+    text: string | ReactNode;
     technologies?: (
       | { name: string; description?: string; link?: string }
       | string
@@ -44,18 +44,19 @@ const projectsInfo: projectInterface[] = [
     description: (
       <>
         As I{"'"}m in Czechia now, I need to learn Czech fastly. This is why I
-        created an addon for <Link href="https://apps.ankiweb.net">Anki</Link>!
+        created an addon for <a href="https://apps.ankiweb.net" target="_blank">Anki</a>!
         For me, the addon helps learning and adding new words.
       </>
     ),
     longDescription: {
       text: "This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively.",
       technologies: [
-        { name: "Lexing", description: "breaking the input text into tokens" },
+        { name: "Lexing", description: "breaking the input text into tokens", link: "https://en.wikipedia.org/wiki/Lexical_analysis" },
         {
           name: "Parsing",
           description:
             "further analysis of these tokens and their conversion into the output text",
+          link: "https://en.wikipedia.org/wiki/Parsing",
         },
       ],
     },
@@ -69,32 +70,42 @@ const projectsInfo: projectInterface[] = [
     description: (
       <>
         My first Frontend project, written in{" "}
-        <Link href="https://nextjs.org">Next.js 13</Link>! There is nothing to
+        <a href="https://nextjs.org" target="_blank">Next.js 13</a>! There is nothing to
         describe, because you are looking at the result right now.
       </>
     ),
     longDescription: {
-      text:
-        "I believe that every programmer should have their own domain, and maybe a website on it. " +
-        "It's incredibly convenient to keep some of your personal things there (for example, running " +
-        "projects or your portfolio/resume). So I recently bought a domain, [perchun.it](https://perchun.it), " +
-        "and to fill my homepage with something, I wrote my portfolio site.",
+      text: (
+        <p>
+          I believe that every programmer should have their own domain, and
+          maybe a website on it. It&apos;s incredibly convenient to keep some of
+          your personal things there (for example, running projects or your
+          portfolio/resume). So I recently bought a domain,{" "}
+          <a
+            href="https://perchun.it"
+            className="underline transition-colors hover:text-blue-800"
+          >
+            perchun.it
+          </a>
+          , and to fill my homepage with something, I wrote my portfolio site.
+        </p>
+      ),
       technologies: [
         {
           name: "Next.js 13",
           description:
-            "framework for React, which removes *a lot* of unnecessary work for developers",
+            "a framework for React, which removes *a lot* of unnecessary work for developers",
           link: "https://nextjs.org",
         },
-        { name: "TypeScript", link: "https://www.typescriptlang.org" },
+        { name: "TypeScript", description: "JavaScript with types", link: "https://www.typescriptlang.org" },
         {
           name: "Precedent.dev",
-          description: "template",
+          description: "the good template from one of Vercel employees",
           link: "https://precedent.dev",
         },
         {
           name: "Tailwind CSS",
-          description: "a new approach to CSS",
+          description: "the new approach to CSS",
           link: "https://tailwindcss.com",
         },
       ],
@@ -108,17 +119,24 @@ const projectsInfo: projectInterface[] = [
     description:
       "The Telegram bot that doom-scrolls through the war news for you!",
     longDescription: {
-      text:
-        "I'm a person who often finds myself doomscrolling, and I'm not a big fan of it. " +
-        "But I really want to follow the latest news in Ukraine (more specifically, about the war). " +
-        "Instead of following hundreds of telegram channels - I can finally use this bot! " +
-        "This bot follows a bunch of telegram channels and sends you the news you need!\n" +
-        "Example: When I saw the news that a missile had landed in Poland, I wanted to follow the news, " +
-        "but I didn't want to scroll through the night.\n" +
-        "I'm sure this happens with a lot of news. At the time, I wanted a channel that reported " +
-        'only the most important news - but this has its drawbacks. The line of "importance" ' +
-        "is subjective for everyone, and such a channel would require the authors to reveal a lot of " +
-        "their thoughts, which I didn't want, so I didn't create something like that.",
+      text: <div>
+          <p className="mt-1">
+            I&apos;m a person who often finds myself doomscrolling, and I&apos;m not a big fan of it.
+            But I really want to follow the latest news in Ukraine (more specifically, about the war).
+            Instead of following hundreds of telegram channels - I can finally use this bot!
+            This bot follows a bunch of telegram channels and sends you the news you need!
+          </p>
+          <p className="mt-1">
+            Example: When I saw the news that a missile had landed in Poland, I wanted to follow the news,
+            but I didn&apos;t want to scroll through the night.
+          </p>
+          <p className="mt-1">
+            I&apos;m sure this happens with a lot of news. At the time, I wanted a channel that reported
+            only the most important news - but this has its drawbacks. The line of the &quot;importance&quot;
+            is subjective for everyone, and such a channel would require the authors to reveal a lot of
+            their thoughts, which I didn&apos;t want, so I didn&apos;t create something like that.
+          </p>
+        </div>,
       technologies: [
         {
           name: "Telethon",
@@ -303,7 +321,7 @@ const projectsInfo: projectInterface[] = [
         "**Features of the library made by me:**\n" +
         "- Rewriting of response objects to the latest system using the [`dataclasses`](https://docs.python.org/3/library/dataclasses.html) module (**[#306](https://github.com/py-mine/mcstatus/pull/306)**).\n" +
         "- Completely new parsing system for server description (MOTD) (**[#335](https://github.com/py-mine/mcstatus/pull/335)**).\n" +
-        "- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).\n" + 
+        "- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).\n" +
         "- Using the `with` block to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).\n" +
         "- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.",
     },

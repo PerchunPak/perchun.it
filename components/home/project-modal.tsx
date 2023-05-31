@@ -8,6 +8,7 @@ import {
 } from "react";
 import { projectInterface } from "@/lib/projects-info";
 import ReactMarkdown from "react-markdown";
+import classNames from "classnames";
 
 function ProjectModal({
   showProjectModal,
@@ -24,14 +25,17 @@ function ProjectModal({
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
           <div className="text-sm text-gray-500">
-            <Markdown text={project.longDescription.text} className="mt-1" />
+            {typeof project.longDescription.text === "string" ? <p>project.longDescription.text</p> : project.longDescription.text}
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
                 )
               : null}
             {project.longDescription.additional !== undefined ? (
-              <Markdown text={project.longDescription.additional} className="mt-1" />
+              <Markdown
+                text={project.longDescription.additional}
+                className="mt-1"
+              />
             ) : null}
           </div>
         </div>
@@ -76,15 +80,13 @@ function parseTechnologiesFromProject(
 
   return (
     <div className="mt-1">
-      <strong className="font-bold">
-        Technologies that I have used here:
-      </strong>{" "}
+      <strong className="font-bold">Technologies that I have used here:</strong>{" "}
       <Markdown text={result} />
     </div>
   );
 }
 
-function Markdown({ text, className }: { text: string, className?: string }) {
+function Markdown({ text, className }: { text: string; className?: string }) {
   return (
     <ReactMarkdown
       components={{
@@ -92,6 +94,7 @@ function Markdown({ text, className }: { text: string, className?: string }) {
           <a
             {...props}
             className="underline transition-colors hover:text-blue-800"
+            target="_blank"
           />
         ),
         strong: ({ node, ...props }) => (
