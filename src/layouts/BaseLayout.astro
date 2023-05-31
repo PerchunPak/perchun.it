@@ -2,7 +2,7 @@
 import "@/styles/globals.css";
 import "@fontsource/inter";
 import config from "@/lib/config";
-import Tooltip from "@/components/shared/tooltip";
+import Tooltip from "@/components/shared/Tooltip.astro";
 import Header from "@/components/shared/Header.astro";
 ---
 
@@ -56,13 +56,12 @@ import Header from "@/components/shared/Header.astro";
       class="absolute w-full border-t border-gray-200 bg-white py-5 text-center text-gray-500"
     >
       Created by
-      <Tooltip content="Hey, it's me!" client:load>
+      <Tooltip content="Hey, it's me!">
         <strong class="footer-link">Perchun</strong>
       </Tooltip>
       on base of
       <Tooltip
         content="Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project."
-        client:load
       >
         <a
           class="footer-link"
