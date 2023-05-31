@@ -24,6 +24,7 @@ export default function MyApp({
     <>
       <RWBProvider>
         <div className={cx(sfPro.variable, inter.variable)}>
+          {/* @ts-expect-error */}
           <Component {...pageProps} />
         </div>
       </RWBProvider>
