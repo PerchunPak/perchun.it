@@ -8,8 +8,10 @@ import {
 } from "@/lib/projects-info";
 import { useProjectModal } from "@/components/home/project-modal";
 
-export function Project({ project }: { project: projectInterface }) {
+export function Project({ projectName, description, links }: projectInterface) {
   const { ProjectModal, setShowProjectModal } = useProjectModal(project);
+  
+  const projectNameInLink = projectName === "This site!" ? "perchun.it" : projectName.toLowerCase()
   const numberOfProjectLinks = projectLinks
     .map((e) => e.name)
     .filter((key) => key in project.links).length;
@@ -23,9 +25,9 @@ export function Project({ project }: { project: projectInterface }) {
       >
         <div className="mx-auto mt-3 flex items-center justify-center space-x-3">
           {projectLinks.map(({ name, title, shortTitle, image }) => {
-            const link: string | undefined = project.links[name];
+            const linkValue: string | undefined = links[name];
 
-            if (link === undefined) {
+            if (linkValue === undefined) {
               return;
             }
 
@@ -51,7 +53,7 @@ export function Project({ project }: { project: projectInterface }) {
               <a
                 key={name}
                 className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-                href={link}
+                href={`https://s.perchun.it/${projectNameInLink}/${name === "main" ? linkValue : name.toLowerCase()}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

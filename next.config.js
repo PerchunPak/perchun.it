@@ -1,3 +1,5 @@
+const { withSentryConfig } = require("@sentry/nextjs");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -5,6 +7,13 @@ const nextConfig = {
   images: {
     domains: ["lh3.googleusercontent.com"],
   },
+  sentry: {
+    tunnelRoute: "/bugs-report",
+  },
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(
+  nextConfig,
+  { silent: true },
+  { hideSourceMaps: false },
+);

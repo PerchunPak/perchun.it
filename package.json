@@ -12,30 +12,28 @@
     "check-types": "tsc --noEmit --pretty"
   },
   "dependencies": {
-    "@honeybadger-io/js": "~5.1.5-alpha",
-    "@honeybadger-io/webpack": "5.1.x",
     "@radix-ui/react-popover": "1.0.x",
     "@radix-ui/react-tooltip": "1.0.x",
-    "@types/node": "18.15.x",
-    "@types/react": "18.0.x",
-    "@types/react-dom": "18.0.x",
-    "@vercel/og": "0.4.x",
+    "@sentry/nextjs": "7.53.x",
+    "@types/node": "20.2.x",
+    "@types/react": "18.2.x",
+    "@types/react-dom": "18.2.x",
+    "@vercel/og": "1.0.x",
     "classnames": "2.3.x",
-    "eslint": "8.36.x",
-    "eslint-config-next": "13.2.x",
-    "framer-motion": "10.6.x",
-    "lucide-react": "~0.125.0",
+    "eslint": "8.41.x",
+    "eslint-config-next": "13.4.x",
+    "framer-motion": "10.12.x",
+    "lucide-react": "*",
     "ms": "2.1.x",
-    "next": "13.2.x",
+    "next": "13.4.x",
     "prop-types": "15.8.x",
     "react": "18.2.x",
     "react-dom": "18.2.x",
     "react-markdown": "8.0.x",
-    "react-wrap-balancer": "0.4.x",
-    "sharp": "0.31.x",
+    "react-wrap-balancer": "0.5.x",
+    "sharp": "0.32.x",
     "typescript": "5.0.x",
-    "use-debounce": "9.0.x",
-    "webpack": ">=4.0.0"
+    "use-debounce": "9.0.x"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.x",
@@ -44,10 +42,10 @@
     "@types/ms": "0.7.x",
     "@vivgui/tailwindcss-hyphens": "^1.0.1",
     "autoprefixer": "10.4.x",
-    "concurrently": "7.6.x",
+    "concurrently": "8.0.x",
     "postcss": "8.4.x",
     "prettier": "2.8.x",
-    "prettier-plugin-tailwindcss": "0.2.x",
-    "tailwindcss": "3.2.x"
+    "prettier-plugin-tailwindcss": "0.3.x",
+    "tailwindcss": "3.3.x"
   }
 }

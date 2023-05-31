@@ -1,4 +1,5 @@
-.env
+# Sentry
+.sentryclirc
 
 # Created by https://www.toptal.com/developers/gitignore/api/linux,windows,visualstudiocode,webstorm,nextjs,yarn
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,windows,visualstudiocode,webstorm,nextjs,yarn

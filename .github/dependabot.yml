@@ -6,6 +6,6 @@ updates:
       interval: daily
       time: "00:00"
     ignore:
+      - dependency-name: "lucide-react"
       - dependency-name: "*"
         update-types: [ "version-update:semver-patch" ]
-      - dependency-name: "webpack"

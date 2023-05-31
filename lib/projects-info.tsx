@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ReactNode } from "react";
 import { Github, ReadTheDocs } from "@/components/shared/icons";
 
@@ -14,7 +13,8 @@ export interface projectInterface {
     additional?: string;
   };
   links: {
-    [key: string]: string;
+    github?: boolean;
+    readTheDocs?: boolean;
   };
 }
 
@@ -61,8 +61,8 @@ const projectsInfo: projectInterface[] = [
       ],
     },
     links: {
-      github: "https://s.perchun.it/czech-plus",
-      readTheDocs: "https://czech-plus.readthedocs.io",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -111,7 +111,7 @@ const projectsInfo: projectInterface[] = [
       ],
     },
     links: {
-      github: "https://s.perchun.it/src-perchun-it",
+      github: true,
     },
   },
   {
@@ -152,8 +152,8 @@ const projectsInfo: projectInterface[] = [
       ],
     },
     links: {
-      github: "https://s.perchun.it/the-war-tracker-bot",
-      readTheDocs: "https://the-war-tracker-bot.readthedocs.io",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -217,8 +217,8 @@ const projectsInfo: projectInterface[] = [
       ],
     },
     links: {
-      github: "https://s.perchun.it/pinger-bot",
-      readTheDocs: "https://pinger-bot.readthedocs.io",
+      github: true,
+      readTheDocs: true,
     },
   },
   {
@@ -284,7 +284,7 @@ const projectsInfo: projectInterface[] = [
       ],
     },
     links: {
-      github: "https://s.perchun.it/py-template",
+      github: true,
     },
   },
   {
@@ -326,8 +326,8 @@ const projectsInfo: projectInterface[] = [
         "- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.",
     },
     links: {
-      github: "https://s.perchun.it/mcstatus",
-      readTheDocs: "https://mcstatus.readthedocs.io",
+      github: true,
+      readTheDocs: true,
     },
   },
   // It's still too ToDo for referencing in portfolio
@@ -336,8 +336,8 @@ const projectsInfo: projectInterface[] = [
   //   description:
   //     "Minecraft Plugin Helper. Tool for managing Minecraft server's plugins. At now, on making architecture stage.",
   //   links: {
-  //     github: "https://s.perchun.it/mcph",
-  //     readTheDocs: "https://mcph.readthedocs.io",
+  //     github: true,
+  //     readTheDocs: true,
   //   },
   // },
 ];

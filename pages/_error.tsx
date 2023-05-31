@@ -1,32 +1,34 @@
-import Error from "next/error";
-import Honeybadger from "@honeybadger-io/js";
-import type { NextPageContext } from "next";
+/**
+ * This page is loaded by Nextjs:
+ *  - on the server, when data-fetching methods throw or reject
+ *  - on the client, when `getInitialProps` throws or rejects
+ *  - on the client, when a React lifecycle method throws or rejects, and it's
+ *    caught by the built-in Nextjs error boundary
+ *
+ * See:
+ *  - https://nextjs.org/docs/basic-features/data-fetching/overview
+ *  - https://nextjs.org/docs/api-reference/data-fetching/get-initial-props
+ *  - https://reactjs.org/docs/error-boundaries.html
+ */
 
-export default function MyError({ statusCode }: { statusCode: number }) {
-  return <Error statusCode={statusCode} />;
+import * as Sentry from "@sentry/nextjs";
+import NextErrorComponent from "next/error";
+// @ts-expect-error
+import { ContextOrProps } from "@sentry/nextjs/types/common/_error";
+
+export default function CustomErrorComponent({
+  statusCode,
+}: {
+  statusCode: number;
+}) {
+  return <NextErrorComponent statusCode={statusCode} />;
 }
 
-MyError.getInitialProps = async (pageContext: NextPageContext) => {
-  const errorInitialProps = await Error.getInitialProps(pageContext);
+CustomErrorComponent.getInitialProps = async (contextData: ContextOrProps) => {
+  // In case this is running in a serverless function, await this in order to give Sentry
+  // time to send the error before the lambda exits
+  await Sentry.captureUnderscoreErrorException(contextData);
 
-  /* Opinionated: do not record an exception for 404
-  if (res && res.statusCode === 404) {
-    return {statusCode: 404}
-  }
-  */
-
-  if (pageContext.err) {
-    Honeybadger.notify(pageContext.err);
-
-    return errorInitialProps;
-  }
-
-  // If this point is reached, getInitialProps was called without any
-  // information about what the error might be. This is unexpected and may
-  // indicate a bug introduced in Next.js, so record it in Honeybadger
-  Honeybadger.notify(
-    `_error.js getInitialProps missing data at path: ${pageContext.asPath}`,
-  );
-
-  return errorInitialProps;
+  // This will contain the status code of the response
+  return NextErrorComponent.getInitialProps(contextData);
 };
