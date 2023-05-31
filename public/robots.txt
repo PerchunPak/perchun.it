@@ -4,4 +4,4 @@ User-agent: *
 Disallow: /api
 
 # Allow robots to be able to crawl the OG Image API route
-Allow: /api/og
+Allow: /opengraph-image

@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import config from "@/lib/config";
 import { Discord, Email, Github, Telegram } from "@/components/shared/icons";

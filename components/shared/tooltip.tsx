@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, useState } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import useWindowSize from "@/lib/hooks/use-window-size";

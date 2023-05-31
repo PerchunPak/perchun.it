@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * This page is loaded by Nextjs:
  *  - on the server, when data-fetching methods throw or reject

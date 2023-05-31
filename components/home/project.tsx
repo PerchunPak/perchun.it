@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "@/components/home/project.module.css";
 import Balancer from "react-wrap-balancer";
 import { ReactNode } from "react";
@@ -85,8 +87,7 @@ export function Project({ project }: { project: projectInterface }) {
 export default function InsertMyProjects() {
   return (
     <>
-      {/* here we are animating with Tailwind instead of Framer Motion because Framer Motion messes up the z-index for child components */}
-      <div className="my-10 flex grid w-full max-w-screen-xl animate-[slide-down-fade_0.5s_ease-in-out] auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3">
+      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up auto-cols-max grid-cols-1 gap-5 px-5 md:grid-cols-3">
         {projectsInfo.map((project) => (
           <Project key={project.name} project={project} />
         ))}

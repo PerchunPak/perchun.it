@@ -1,19 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/server";
 import appConfig from "@/lib/config";
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
+export const alt = `${appConfig.title} - ${appConfig.shortDescription}`;
+export const contentType = "image/png";
 
-const sfPro = fetch(
-  new URL("../../styles/SF-Pro-Display-Medium.otf", import.meta.url),
-).then((res) => res.arrayBuffer());
-
-export default async function handler() {
-  const [sfProData] = await Promise.all([sfPro]);
-
-  const title = appConfig.title;
+export default async function OG() {
+  const sfPro = await fetch(
+    new URL("./fonts/SF-Pro-Display-Medium.otf", import.meta.url),
+  ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
@@ -31,9 +27,9 @@ export default async function handler() {
         }}
       >
         <img
-          src={new URL("../../public/logo.png", import.meta.url).toString()}
+          src={new URL("../public/logo.png", import.meta.url).toString()}
           alt="My avatar"
-          tw="w-20 h-20 mb-4 opacity-95"
+          className="w-20 h-20 mb-4 opacity-95"
         />
         <h1
           style={{
@@ -47,7 +43,7 @@ export default async function handler() {
             letterSpacing: "-0.02em",
           }}
         >
-          {title}
+          {appConfig.title}
         </h1>
       </div>
     ),
@@ -57,7 +53,7 @@ export default async function handler() {
       fonts: [
         {
           name: "SF Pro",
-          data: sfProData,
+          data: sfPro,
         },
       ],
     },
