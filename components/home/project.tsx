@@ -8,10 +8,11 @@ import {
 } from "@/lib/projects-info";
 import { useProjectModal } from "@/components/home/project-modal";
 
-export function Project({ projectName, description, links }: projectInterface) {
+export function Project({ project }: { project: projectInterface }) {
   const { ProjectModal, setShowProjectModal } = useProjectModal(project);
-  
-  const projectNameInLink = projectName === "This site!" ? "perchun.it" : projectName.toLowerCase()
+
+  const projectNameInLink =
+    project.name === "This site!" ? "perchun.it" : project.name.toLowerCase();
   const numberOfProjectLinks = projectLinks
     .map((e) => e.name)
     .filter((key) => key in project.links).length;
@@ -25,7 +26,8 @@ export function Project({ projectName, description, links }: projectInterface) {
       >
         <div className="mx-auto mt-3 flex items-center justify-center space-x-3">
           {projectLinks.map(({ name, title, shortTitle, image }) => {
-            const linkValue: string | undefined = links[name];
+            // @ts-expect-error
+            const linkValue: string | undefined = project.links[name];
 
             if (linkValue === undefined) {
               return;
@@ -53,7 +55,9 @@ export function Project({ projectName, description, links }: projectInterface) {
               <a
                 key={name}
                 className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-3 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-                href={`https://s.perchun.it/${projectNameInLink}/${name === "main" ? linkValue : name.toLowerCase()}`}
+                href={`https://s.perchun.it/${projectNameInLink}/${
+                  name === "main" ? linkValue : name.toLowerCase()
+                }`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

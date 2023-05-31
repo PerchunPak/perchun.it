@@ -8,7 +8,6 @@ import {
 } from "react";
 import { projectInterface } from "@/lib/projects-info";
 import ReactMarkdown from "react-markdown";
-import classNames from "classnames";
 
 function ProjectModal({
   showProjectModal,
@@ -25,7 +24,11 @@ function ProjectModal({
         <div className="flex flex-col items-center justify-center space-y-3 bg-white px-4 py-6 pt-8 md:px-16">
           <h3 className="font-display text-2xl font-bold">{project.name}</h3>
           <div className="text-sm text-gray-500">
-            {typeof project.longDescription.text === "string" ? <p>project.longDescription.text</p> : project.longDescription.text}
+            {typeof project.longDescription.text === "string" ? (
+              <p>{project.longDescription.text}</p>
+            ) : (
+              project.longDescription.text
+            )}
             {project.longDescription.technologies !== undefined
               ? parseTechnologiesFromProject(
                   project.longDescription.technologies,
@@ -100,9 +103,13 @@ function Markdown({ text, className }: { text: string; className?: string }) {
         strong: ({ node, ...props }) => (
           <strong {...props} className="font-bold" />
         ),
-        ul: ({ node, ...props }) => (
-          <ul {...props} className="mt-2 list-inside list-disc space-y-2" />
-        ),
+        ul: ({ node, ...props }) => {
+          // @ts-expect-error // this must be a string
+          props.ordered = props.ordered.toString();
+          return (
+            <ul {...props} className="mt-2 list-inside list-disc space-y-2" />
+          );
+        },
       }}
       className={className}
     >

@@ -20,14 +20,11 @@ export default function Modal({
 }) {
   const desktopModalRef = useRef(null);
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setShowModal(false);
-      }
-    },
-    [],
-  );
+  const onKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setShowModal(false);
+    }
+  }, []);
 
   useEffect(() => {
     document.addEventListener("keydown", onKeyDown);

@@ -44,14 +44,21 @@ const projectsInfo: projectInterface[] = [
     description: (
       <>
         As I{"'"}m in Czechia now, I need to learn Czech fastly. This is why I
-        created an addon for <a href="https://apps.ankiweb.net" target="_blank">Anki</a>!
-        For me, the addon helps learning and adding new words.
+        created an addon for{" "}
+        <a href="https://apps.ankiweb.net" target="_blank">
+          Anki
+        </a>
+        ! For me, the addon helps learning and adding new words.
       </>
     ),
     longDescription: {
       text: "This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively.",
       technologies: [
-        { name: "Lexing", description: "breaking the input text into tokens", link: "https://en.wikipedia.org/wiki/Lexical_analysis" },
+        {
+          name: "Lexing",
+          description: "breaking the input text into tokens",
+          link: "https://en.wikipedia.org/wiki/Lexical_analysis",
+        },
         {
           name: "Parsing",
           description:
@@ -70,8 +77,11 @@ const projectsInfo: projectInterface[] = [
     description: (
       <>
         My first Frontend project, written in{" "}
-        <a href="https://nextjs.org" target="_blank">Next.js 13</a>! There is nothing to
-        describe, because you are looking at the result right now.
+        <a href="https://nextjs.org" target="_blank">
+          Next.js 13
+        </a>
+        ! There is nothing to describe, because you are looking at the result
+        right now.
       </>
     ),
     longDescription: {
@@ -84,6 +94,7 @@ const projectsInfo: projectInterface[] = [
           <a
             href="https://perchun.it"
             className="underline transition-colors hover:text-blue-800"
+            target="_blank"
           >
             perchun.it
           </a>
@@ -97,7 +108,11 @@ const projectsInfo: projectInterface[] = [
             "a framework for React, which removes *a lot* of unnecessary work for developers",
           link: "https://nextjs.org",
         },
-        { name: "TypeScript", description: "JavaScript with types", link: "https://www.typescriptlang.org" },
+        {
+          name: "TypeScript",
+          description: "JavaScript with types",
+          link: "https://www.typescriptlang.org",
+        },
         {
           name: "Precedent.dev",
           description: "the good template from one of Vercel employees",
@@ -119,24 +134,31 @@ const projectsInfo: projectInterface[] = [
     description:
       "The Telegram bot that doom-scrolls through the war news for you!",
     longDescription: {
-      text: <div>
+      text: (
+        <div>
           <p className="mt-1">
-            I&apos;m a person who often finds myself doomscrolling, and I&apos;m not a big fan of it.
-            But I really want to follow the latest news in Ukraine (more specifically, about the war).
-            Instead of following hundreds of telegram channels - I can finally use this bot!
-            This bot follows a bunch of telegram channels and sends you the news you need!
+            I&apos;m a person who often finds myself doomscrolling, and I&apos;m
+            not a big fan of it. But I really want to follow the latest news in
+            Ukraine (more specifically, about the war). Instead of following
+            hundreds of telegram channels - I can finally use this bot! This bot
+            follows a bunch of telegram channels and sends you the news you
+            need!
           </p>
           <p className="mt-1">
-            Example: When I saw the news that a missile had landed in Poland, I wanted to follow the news,
-            but I didn&apos;t want to scroll through the night.
+            Example: When I saw the news that a missile had landed in Poland, I
+            wanted to follow the news, but I didn&apos;t want to scroll through
+            the night.
           </p>
           <p className="mt-1">
-            I&apos;m sure this happens with a lot of news. At the time, I wanted a channel that reported
-            only the most important news - but this has its drawbacks. The line of the &quot;importance&quot;
-            is subjective for everyone, and such a channel would require the authors to reveal a lot of
-            their thoughts, which I didn&apos;t want, so I didn&apos;t create something like that.
+            I&apos;m sure this happens with a lot of news. At the time, I wanted
+            a channel that reported only the most important news - but this has
+            its drawbacks. The line of the &quot;importance&quot; is subjective
+            for everyone, and such a channel would require the authors to reveal
+            a lot of their thoughts, which I didn&apos;t want, so I didn&apos;t
+            create something like that.
           </p>
-        </div>,
+        </div>
+      ),
       technologies: [
         {
           name: "Telethon",
@@ -292,12 +314,23 @@ const projectsInfo: projectInterface[] = [
     description:
       "Python library to ping and get status from Minecraft servers. Not actually mine, but project that I maintain.",
     longDescription: {
-      text:
-        "This is a library for receiving data from Minecraft servers. And I, in particular, " +
-        "[rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction " +
-        "between the library and users using the latest technologies and standards. Since this " +
-        "rewrite took a lot of time, it so happened that I made many other contributions to this " +
-        "library and became a maintainer!",
+      text: (
+        <p>
+          This is a library for receiving data from Minecraft servers. And I, in
+          particular,{" "}
+          <a
+            href="https://github.com/py-mine/mcstatus/pull/306"
+            target="_blank"
+            className="underline transition-colors hover:text-blue-800"
+          >
+            rewrote
+          </a>{" "}
+          the entire system of interaction between the library and users using
+          the latest technologies and standards. Since this rewrite took a lot
+          of time, it so happened that I made many other contributions to this
+          library and became a maintainer!
+        </p>
+      ),
       technologies: [
         {
           name: "poetry-dynamic-versioning",
