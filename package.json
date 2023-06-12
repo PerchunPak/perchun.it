@@ -42,7 +42,7 @@
     "@types/ms": "0.7.x",
     "@vivgui/tailwindcss-hyphens": "^1.0.1",
     "autoprefixer": "10.4.x",
-    "concurrently": "8.1.x",
+    "concurrently": "8.2.x",
     "postcss": "8.4.x",
     "prettier": "2.8.x",
     "prettier-plugin-tailwindcss": "0.3.x",
