@@ -29,7 +29,7 @@ export default async function OG() {
         <img
           src={new URL("../public/logo.png", import.meta.url).toString()}
           alt="My avatar"
-          className="w-20 h-20 mb-4 opacity-95"
+          tw="w-50 h-50 mb-4"
         />
         <h1
           style={{
