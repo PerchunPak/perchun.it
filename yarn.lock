@@ -4608,7 +4608,7 @@ __metadata:
     react: 18.2.x
     react-dom: 18.2.x
     react-markdown: 8.0.x
-    react-wrap-balancer: 0.5.x
+    react-wrap-balancer: 1.0.x
     sharp: 0.32.x
     tailwindcss: 3.3.x
     typescript: 5.1.x
@@ -5090,12 +5090,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-wrap-balancer@npm:0.5.x":
-  version: 0.5.0
-  resolution: "react-wrap-balancer@npm:0.5.0"
+"react-wrap-balancer@npm:1.0.x":
+  version: 1.0.0
+  resolution: "react-wrap-balancer@npm:1.0.0"
   peerDependencies:
     react: ">=16.8.0 || ^17.0.0 || ^18"
-  checksum: 01ad22202d34a98171c968dcbec26302f975fd8e824ef2982b6c9bf8c2ba3aa6753f0b896e5b13a957137a935b29e5313bc39ccec2fac35c0e3ade763a81be9f
+  checksum: a3e263528b940e555894914d3a0d474cf60594578b4f2a34646d36ea5d9603f75270ec30ff1a7df3a9637cf014d6414c75a70abb82b0c4223bfbeda557ac19ca
   languageName: node
   linkType: hard
 
@@ -6078,11 +6078,11 @@ __metadata:
 
 "typescript@patch:typescript@5.1.x#~builtin<compat/typescript>":
   version: 5.1.3
-  resolution: "typescript@patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=5da071"
+  resolution: "typescript@patch:typescript@npm%3A5.1.3#~builtin<compat/typescript>::version=5.1.3&hash=85af82"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 6f0a9dca6bf4ce9dcaf4e282aade55ef4c56ecb5fb98d0a4a5c0113398815aea66d871b5611e83353e5953a19ed9ef103cf5a76ac0f276d550d1e7cd5344f61e
+  checksum: 32a25b2e128a4616f999d4ee502aabb1525d5647bc8955e6edf05d7fbc53af8aa98252e2f6ba80bcedfc0260c982b885f3c09cfac8bb65d2924f3133ad1e1e62
   languageName: node
   linkType: hard
 
