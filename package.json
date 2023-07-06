@@ -44,7 +44,7 @@
     "autoprefixer": "10.4.x",
     "concurrently": "8.2.x",
     "postcss": "8.4.x",
-    "prettier": "2.8.x",
+    "prettier": "3.0.x",
     "prettier-plugin-tailwindcss": "0.3.x",
     "tailwindcss": "3.3.x"
   }
