@@ -15,7 +15,7 @@
     "@radix-ui/react-popover": "1.0.x",
     "@radix-ui/react-tooltip": "1.0.x",
     "@sentry/nextjs": "7.63.x",
-    "@types/node": "20.4.x",
+    "@types/node": "20.5.x",
     "@types/react": "18.2.x",
     "@types/react-dom": "18.2.x",
     "@vercel/og": "1.0.x",
