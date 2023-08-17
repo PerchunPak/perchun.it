@@ -2643,9 +2643,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:10.15.x":
-  version: 10.15.0
-  resolution: "framer-motion@npm:10.15.0"
+"framer-motion@npm:10.16.x":
+  version: 10.16.0
+  resolution: "framer-motion@npm:10.16.0"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -2660,7 +2660,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 29f9d4368d7ed8f14e4f4a1979d2071b5745a1575bcf96120f3a4c2ac400a7bec8755139f9439ab19e0fc1225568af1270a88443e75d91bfbe71e21681ce5a88
+  checksum: 155fd0fc81b45d91583625aaa3b970785bd7e2c552d1f5b9afd5caafa7c3f2b545200aefdb98f3082f50f7472eb49630f8890f5a772cd2f90b87a1c935b21332
   languageName: node
   linkType: hard
 
@@ -4620,7 +4620,7 @@ __metadata:
     concurrently: 8.2.x
     eslint: 8.47.x
     eslint-config-next: 13.4.x
-    framer-motion: 10.15.x
+    framer-motion: 10.16.x
     lucide-react: "*"
     ms: 2.1.x
     next: 13.4.x

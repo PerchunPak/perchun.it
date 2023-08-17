@@ -22,7 +22,7 @@
     "classnames": "2.3.x",
     "eslint": "8.47.x",
     "eslint-config-next": "13.4.x",
-    "framer-motion": "10.15.x",
+    "framer-motion": "10.16.x",
     "lucide-react": "*",
     "ms": "2.1.x",
     "next": "13.4.x",
