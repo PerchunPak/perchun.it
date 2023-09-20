@@ -25,7 +25,7 @@
     "framer-motion": "10.16.x",
     "lucide-react": "*",
     "ms": "2.1.x",
-    "next": "13.4.x",
+    "next": "13.5.x",
     "prop-types": "15.8.x",
     "react": "18.2.x",
     "react-dom": "18.2.x",
