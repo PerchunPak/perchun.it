@@ -29,7 +29,7 @@
     "prop-types": "15.8.x",
     "react": "18.2.x",
     "react-dom": "18.2.x",
-    "react-markdown": "8.0.x",
+    "react-markdown": "9.0.x",
     "react-wrap-balancer": "1.1.x",
     "sharp": "0.32.x",
     "typescript": "5.2.x",
