@@ -20,7 +20,7 @@
     "@types/react-dom": "18.2.x",
     "@vercel/og": "1.0.x",
     "classnames": "2.3.x",
-    "eslint": "8.49.x",
+    "eslint": "8.50.x",
     "eslint-config-next": "13.5.x",
     "framer-motion": "10.16.x",
     "lucide-react": "*",
