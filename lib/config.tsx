@@ -12,10 +12,10 @@ export const config: {
   };
 } = {
   title: "Perchun's Portfolio",
-  shortDescription: "15 years old Junior+ Backend/Software developer!",
+  shortDescription: "16 years old Junior+ Backend/Software developer!",
   aboutMe: (
     <>
-      Hello there! I{"'"}m 15 years old Junior+ Backend/Software developer from{" "}
+      Hello there! I{"'"}m 16 years old Junior+ Backend/Software developer from{" "}
       <a href="https://s.perchun.it/ukraine" className="description-link">
         Ukraine
       </a>
