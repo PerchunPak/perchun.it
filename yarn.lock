@@ -4867,7 +4867,7 @@ __metadata:
     sharp: 0.32.x
     tailwindcss: 3.3.x
     typescript: 5.2.x
-    use-debounce: 9.0.x
+    use-debounce: 10.0.x
   languageName: unknown
   linkType: soft
 
@@ -6606,12 +6606,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-debounce@npm:9.0.x":
-  version: 9.0.3
-  resolution: "use-debounce@npm:9.0.3"
+"use-debounce@npm:10.0.x":
+  version: 10.0.0
+  resolution: "use-debounce@npm:10.0.0"
   peerDependencies:
     react: ">=16.8.0"
-  checksum: e9aa3b89abe28bd746cfb5e7edc281d786788b6afe4063cfd8e34c4fff58af212809f13bffa16ff291bead199abb497325330e66d1e772d1843853edbd4646ba
+  checksum: b296fedba916ca721eeb7117f29a13c252966d03411abccc5e5894ed4de0f32b9cb6f6b150555b8b4cb9b0acf53b84022ad4cd43b89253389e9cd13779eebca7
   languageName: node
   linkType: hard
 

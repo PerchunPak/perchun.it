@@ -33,7 +33,7 @@
     "react-wrap-balancer": "1.1.x",
     "sharp": "0.32.x",
     "typescript": "5.2.x",
-    "use-debounce": "9.0.x"
+    "use-debounce": "10.0.x"
   },
   "devDependencies": {
     "@tailwindcss/forms": "0.5.x",
