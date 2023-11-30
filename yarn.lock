@@ -1002,12 +1002,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.9.x":
-  version: 20.9.0
-  resolution: "@types/node@npm:20.9.0"
+"@types/node@npm:20.10.x":
+  version: 20.10.1
+  resolution: "@types/node@npm:20.10.1"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: a934f7645ed117a27857147403b0c657ffbca578c8f280e4c21d27dfb43e58dc4f24c4319d4335b8a4fa08e28fb2dc905a5bd5e4bc8878047164c56c1b162139
+  checksum: 703c3cc5bdb2818a16f87019fe4072bfd66489bb300338970260c5b84dd2129595995c41b28773c3b7d9d1a64f36fec59a741629ec466f2aeddad7a9d0c027ac
   languageName: node
   linkType: hard
 
@@ -5023,7 +5023,7 @@ __metadata:
     "@tailwindcss/line-clamp": "npm:0.4.x"
     "@tailwindcss/typography": "npm:0.5.x"
     "@types/ms": "npm:0.7.x"
-    "@types/node": "npm:20.9.x"
+    "@types/node": "npm:20.10.x"
     "@types/react": "npm:18.2.x"
     "@types/react-dom": "npm:18.2.x"
     "@vercel/og": "npm:1.0.x"
