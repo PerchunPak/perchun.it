@@ -106,8 +106,6 @@ function Markdown({ text, className }: { text: string; className?: string }) {
           <strong {...props} className="font-bold" />
         ),
         ul: ({ node, ...props }) => {
-          // @ts-expect-error // this must be a string
-          props.ordered = props.ordered.toString();
           return (
             <ul {...props} className="mt-2 list-inside list-disc space-y-2" />
           );
