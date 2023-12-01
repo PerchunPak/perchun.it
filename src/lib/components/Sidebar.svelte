@@ -35,8 +35,8 @@
 	<!-- navigation -->
 	<div class="absolute bottom-0 w-1/5">
 		<div class="flex justify-between m-3">
-			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{"<"}</button>
-			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{">"}</button>
+			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{'<'}</button>
+			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{'>'}</button>
 		</div>
 	</div>
 </div>
