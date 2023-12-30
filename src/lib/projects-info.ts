@@ -29,9 +29,9 @@ const projectsInfo: ProjectInfo[] = [
 	{
 		name: 'czech-plus',
 		description:
-			"As I'm in Czechia now, I need to learn Czech fastly. This is why I created an addon for [Anki](https://apps.ankiweb.net)! For me, the addon helps learning and adding new words.",
+			"As I'm in Czech Republic now, I need to learn Czech fastly. This is why I created an addon for [Anki](https://apps.ankiweb.net)! For me, the addon helps learning and adding new words.",
 		longDescription: {
-			text: 'This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively.',
+			text: 'This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively. I wrote a whole amount of code to make it work, like tests which are testing like 50 test cases using parametrization and randomization (kind of anti-pattern, but they\'re kind of impressive too) or custom syntax parsing. So I probably could say, that I wrote a custom non-Turing complete programming language to just study Czech words.',
 			technologies: [
 				{
 					name: 'Lexing',
@@ -54,31 +54,31 @@ const projectsInfo: ProjectInfo[] = [
 	{
 		name: 'This site!',
 		description:
-			'My first Frontend project, written in [Next.js 13](https://nextjs.org)! There is nothing to describe, because you are looking at the result right now.',
+			'My first Frontend project. It was firstly written in [Next.js 13](https://nextjs.org), but then after some experience with frontend development, it is now in [Svelte](https://svelte.dev/). It uses [daisyUI](https://daisyui.com/) library for nice cute look of the site, which itself is built using [Tailwind CSS](https://tailwindcss.com/). The site also has [Markdown](https://en.wikipedia.org/wiki/Markdown) support. In fact, this paragraph is written in Markdown.',
 		longDescription: {
-			text: "I believe that every programmer should have their own domain, and maybe a website on it. It's incredibly convenient to keep some of your personal things there (for example, running projects or your portfolio/resume). So I recently bought a domain, [perchun.it](https://perchun.it), and to fill my homepage with something, I wrote my portfolio site.",
+			text: "I believe that every programmer should have their own domain, and maybe a website on it. It's incredibly convenient to keep some of your personal things there (for example, running projects or your portfolio/resume). So I bought such a year ago, [perchun.it](https://perchun.it), and to fill my homepage with something, I wrote my portfolio site. This is how my journey to frontend beginned. And as you may see, I mentioned that I am only backend developer, don't like at all the whole frontend state and technologies used to build software here.",
 			technologies: [
 				{
-					name: 'Next.js 13',
+					name: 'Svelte',
 					description:
-						'a framework for React, which removes *a lot* of unnecessary work for developers',
-					link: 'https://nextjs.org',
-					markdowned: { description: true }
+						'a fast and light frontend framework, which is just better and easier than React, which I used before',
+					link: 'https://svelte.dev'
+				},
+				{
+					name: 'daisyUI',
+					description:
+						'super cute and cool UI library, which is framework independent and is built using only Tailwind CSS. This site wouldn\'t be so nice at all without it. At the end of the day, I am not a designer',
+					link: 'https://daisyui.com'
+				},
+				{
+					name: 'Tailwind CSS',
+					description: 'the new awesome approach to CSS',
+					link: 'https://tailwindcss.com'
 				},
 				{
 					name: 'TypeScript',
 					description: 'JavaScript with types',
 					link: 'https://www.typescriptlang.org'
-				},
-				{
-					name: 'Precedent.dev',
-					description: 'the good template from one of Vercel employees',
-					link: 'https://precedent.dev'
-				},
-				{
-					name: 'Tailwind CSS',
-					description: 'the new approach to CSS',
-					link: 'https://tailwindcss.com'
 				}
 			]
 		},

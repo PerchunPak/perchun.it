@@ -25,6 +25,11 @@
 			Below you can find some of my main projects. They're all available on
 			<a href="https://s.perchun.it/github" class="link-primary">my GitHub</a>!
 		</p>
+		<p class="mt-2">
+			I often find that technologies used in project often can say more about it, that its README. I also find a small
+			satisfaction in connecting a lot of different technologies, libraries and frameworks together to create one, quite
+			messy, but working piece of art. This is why I list technologies on the site, as well as link to docs and GitHub.
+		</p>
 	</div>
 	<!-- project list -->
 	<div class="mt-10">
