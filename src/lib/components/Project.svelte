@@ -25,13 +25,13 @@
 				<p>{project.description}</p>
 			{/if}
 		</div>
-		<p class="mt-2">
+		<div class="mt-2">
 			{#if project.markdowned?.longDescriptionText === true}
 				<SvelteMarkdown source={project.longDescription.text} />
 			{:else}
 				<p>{project.longDescription.text}</p>
 			{/if}
-		</p>
+		</div>
 		{#if project.longDescription.technologies !== undefined}
 			<h2 class="text-2xl mt-5 font-bold">Technologies that I have used here:</h2>
 			<ul class="list-disc list-inside">
