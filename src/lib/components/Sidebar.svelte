@@ -2,10 +2,10 @@
 	import projectsInfo from '$lib/projects-info.ts';
 	import { currentProjectIndex } from '$lib/stores.ts';
 
-	let isFirstProject: boolean
-	currentProjectIndex.subscribe((v) => isFirstProject = v === 0)
+	let isFirstProject: boolean;
+	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
 	let isLastProject: boolean;
-	currentProjectIndex.subscribe((v) => isLastProject = v === projectsInfo.length - 1)
+	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
 </script>
 
 <div class="bg-base-200 h-full min-h-screen">

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Writable } from "svelte/store";
+	import type { Writable } from 'svelte/store';
 	import projectsInfo from '$lib/projects-info.ts';
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import type { ProjectInfo } from '$lib/projects-info.ts';
 
 	export let idStore: Writable<number>;
 
-	let project: ProjectInfo
+	let project: ProjectInfo;
 	idStore.subscribe((id: number) => {
 		project = projectsInfo[id];
 	});
