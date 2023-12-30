@@ -3,12 +3,25 @@ export interface ProjectInfo {
 	description: string;
 	longDescription: {
 		text: string;
-		technologies?: ({ name: string; description?: string; link?: string } | string)[];
+		technologies?: (
+			| {
+					name: string;
+					description?: string;
+					link?: string;
+					markdowned?: { name?: boolean; description?: boolean };
+			  }
+			| string
+		)[];
 		additional?: string;
 	};
 	links: {
 		github?: boolean;
 		readTheDocs?: boolean;
+	};
+	markdowned?: {
+		description?: boolean;
+		longDescriptionText?: boolean;
+		additional?: boolean;
 	};
 }
 
@@ -35,7 +48,8 @@ const projectsInfo: ProjectInfo[] = [
 		links: {
 			github: true,
 			readTheDocs: true
-		}
+		},
+		markdowned: { description: true }
 	},
 	{
 		name: 'This site!',
@@ -48,7 +62,8 @@ const projectsInfo: ProjectInfo[] = [
 					name: 'Next.js 13',
 					description:
 						'a framework for React, which removes *a lot* of unnecessary work for developers',
-					link: 'https://nextjs.org'
+					link: 'https://nextjs.org',
+					markdowned: { description: true }
 				},
 				{
 					name: 'TypeScript',
@@ -69,7 +84,8 @@ const projectsInfo: ProjectInfo[] = [
 		},
 		links: {
 			github: true
-		}
+		},
+		markdowned: { description: true, longDescriptionText: true }
 	},
 	{
 		name: 'the-war-tracker-bot',
@@ -126,7 +142,8 @@ const projectsInfo: ProjectInfo[] = [
 					name: 'SQLAlchemy ORM',
 					description:
 						'for connecting to the database (I currently support [SQLite](https://sqlite.org/), [MySQL](https://www.mysql.com/) and [PostgreSQL](https://postgresql.org))',
-					link: 'https://sqlalchemy.org/'
+					link: 'https://sqlalchemy.org/',
+					markdowned: { description: true }
 				},
 				{
 					name: 'alembic',
@@ -212,14 +229,21 @@ const projectsInfo: ProjectInfo[] = [
 					description: 'for testing with easy-to-write unit-tests',
 					link: 'https://pytest.org/'
 				},
-				'QA with **[flake8](https://flake8.pycqa.org/)** and about five addons to it',
+				{
+					name: 'QA with **[flake8](https://flake8.pycqa.org/)** and about five addons to it',
+					markdowned: { name: true }
+				},
 				{
 					name: 'Sphinx',
 					description:
 						'for generating documentation from [.RST](https://en.wikipedia.org/wiki/ReStructuredText) files',
-					link: 'https://python-poetry.org/'
+					link: 'https://python-poetry.org/',
+					markdowned: { description: true }
 				},
-				'documentation with **[Sphinx](https://pypi.org/project/Sphinx/)**, **[Furo](https://pypi.org/project/furo/)** theme and **[ReadTheDocs.org](https://readthedocs.org)** for hosting'
+				{
+					name: 'documentation with **[Sphinx](https://pypi.org/project/Sphinx/)**, **[Furo](https://pypi.org/project/furo/)** theme and **[ReadTheDocs.org](https://readthedocs.org)** for hosting',
+					markdowned: { name: true }
+				}
 			]
 		},
 		links: {
@@ -247,9 +271,13 @@ const projectsInfo: ProjectInfo[] = [
 					name: 'pyright',
 					description:
 						'linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because is written in NodeJS',
-					link: 'https://github.com/microsoft/pyright#readme'
+					link: 'https://github.com/microsoft/pyright#readme',
+					markdowned: { description: true }
 				},
-				'all other features from [python-template](https://s.perchun.it/py-template)'
+				{
+					name: 'all other features from [python-template](https://s.perchun.it/py-template)',
+					markdowned: { name: true }
+				}
 			],
 			additional:
 				'**Features of the library made by me:**\n' +
@@ -262,7 +290,8 @@ const projectsInfo: ProjectInfo[] = [
 		links: {
 			github: true,
 			readTheDocs: true
-		}
+		},
+		markdowned: { longDescriptionText: true, additional: true }
 	}
 ];
 export default projectsInfo;
