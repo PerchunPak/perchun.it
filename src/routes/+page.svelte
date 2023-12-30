@@ -5,8 +5,10 @@
 </script>
 
 <div class="flex">
-	<div class="max-w-[20%] min-w-[20%]">
+	<div class="w-full md:w-[35rem] 2xl:w-96">
 		<Sidebar />
 	</div>
-	<Project idStore={currentProjectIndex} />
+	<div class="hidden md:contents">
+		<Project idStore={currentProjectIndex} />
+	</div>
 </div>

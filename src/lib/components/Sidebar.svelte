@@ -9,7 +9,7 @@
 	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
 </script>
 
-<div class="bg-base-200 h-full min-h-screen">
+<div class="relative bg-base-200 h-full min-h-screen">
 	<!-- bio -->
 	<div class="p-3">
 		<img
@@ -45,7 +45,7 @@
 		</ul>
 	</div>
 	<!-- navigation -->
-	<div class="absolute bottom-0 w-1/5">
+	<div class="absolute bottom-0 w-full">
 		<div class="flex justify-between m-3">
 			<button
 				class="btn bg-base-300 text-4xl w-20 h-20 text-center"
