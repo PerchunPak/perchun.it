@@ -14,9 +14,9 @@
 		/>
 		<p class="pt-4">
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
-			<a href="https://s.perchun.it/ukraine" class="link">Ukraine</a>.<br />
+			<a href="https://s.perchun.it/ukraine" class="link-primary">Ukraine</a>.<br />
 			Below you can find some of my main projects. They're all available on
-			<a href="https://s.perchun.it/github" class="link">my GitHub</a>!
+			<a href="https://s.perchun.it/github" class="link-primary">my GitHub</a>!
 		</p>
 	</div>
 	<!-- project list -->
