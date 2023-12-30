@@ -75,13 +75,15 @@
 				<ProjectLink projectName={project.name} linkName={name} />
 			{/if}
 		{/each}
-		{#if project.longDescription.additional}
-			{#if project.markdowned?.additional === true}
-				<SvelteMarkdown source={project.longDescription.additional} />
-			{:else}
-				{project.longDescription.additional}
+		<div class="mt-4">
+			{#if project.longDescription.additional}
+				{#if project.markdowned?.additional === true}
+					<SvelteMarkdown source={project.longDescription.additional} />
+				{:else}
+					{project.longDescription.additional}
+				{/if}
 			{/if}
-		{/if}
+		</div>
 
 		<style lang="postcss">
 			em {
