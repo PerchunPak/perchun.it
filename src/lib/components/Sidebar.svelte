@@ -1,5 +1,11 @@
 <script lang="ts">
 	import projectsInfo from '$lib/projects-info.ts';
+	import { currentProjectIndex } from '$lib/stores.ts';
+
+	let isFirstProject: boolean
+	currentProjectIndex.subscribe((v) => isFirstProject = v === 0)
+	let isLastProject: boolean;
+	currentProjectIndex.subscribe((v) => isLastProject = v === projectsInfo.length - 1)
 </script>
 
 <div class="bg-base-200 h-full min-h-screen">
@@ -22,10 +28,10 @@
 	<!-- project list -->
 	<div class="mt-10">
 		<ul class="list-disc list-inside p-3">
-			{#each projectsInfo as project}
+			{#each projectsInfo as project, index}
 				<li>
 					{project.name}
-					{#if project.name === 'czech-plus'}
+					{#if index === $currentProjectIndex}
 						<span class="float-right text-accent text-xl">{'<=='}</span>
 					{/if}
 				</li>
@@ -35,8 +41,16 @@
 	<!-- navigation -->
 	<div class="absolute bottom-0 w-1/5">
 		<div class="flex justify-between m-3">
-			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{'<'}</button>
-			<button class="btn bg-base-300 text-4xl w-20 h-20 text-center">{'>'}</button>
+			<button
+				class="btn bg-base-300 text-4xl w-20 h-20 text-center"
+				class:btn-disabled={isFirstProject}
+				on:click={() => currentProjectIndex.update((v) => v - 1)}>{'<'}</button
+			>
+			<button
+				class="btn bg-base-300 text-4xl w-20 h-20 text-center"
+				class:btn-disabled={isLastProject}
+				on:click={() => currentProjectIndex.update((v) => v + 1)}>{'>'}</button
+			>
 		</div>
 	</div>
 </div>

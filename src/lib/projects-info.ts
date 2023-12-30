@@ -1,4 +1,4 @@
-interface ProjectInfo {
+export interface ProjectInfo {
 	name: string;
 	description: string;
 	longDescription: {
