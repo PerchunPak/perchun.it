@@ -17,9 +17,9 @@
 			width="150"
 			height="150"
 			alt="My avatar"
-			class="bg-white rounded-[2rem]"
+			class="mb-4 bg-white rounded-[2rem]"
 		/>
-		<p class="pt-4">
+		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
 			<a href="https://s.perchun.it/ukraine" class="link-primary">Ukraine</a>.<br />
 			Below you can find some of my main projects. They're all available on
