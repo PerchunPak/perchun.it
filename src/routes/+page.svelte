@@ -2,11 +2,11 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Project from '$lib/components/Project.svelte';
 	import { currentProjectIndex } from '$lib/stores.ts';
-	import ScreenSize from "$lib/components/ScreenSize.svelte";
+	import ScreenSize from '$lib/components/ScreenSize.svelte';
 
 	let isSidebarOpen = true;
-	let innerWidth: number
-	$: if (innerWidth >= 768) isSidebarOpen = true
+	let innerWidth: number;
+	$: if (innerWidth >= 768) isSidebarOpen = true;
 </script>
 
 <ScreenSize bind:innerWidth />

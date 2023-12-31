@@ -1,14 +1,9 @@
 <script lang="ts">
-	import { shortcut } from '$lib/shortcut.ts';
 	import projectsInfo from '$lib/projects-info.ts';
 	import { currentProjectIndex } from '$lib/stores.ts';
+	import NavigationBar from '$lib/components/NavigationBar.svelte';
 
 	export let isOpen = true;
-
-	let isFirstProject: boolean;
-	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
-	let isLastProject: boolean;
-	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
 </script>
 
 <div class="relative bg-base-200 h-full min-h-screen">
@@ -53,23 +48,7 @@
 			{/each}
 		</ul>
 	</div>
-	<!-- navigation -->
-	<div class="absolute bottom-0 w-full">
-		<div class="flex justify-between m-3">
-			<button
-				class="btn bg-base-300 text-4xl w-20 h-20 text-center"
-				class:btn-disabled={isFirstProject}
-				use:shortcut={{ code: 'ArrowLeft' }}
-				use:shortcut={{ code: 'KeyA' }}
-				on:click={() => currentProjectIndex.update((v) => v - 1)}>{'<'}</button
-			>
-			<button
-				class="btn bg-base-300 text-4xl w-20 h-20 text-center"
-				class:btn-disabled={isLastProject}
-				use:shortcut={{ code: 'ArrowRight' }}
-				use:shortcut={{ code: 'KeyD' }}
-				on:click={() => currentProjectIndex.update((v) => v + 1)}>{'>'}</button
-			>
-		</div>
-	</div>
+	<footer class="absolute bottom-0 w-full">
+		<NavigationBar />
+	</footer>
 </div>

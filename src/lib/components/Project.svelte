@@ -4,6 +4,7 @@
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import type { ProjectInfo } from '$lib/projects-info.ts';
 	import SvelteMarkdown from 'svelte-markdown';
+	import NavigationBar from '$lib/components/NavigationBar.svelte';
 
 	export let idStore: Writable<number>;
 
@@ -108,3 +109,9 @@
 		</style>
 	</div>
 </div>
+
+<footer class="w-full bg-base-200">
+	<div class="py-0.5 w-full h-full">
+		<NavigationBar />
+	</div>
+</footer>
