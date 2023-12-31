@@ -31,7 +31,7 @@ const projectsInfo: ProjectInfo[] = [
 		description:
 			"As I'm in Czech Republic now, I need to learn Czech fastly. This is why I created an addon for [Anki](https://apps.ankiweb.net)! For me, the addon helps learning and adding new words.",
 		longDescription: {
-			text: 'This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively. I wrote a whole amount of code to make it work, like tests which are testing like 50 test cases using parametrization and randomization (kind of anti-pattern, but they\'re kind of impressive too) or custom syntax parsing. So I probably could say, that I wrote a custom non-Turing complete programming language to just study Czech words.',
+			text: "This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively. I wrote a whole amount of code to make it work, like tests which are testing like 50 test cases using parametrization and randomization (kind of anti-pattern, but they're kind of impressive too) or custom syntax parsing. So I probably could say, that I wrote a custom non-Turing complete programming language to just study Czech words.",
 			technologies: [
 				{
 					name: 'Lexing',
@@ -67,7 +67,7 @@ const projectsInfo: ProjectInfo[] = [
 				{
 					name: 'daisyUI',
 					description:
-						'super cute and cool UI library, which is framework independent and is built using only Tailwind CSS. This site wouldn\'t be so nice at all without it. At the end of the day, I am not a designer',
+						"super cute and cool UI library, which is framework independent and is built using only Tailwind CSS. This site wouldn't be so nice at all without it. At the end of the day, I am not a designer",
 					link: 'https://daisyui.com'
 				},
 				{

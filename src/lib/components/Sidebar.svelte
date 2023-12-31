@@ -3,6 +3,8 @@
 	import projectsInfo from '$lib/projects-info.ts';
 	import { currentProjectIndex } from '$lib/stores.ts';
 
+	export let isOpen = true;
+
 	let isFirstProject: boolean;
 	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
 	let isLastProject: boolean;
@@ -26,10 +28,17 @@
 			<a href="https://s.perchun.it/github" class="link-primary">my GitHub</a>!
 		</p>
 		<p class="mt-2">
-			I often find that technologies used in project often can say more about it, that its README. I also find a small
-			satisfaction in connecting a lot of different technologies, libraries and frameworks together to create one, quite
-			messy, but working piece of art. This is why I list technologies on the site, as well as link to docs and GitHub.
+			I often find that technologies used in project often can say more about it, that its README. I
+			also find a small satisfaction in connecting a lot of different technologies, libraries and
+			frameworks together to create one, quite messy, but working piece of art. This is why I list
+			technologies on the site, as well as link to docs and GitHub.
 		</p>
+	</div>
+	<!-- close sidebar -->
+	<div class="absolute right-2 top-2">
+		<button class="btn btn-square btn-ghost" on:click={() => (isOpen = !isOpen)}>
+			<iconify-icon icon="mdi:menu" class="p-1.5 w-full h-full" width="unset" height="unset" />
+		</button>
 	</div>
 	<!-- project list -->
 	<div class="mt-10">

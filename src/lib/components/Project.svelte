@@ -17,7 +17,7 @@
 	<div class="flex flex-col items-center w-full">
 		<h1 class="text-4xl mt-5">{project.name}</h1>
 	</div>
-	<div class="mx-10">
+	<div class="mx-5 sm:mx-10">
 		<div class="mt-2">
 			{#if project.markdowned?.description === true}
 				<SvelteMarkdown source={project.description} />
