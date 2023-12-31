@@ -13,7 +13,7 @@
 
 <div class="flex">
 	{#if isSidebarOpen}
-		<div class="w-full md:w-[35rem] 2xl:w-96">
+		<div class="w-full md:w-[35rem] 2xl:w-[30rem]">
 			<Sidebar bind:isOpen={isSidebarOpen} />
 		</div>
 	{:else}
