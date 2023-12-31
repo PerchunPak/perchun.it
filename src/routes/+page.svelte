@@ -6,6 +6,7 @@
 
 	let isSidebarOpen = true;
 	let innerWidth: number
+	$: if (innerWidth >= 768) isSidebarOpen = true
 </script>
 
 <ScreenSize bind:innerWidth />
@@ -22,7 +23,7 @@
 			</button>
 		</div>
 	{/if}
-	<div class="hidden sm:contents" class:hidden={isSidebarOpen || innerWidth >= 768}>
+	<div class="hidden md:contents" class:hidden={isSidebarOpen || innerWidth >= 768}>
 		<Project idStore={currentProjectIndex} />
 	</div>
 </div>

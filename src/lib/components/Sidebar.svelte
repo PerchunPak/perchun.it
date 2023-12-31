@@ -35,7 +35,7 @@
 		</p>
 	</div>
 	<!-- close sidebar -->
-	<div class="absolute right-2 top-2">
+	<div class="absolute right-2 top-2 md:hidden">
 		<button class="btn btn-square btn-ghost" on:click={() => (isOpen = !isOpen)}>
 			<iconify-icon icon="mdi:menu" class="p-1.5 w-full h-full" width="unset" height="unset" />
 		</button>
