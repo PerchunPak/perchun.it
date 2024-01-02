@@ -4,10 +4,14 @@
 	import { currentProjectIndex } from '$lib/stores.ts';
 	import ScreenSize from '$lib/components/ScreenSize.svelte';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
+	import { onMount } from 'svelte';
 
 	let isSidebarOpen = true;
 	let innerWidth: number;
 	$: if (innerWidth >= 768) isSidebarOpen = true;
+
+	let loaded = false;
+	onMount(() => (loaded = true));
 </script>
 
 <ScreenSize bind:innerWidth />
@@ -16,7 +20,7 @@
 	{#if isSidebarOpen}
 		<div class="w-full md:w-[35rem] 2xl:w-[30rem]">
 			<Sidebar bind:isOpen={isSidebarOpen}>
-				{#if innerWidth >= 768}
+				{#if innerWidth >= 768 || !loaded}
 					<footer class="absolute bottom-0 w-full">
 						<NavigationButtons />
 					</footer>
@@ -34,7 +38,7 @@
 		<Project idStore={currentProjectIndex} />
 	</div>
 
-	{#if innerWidth < 768}
+	{#if innerWidth < 768 && loaded}
 		<footer class="fixed bottom-0 bg-base-200 w-full">
 			<div class="py-0 w-full h-full">
 				<NavigationButtons />
