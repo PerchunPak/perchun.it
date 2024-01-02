@@ -3,6 +3,7 @@
 	import Project from '$lib/components/Project.svelte';
 	import { currentProjectIndex } from '$lib/stores.ts';
 	import ScreenSize from '$lib/components/ScreenSize.svelte';
+	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
 
 	let isSidebarOpen = true;
 	let innerWidth: number;
@@ -14,7 +15,13 @@
 <div class="flex">
 	{#if isSidebarOpen}
 		<div class="w-full md:w-[35rem] 2xl:w-[30rem]">
-			<Sidebar bind:isOpen={isSidebarOpen} />
+			<Sidebar bind:isOpen={isSidebarOpen}>
+				{#if innerWidth >= 768}
+					<footer class="absolute bottom-0 w-full">
+							<NavigationButtons />
+					</footer>
+				{/if}
+			</Sidebar>
 		</div>
 	{:else}
 		<div class="absolute left-2 top-2">
@@ -26,4 +33,12 @@
 	<div class="hidden md:contents" class:hidden={isSidebarOpen || innerWidth >= 768}>
 		<Project idStore={currentProjectIndex} />
 	</div>
+
+	{#if innerWidth < 768}
+		<footer class="fixed bottom-0 bg-base-200 w-full">
+			<div class="py-0 w-full h-full">
+				<NavigationButtons />
+			</div>
+		</footer>
+	{/if}
 </div>
