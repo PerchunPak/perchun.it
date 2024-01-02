@@ -4,8 +4,6 @@
 </script>
 
 <svelte:head>
-	<!-- Simple Analytics - 100% privacy-first analytics -->
-	<!-- Simple Analytics - 100% privacy-first analytics -->
 	<script async defer src="https://simpleanal.perchun.it/latest.js"></script>
 	<noscript>
 		<img
