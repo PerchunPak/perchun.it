@@ -27,89 +27,47 @@ export interface ProjectInfo {
 
 const projectsInfo: ProjectInfo[] = [
 	{
-		name: 'czech-plus',
+		name: 'mcstatus',
 		description:
-			"As I'm in Czech Republic now, I need to learn Czech fastly. This is why I created an addon for [Anki](https://apps.ankiweb.net)! For me, the addon helps learning and adding new words.",
+			'Python library to ping and get status from Minecraft servers. Library was created by [Dinnerbone](https://minecraft.wiki/w/Nathan_Adams), who is a technical director at Mojang Studios, [13 years ago](https://github.com/py-mine/mcstatus/commit/b463a4b9196d7e34883be33a4322e095b1073a41). I am a core maintainer of the library for almost a year and added a lot of new stuff there.',
 		longDescription: {
-			text: "This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively. I wrote a whole amount of code to make it work, like tests which are testing like 50 test cases using parametrization and randomization (kind of anti-pattern, but they're kind of impressive too) or custom syntax parsing. So I probably could say, that I wrote a custom non-Turing complete programming language to just study Czech words.",
+			text: 'The library is used to get status and data from Minecraft servers, such as MOTD (aka description), player count, etc. Interesting that most of our users are bot developers, which is actually a really good use cases for our library. This is a library for receiving data from Minecraft servers. And I, in particular, [rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction between the library and users using the latest technologies and standards. Since this rewrite took a lot of time, it so happened that I made many other contributions to this library and became a maintainer!',
 			technologies: [
 				{
-					name: 'Lexing',
-					description: 'breaking the input text into tokens',
-					link: 'https://en.wikipedia.org/wiki/Lexical_analysis'
+					name: 'poetry-dynamic-versioning',
+					description: 'for automatic version control using Git tags',
+					link: 'https://pypi.org/project/poetry-dynamic-versioning/'
 				},
 				{
-					name: 'Parsing',
-					description: 'further analysis of these tokens and their conversion into the output text',
-					link: 'https://en.wikipedia.org/wiki/Parsing'
+					name: 'dnspython',
+					description: 'for DNS SRV record lookup',
+					link: 'https://dnspython.readthedocs.io/en/latest/'
+				},
+				{
+					name: 'pyright',
+					description:
+						'linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because is written in NodeJS',
+					link: 'https://github.com/microsoft/pyright#readme',
+					markdowned: { description: true }
+				},
+				{
+					name: 'all other features from [python-template](https://s.perchun.it/py-template)',
+					markdowned: { name: true }
 				}
-			]
+			],
+			additional:
+				'**Features of the library made by me:**\n' +
+				'- Rewriting of response objects to the latest system using the [`dataclasses`](https://docs.python.org/3/library/dataclasses.html) module (**[#306](https://github.com/py-mine/mcstatus/pull/306)**).\n' +
+				'- Completely new parsing system for server description (MOTD) (**[#335](https://github.com/py-mine/mcstatus/pull/335)**).\n' +
+				'- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).\n' +
+				'- Using the `with` block to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).\n' +
+				'- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.'
 		},
 		links: {
 			github: true,
 			readTheDocs: true
 		},
-		markdowned: { description: true }
-	},
-	{
-		name: 'This site!',
-		description:
-			'My first Frontend project. It was firstly written in [Next.js 13](https://nextjs.org), but then after some experience with frontend development, it is now in [Svelte](https://svelte.dev/). It uses [daisyUI](https://daisyui.com/) library for nice cute look of the site, which itself is built using [Tailwind CSS](https://tailwindcss.com/). The site also has [Markdown](https://en.wikipedia.org/wiki/Markdown) support. In fact, this paragraph is written in Markdown.',
-		longDescription: {
-			text: "I believe that every programmer should have their own domain, and maybe a website on it. It's incredibly convenient to keep some of your personal things there (for example, running projects or your portfolio/resume). So I bought such a year ago, [perchun.it](https://perchun.it), and to fill my homepage with something, I wrote my portfolio site. This is how my journey to frontend beginned. And as you may see, I mentioned that I am only backend developer, don't like at all the whole frontend state and technologies used to build software here.",
-			technologies: [
-				{
-					name: 'Svelte',
-					description:
-						'a fast and light frontend framework, which is just better and easier than React, which I used before',
-					link: 'https://svelte.dev'
-				},
-				{
-					name: 'daisyUI',
-					description:
-						"super cute and cool UI library, which is framework independent and is built using only Tailwind CSS. This site wouldn't be so nice at all without it. At the end of the day, I am not a designer",
-					link: 'https://daisyui.com'
-				},
-				{
-					name: 'Tailwind CSS',
-					description: 'the new awesome approach to CSS',
-					link: 'https://tailwindcss.com'
-				},
-				{
-					name: 'TypeScript',
-					description: 'JavaScript with types',
-					link: 'https://www.typescriptlang.org'
-				}
-			]
-		},
-		links: {
-			github: true
-		},
-		markdowned: { description: true, longDescriptionText: true }
-	},
-	{
-		name: 'the-war-tracker-bot',
-		description: 'The Telegram bot that doom-scrolls through the war news for you!',
-		longDescription: {
-			text: "I'm a person who often finds myself doomscrolling, and I'm not a big fan of it. But I really want to follow the latest news in Ukraine (more specifically, about the war). Instead of following hundreds of telegram channels - I can finally use this bot! This bot follows a bunch of telegram channels and sends you the news you need!\nExample: When I saw the news that a missile had landed in Poland, I wanted to follow the news, but I didn't want to scroll through the night.\nI'm sure this happens with a lot of news. At the time, I wanted a channel that reported only the most important news - but this has its drawbacks. The line of the \"importance\" is subjective for everyone, and such a channel would require the authors to reveal a lot of their thoughts, which I didn't want, so I didn't create something like that.",
-			technologies: [
-				{
-					name: 'Telethon',
-					description:
-						'library for connecting to Telegram with MTProto protocol, which is what use mobile apps',
-					link: 'https://pypi.org/project/Telethon/'
-				},
-				{
-					name: 'Redis',
-					description: 'key-value database, mostly used for caching',
-					link: 'https://redis.io'
-				}
-			]
-		},
-		links: {
-			github: true,
-			readTheDocs: true
-		}
+		markdowned: { description: true, longDescriptionText: true, additional: true }
 	},
 	{
 		name: 'pinger-bot',
@@ -176,6 +134,31 @@ const projectsInfo: ProjectInfo[] = [
 			github: true,
 			readTheDocs: true
 		}
+	},
+	{
+		name: 'czech-plus',
+		description:
+			"As I'm in Czech Republic now, I need to learn Czech fastly. This is why I created an addon for [Anki](https://apps.ankiweb.net)! For me, the addon helps learning and adding new words.",
+		longDescription: {
+			text: "This addon helps you (and me actually) to learn new words deeply, add them to your vocabulary, and learn productively. I wrote a whole amount of code to make it work, like tests which are testing like 50 test cases using parametrization and randomization (kind of anti-pattern, but they're kind of impressive too) or custom syntax parsing. So I probably could say, that I wrote a custom non-Turing complete programming language to just study Czech words.",
+			technologies: [
+				{
+					name: 'Lexing',
+					description: 'breaking the input text into tokens',
+					link: 'https://en.wikipedia.org/wiki/Lexical_analysis'
+				},
+				{
+					name: 'Parsing',
+					description: 'further analysis of these tokens and their conversion into the output text',
+					link: 'https://en.wikipedia.org/wiki/Parsing'
+				}
+			]
+		},
+		links: {
+			github: true,
+			readTheDocs: true
+		},
+		markdowned: { description: true }
 	},
 	{
 		name: 'python-template',
@@ -251,47 +234,64 @@ const projectsInfo: ProjectInfo[] = [
 		}
 	},
 	{
-		name: 'mcstatus',
+		name: 'This site!',
 		description:
-			'Python library to ping and get status from Minecraft servers. Not actually mine, but project that I maintain.',
+			'My first Frontend project. It was firstly written in [Next.js 13](https://nextjs.org), but then after some experience with frontend development, it is now in [Svelte](https://svelte.dev/). It uses [daisyUI](https://daisyui.com/) library for nice cute look of the site, which itself is built using [Tailwind CSS](https://tailwindcss.com/). The site also has [Markdown](https://en.wikipedia.org/wiki/Markdown) support. In fact, this paragraph is written in Markdown.',
 		longDescription: {
-			text: 'This is a library for receiving data from Minecraft servers. And I, in particular, [rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction between the library and users using the latest technologies and standards. Since this rewrite took a lot of time, it so happened that I made many other contributions to this library and became a maintainer!',
+			text: "I believe that every programmer should have their own domain, and maybe a website on it. It's incredibly convenient to keep some of your personal things there (for example, running projects or your portfolio/resume). So I bought such a year ago, [perchun.it](https://perchun.it), and to fill my homepage with something, I wrote my portfolio site. This is how my journey to frontend beginned. And as you may see, I mentioned that I am only backend developer, don't like at all the whole frontend state and technologies used to build software here.",
 			technologies: [
 				{
-					name: 'poetry-dynamic-versioning',
-					description: 'for automatic version control using Git tags',
-					link: 'https://pypi.org/project/poetry-dynamic-versioning/'
-				},
-				{
-					name: 'dnspython',
-					description: 'for DNS SRV record lookup',
-					link: 'https://dnspython.readthedocs.io/en/latest/'
-				},
-				{
-					name: 'pyright',
+					name: 'Svelte',
 					description:
-						'linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because is written in NodeJS',
-					link: 'https://github.com/microsoft/pyright#readme',
-					markdowned: { description: true }
+						'a fast and light frontend framework, which is just better and easier than React, which I used before',
+					link: 'https://svelte.dev'
 				},
 				{
-					name: 'all other features from [python-template](https://s.perchun.it/py-template)',
-					markdowned: { name: true }
+					name: 'daisyUI',
+					description:
+						"super cute and cool UI library, which is framework independent and is built using only Tailwind CSS. This site wouldn't be so nice at all without it. At the end of the day, I am not a designer",
+					link: 'https://daisyui.com'
+				},
+				{
+					name: 'Tailwind CSS',
+					description: 'the new awesome approach to CSS',
+					link: 'https://tailwindcss.com'
+				},
+				{
+					name: 'TypeScript',
+					description: 'JavaScript with types',
+					link: 'https://www.typescriptlang.org'
 				}
-			],
-			additional:
-				'**Features of the library made by me:**\n' +
-				'- Rewriting of response objects to the latest system using the [`dataclasses`](https://docs.python.org/3/library/dataclasses.html) module (**[#306](https://github.com/py-mine/mcstatus/pull/306)**).\n' +
-				'- Completely new parsing system for server description (MOTD) (**[#335](https://github.com/py-mine/mcstatus/pull/335)**).\n' +
-				'- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).\n' +
-				'- Using the `with` block to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).\n' +
-				'- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.'
+			]
+		},
+		links: {
+			github: true
+		},
+		markdowned: { description: true, longDescriptionText: true }
+	},
+	{
+		name: 'the-war-tracker-bot',
+		description: 'The Telegram bot that doom-scrolls through the war news for you!',
+		longDescription: {
+			text: "I'm a person who often finds myself doomscrolling, and I'm not a big fan of it. But I really want to follow the latest news in Ukraine (more specifically, about the war). Instead of following hundreds of telegram channels - I can finally use this bot! This bot follows a bunch of telegram channels and sends you the news you need!\nExample: When I saw the news that a missile had landed in Poland, I wanted to follow the news, but I didn't want to scroll through the night.\nI'm sure this happens with a lot of news. At the time, I wanted a channel that reported only the most important news - but this has its drawbacks. The line of the \"importance\" is subjective for everyone, and such a channel would require the authors to reveal a lot of their thoughts, which I didn't want, so I didn't create something like that.",
+			technologies: [
+				{
+					name: 'Telethon',
+					description:
+						'library for connecting to Telegram with MTProto protocol, which is what use mobile apps',
+					link: 'https://pypi.org/project/Telethon/'
+				},
+				{
+					name: 'Redis',
+					description: 'key-value database, mostly used for caching',
+					link: 'https://redis.io'
+				}
+			]
 		},
 		links: {
 			github: true,
 			readTheDocs: true
-		},
-		markdowned: { longDescriptionText: true, additional: true }
-	}
+		}
+	},
 ];
 export default projectsInfo;
