@@ -3,7 +3,7 @@
 	import Project from '$lib/components/Project.svelte';
 	import { currentProjectIndex } from '$lib/stores.ts';
 	import ScreenSize from '$lib/components/ScreenSize.svelte';
-	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
+	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	let isSidebarOpen = true;
 	let innerWidth: number;
@@ -18,7 +18,7 @@
 			<Sidebar bind:isOpen={isSidebarOpen}>
 				{#if innerWidth >= 768}
 					<footer class="absolute bottom-0 w-full">
-							<NavigationButtons />
+						<NavigationButtons />
 					</footer>
 				{/if}
 			</Sidebar>

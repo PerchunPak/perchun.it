@@ -4,7 +4,7 @@
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import type { ProjectInfo } from '$lib/projects-info.ts';
 	import SvelteMarkdown from 'svelte-markdown';
-	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
+	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	export let idStore: Writable<number>;
 
