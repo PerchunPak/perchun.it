@@ -19,23 +19,20 @@
 	</div>
 	<div class="mx-5 sm:mx-10">
 		<div class="mt-2">
-			{#if project.markdowned?.description === true}
-				<SvelteMarkdown source={project.description} />
-			{:else}
-				<p>{project.description}</p>
-			{/if}
+			{#each project.description.split('\n') as paragraph}
+				<div class="pt-2">
+					{#if project.markdowned?.description === true}
+						<SvelteMarkdown source={paragraph} />
+					{:else}
+						<p>{paragraph}</p>
+					{/if}
+				</div>
+			{/each}
 		</div>
-		<div class="mt-2">
-			{#if project.markdowned?.longDescriptionText === true}
-				<SvelteMarkdown source={project.longDescription.text} />
-			{:else}
-				<p>{project.longDescription.text}</p>
-			{/if}
-		</div>
-		{#if project.longDescription.technologies !== undefined}
+		{#if project.technologies !== undefined}
 			<h2 class="text-2xl mt-5 font-bold">Technologies that I have used here:</h2>
 			<ul class="list-disc list-inside">
-				{#each project.longDescription.technologies as technology}
+				{#each project.technologies as technology}
 					<li class="mt-2">
 						{#if typeof technology === 'string'}
 							{technology}
@@ -78,11 +75,11 @@
 			{/each}
 		{/key}
 		<div class="mt-4">
-			{#if project.longDescription.additional}
-				{#if project.markdowned?.additional === true}
-					<SvelteMarkdown source={project.longDescription.additional} />
+			{#if project.additionalDescription}
+				{#if project.markdowned?.additionalDescription === true}
+					<SvelteMarkdown source={project.additionalDescription} />
 				{:else}
-					{project.longDescription.additional}
+					{project.additionalDescription}
 				{/if}
 			{/if}
 		</div>
