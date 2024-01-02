@@ -4,7 +4,6 @@
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import type { ProjectInfo } from '$lib/projects-info.ts';
 	import SvelteMarkdown from 'svelte-markdown';
-	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	export let idStore: Writable<number>;
 
@@ -71,11 +70,13 @@
 			</ul>
 		{/if}
 		<h2 class="text-2xl mt-5 font-bold">Links:</h2>
-		{#each Object.entries(project.links) as [name, exists]}
-			{#if exists}
-				<ProjectLink projectName={project.name} linkName={name} />
-			{/if}
-		{/each}
+		{#key project.name}
+			{#each Object.entries(project.links) as [name, exists]}
+				{#if exists}
+					<ProjectLink projectName={project.name} linkName={name} />
+				{/if}
+			{/each}
+		{/key}
 		<div class="mt-4">
 			{#if project.longDescription.additional}
 				{#if project.markdowned?.additional === true}
