@@ -21,7 +21,7 @@
 		<div class="w-full md:w-[35rem] 2xl:w-[30rem]">
 			<Sidebar bind:isOpen={isSidebarOpen}>
 				{#if innerWidth >= 768 || !loaded}
-					<footer class="absolute bottom-0 w-full">
+					<footer class="absolute bottom-0 w-full bg-base-200">
 						<NavigationButtons />
 					</footer>
 				{/if}
