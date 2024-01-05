@@ -25,7 +25,7 @@ const projectsInfo: ProjectInfo[] = [
 	{
 		name: 'mcstatus',
 		description:
-			'Python library to ping and get status from Minecraft servers. It doesn\'t just return you `ok` or `not ok`, you can also get the server icon, description, player count, etc. Interesting that this library is mostly used by Discord bot developers (even I found this library because I wanted a Discord bot for my Minecraft server, what a perfect use case).\nI have been a core maintainer of the library for almost a year now and have added a lot of new stuff there. One of my biggest contributions was the first one, I [rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction between the library and users using [dataclasses](https://docs.python.org/3/library/dataclasses.html) (if you are not familiar what it is, it is just a simpler, faster way to write simple classes that only store data; much nicer and typed than dicts; everyone should try it). Since this rewrite took a lot of time, it so happened that I made many other contributions to this library and became a maintainer!\nAnd one more interesting fact: the library was created by [Dinnerbone](https://minecraft.wiki/w/Nathan_Adams), who is a technical director at Mojang Studios now, [13 years ago](https://github.com/py-mine/mcstatus/commit/b463a4b9196d7e34883be33a4322e095b1073a41).',
+			"Python library to ping and get status from Minecraft servers. It doesn't just return you `ok` or `not ok`, you can also get the server icon, description, player count, etc. Interesting that this library is mostly used by Discord bot developers (even I found this library because I wanted a Discord bot for my Minecraft server, what a perfect use case).\nI have been a core maintainer of the library for almost a year now and have added a lot of new stuff there. One of my biggest contributions was the first one, I [rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction between the library and users using [dataclasses](https://docs.python.org/3/library/dataclasses.html) (if you are not familiar what it is, it is just a simpler, faster way to write simple classes that only store data; much nicer and typed than dicts; everyone should try it). Since this rewrite took a lot of time, it so happened that I made many other contributions to this library and became a maintainer!\nAnd one more interesting fact: the library was created by [Dinnerbone](https://minecraft.wiki/w/Nathan_Adams), who is a technical director at Mojang Studios now, [13 years ago](https://github.com/py-mine/mcstatus/commit/b463a4b9196d7e34883be33a4322e095b1073a41).",
 		technologies: [
 			{
 				name: 'dnspython',
@@ -35,12 +35,12 @@ const projectsInfo: ProjectInfo[] = [
 			{
 				name: 'pyright',
 				description:
-					'linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because it is written in Node.js. See [this document](https://github.com/microsoft/pyright/blob/main/docs/mypy-comparison.md) if you are interesting in how it is different from mypy, [this GitHub issue](https://github.com/py-mine/mcstatus/issues/699) to read why we don\'t use mypy and [this page](https://www.google.com/search?q=what+is+typed+python) to know what is typed Python',
+					"linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because it is written in Node.js. See [this document](https://github.com/microsoft/pyright/blob/main/docs/mypy-comparison.md) if you are interesting in how it is different from mypy, [this GitHub issue](https://github.com/py-mine/mcstatus/issues/699) to read why we don't use mypy and [this page](https://www.google.com/search?q=what+is+typed+python) to know what is typed Python",
 				link: 'https://github.com/microsoft/pyright#readme',
 				markdowned: { description: true }
 			},
 			{
-				name: 'and all other features from [python-template](https://s.perchun.it/py-template/github)',  // todo replace link to this website
+				name: 'and all other features from [python-template](/python-template)', // todo replace link to this website
 				markdowned: { name: true }
 			}
 		],
