@@ -35,14 +35,13 @@
 		</button>
 	</div>
 	<!-- project list -->
-	<div class="mt-10">
+	<div class="mt-10 pb-28">
 		<ul class="list-disc list-inside p-3">
 			{#each projectsInfo as project, index}
-				<li>
-					{project.name}
-					{#if index === $currentProjectIndex}
-						<span class="float-right text-accent text-xl">{'<=='}</span>
-					{/if}
+				<li class="p-[0.35rem] mt-1 rounded" class:bg-neutral={index === $currentProjectIndex}>
+					<a href={`/${project.name === 'This site!' ? 'perchun.it' : project.name}`}>
+						{project.name}
+					</a>
 				</li>
 			{/each}
 		</ul>
