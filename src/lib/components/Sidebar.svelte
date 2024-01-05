@@ -8,16 +8,25 @@
 <div class="relative bg-base-200 h-full min-h-screen">
 	<!-- bio -->
 	<div class="p-3">
-		<img
-			src="/avatar.png"
-			width="150"
-			height="150"
-			alt="My avatar"
-			class="mb-4 bg-white rounded-[2rem]"
-		/>
+		<div class="flex">
+			<img
+				src="/avatar.png"
+				width="150"
+				height="150"
+				alt="My avatar"
+				class="mb-4 bg-white rounded-[2rem]"
+			/>
+			<div class="ml-5 grid">
+				<p class="text-xl text-gray-600">she/her</p>
+				<p class="text-sm">
+					Contact me at
+					<a href="mailto:hi@perchun.it">hi@perchun.it</a>
+				</p>
+			</div>
+		</div>
 		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
-			<a href="https://s.perchun.it/ukraine" class="link-primary">Ukraine</a>.<br />
+			<a href="https://s.perchun.it/ukraine" class="link-primary">Ukraine 🇺🇦</a>.<br />
 			Below you can find some of my main projects. They're all available on
 			<a href="https://s.perchun.it/github" class="link-primary">my GitHub</a>!
 		</p>
