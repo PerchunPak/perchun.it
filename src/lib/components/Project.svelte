@@ -95,7 +95,7 @@
 				@apply link-primary;
 			}
 			code {
-				@apply font-mono;
+				@apply font-mono bg-base-200 dark:bg-neutral px-1 py-0.5 rounded-md;
 			}
 
 			ul {
