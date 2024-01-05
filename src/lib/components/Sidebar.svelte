@@ -47,7 +47,11 @@
 	<div class="mt-10 pb-28">
 		<ul class="list-disc list-inside p-3">
 			{#each projectsInfo as project, index}
-				<li class="p-[0.35rem] mt-1 rounded" class:bg-neutral={index === $currentProjectIndex}>
+				<li
+					class="p-[0.35rem] mt-1 rounded"
+					class:bg-base-300={index === $currentProjectIndex}
+					class:dark:bg-neutral={index === $currentProjectIndex}
+				>
 					<a href={`/${project.name === 'This site!' ? 'perchun.it' : project.name}`}>
 						{project.name}
 					</a>
