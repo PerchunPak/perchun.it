@@ -1,18 +1,16 @@
 {
-  "template": "https://github.com/PerchunPak/svelte-template",
-  "commit": "f36ff79875ca045a744c53f97771bc642c30f7a7",
-  "checkout": null,
-  "context": {
-    "cookiecutter": {
-      "project_name": "perchun.it",
-      "organization": "PerchunPak",
-      "project_description": "My personal portfolio!",
-      "center_everything": "n",
-      "_copy_without_render": [
-        ".venv"
-      ],
-      "_template": "https://github.com/PerchunPak/svelte-template"
-    }
-  },
-  "directory": null
+	"template": "https://github.com/PerchunPak/svelte-template",
+	"commit": "f36ff79875ca045a744c53f97771bc642c30f7a7",
+	"checkout": null,
+	"context": {
+		"cookiecutter": {
+			"project_name": "perchun.it",
+			"organization": "PerchunPak",
+			"project_description": "My personal portfolio!",
+			"center_everything": "n",
+			"_copy_without_render": [".venv"],
+			"_template": "https://github.com/PerchunPak/svelte-template"
+		}
+	},
+	"directory": null
 }
