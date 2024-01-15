@@ -1,7 +1,10 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { AppShell, AppBar, autoModeWatcher } from '@skeletonlabs/skeleton';
+	import Sidebar from '$lib/components/Sidebar.svelte';
 </script>
+
+<svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
 <!-- App Shell -->
 <AppShell>
@@ -38,6 +41,9 @@
 				</a>
 			</svelte:fragment>
 		</AppBar>
+	</svelte:fragment>
+	<svelte:fragment slot="sidebarLeft">
+		<Sidebar />
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
