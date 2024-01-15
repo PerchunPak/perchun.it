@@ -1,17 +1,10 @@
 <script lang="ts">
-	import { Avatar } from '@skeletonlabs/skeleton';
-	import { AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 
 	let currentProject: string = 'mcstatus';
 </script>
 
 <AppRail width="w-full md:w-[35rem] 2xl:w-[30rem]" class="p-4">
-	<!-- TODO iconify
-  <svelte:fragment slot="lead">
-    <AppRailAnchor href="/" >(icon)</AppRailAnchor>
-  </svelte:fragment>
-  -->
-	<!-- --- -->
 	<div>
 		<div class="flex mb-4">
 			<Avatar src="/avatar.png" width="w-32" rounded="rounded-xl" />
@@ -43,10 +36,4 @@
 			>
 		{/each}
 	</ListBox>
-	<!-- --- -->
-	<!-- TODO navigation
-  <svelte:fragment slot="trail">
-    <AppRailAnchor href="/" target="_blank" title="Account">(icon)</AppRailAnchor>
-  </svelte:fragment>
-  -->
 </AppRail>
