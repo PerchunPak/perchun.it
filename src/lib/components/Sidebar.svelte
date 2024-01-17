@@ -13,7 +13,7 @@
 	let currentProject: string = 'mcstatus';
 </script>
 
-<AppRail width="w-full md:w-[35rem] 2xl:w-[30rem]" class="p-4">
+<AppRail width="w-[30rem]" class="p-4">
 	<div>
 		<div class="flex mb-4">
 			<Avatar src="/avatar.png" width="w-32" rounded="rounded-xl" />
