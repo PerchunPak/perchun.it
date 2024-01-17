@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import Icon from '@iconify/svelte';
 
+	const projects: string[] = [
+		'mcstatus',
+		'pinger-bot',
+		'czech-plus',
+		'python-template',
+		'This site!',
+		'the-war-tracker-bot'
+	];
 	let currentProject: string = 'mcstatus';
 </script>
 
@@ -30,10 +39,28 @@
 		</p>
 	</div>
 	<ListBox class="mt-10">
-		{#each ['mcstatus', 'pinger-bot', 'czech-plus', 'python-template', 'This site!', 'the-war-tracker-bot'] as projectName}
+		{#each projects as projectName}
 			<ListBoxItem bind:group={currentProject} name="medium" value={projectName}
 				>{projectName}</ListBoxItem
 			>
 		{/each}
 	</ListBox>
+	<div class="flex justify-between mt-3">
+		<button
+			type="button"
+			on:click={() => (currentProject = projects[projects.indexOf(currentProject) - 1])}
+			disabled={projects.indexOf(currentProject) === 0}
+			class="btn-icon btn-icon-lg variant-filled"
+		>
+			<Icon icon="mdi:arrow-left" />
+		</button>
+		<button
+			type="button"
+			on:click={() => (currentProject = projects[projects.indexOf(currentProject) + 1])}
+			disabled={projects.indexOf(currentProject) === projects.length - 1}
+			class="btn-icon btn-icon-lg variant-filled"
+		>
+			<Icon icon="mdi:arrow-right" />
+		</button>
+	</div>
 </AppRail>
