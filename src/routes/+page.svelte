@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { currentProjectIndex } from "$lib/stores";
+	import { currentProjectIndex } from '$lib/stores';
 </script>
 
 <!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->

@@ -1,5 +1,5 @@
 import type { Invalidator, Subscriber, Unsubscriber, Updater, Writable } from 'svelte/store';
-import { writable, get } from 'svelte/store';
+import { writable } from 'svelte/store';
 import projectsInfo from '$lib/projects-info';
 import { goto } from '$app/navigation';
 import { browser } from '$app/environment';

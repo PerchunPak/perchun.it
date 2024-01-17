@@ -10,7 +10,7 @@
 	} from '@skeletonlabs/skeleton';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
-	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
+	import Keybinds from '$lib/components/Keybinds.svelte';
 
 	initializeStores();
 
@@ -19,9 +19,11 @@
 
 <svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
+<Keybinds />
 <Drawer>
 	<Sidebar />
 </Drawer>
+
 <!-- App Shell -->
 <AppShell>
 	<svelte:fragment slot="header">

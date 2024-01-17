@@ -2,7 +2,7 @@
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import projectsInfo from '$lib/projects-info';
 	import { currentProjectIndex } from '$lib/stores';
-	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
+	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	let selectedProjectInSidebar: string = projectsInfo[0].name;
 	$: currentProjectIndex.set(projectsInfo.findIndex((v) => v.name === selectedProjectInSidebar));
