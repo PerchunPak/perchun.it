@@ -28,7 +28,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
-		<AppBar>
+		<AppBar background="bg-surface-50-900-token">
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button
