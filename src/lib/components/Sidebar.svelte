@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import Icon from '@iconify/svelte';
+	import projectsInfo from '$lib/projects-info';
+	import { currentProjectIndex } from '$lib/stores';
 
-	const projects: string[] = [
-		'mcstatus',
-		'pinger-bot',
-		'czech-plus',
-		'python-template',
-		'This site!',
-		'the-war-tracker-bot'
-	];
-	let currentProject: string = 'mcstatus';
+	let selectedProjectInSidebar: string = projectsInfo[0].name;
+	$: currentProjectIndex.set(projectsInfo.findIndex((v) => v.name === selectedProjectInSidebar));
+	currentProjectIndex.subscribe((v) => selectedProjectInSidebar = projectsInfo[v].name)
+
+	let isFirstProject: boolean;
+	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
+	let isLastProject: boolean;
+	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
 </script>
 
 <AppRail width="w-[30rem]" class="p-4">
@@ -39,25 +40,25 @@
 		</p>
 	</div>
 	<ListBox class="mt-10">
-		{#each projects as projectName}
-			<ListBoxItem bind:group={currentProject} name="medium" value={projectName}
-				>{projectName}</ListBoxItem
-			>
+		{#each projectsInfo as project}
+			<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
+				{project.name}
+			</ListBoxItem>
 		{/each}
 	</ListBox>
 	<div class="flex justify-between mt-3">
 		<button
 			type="button"
-			on:click={() => (currentProject = projects[projects.indexOf(currentProject) - 1])}
-			disabled={projects.indexOf(currentProject) === 0}
+			on:click={() => currentProjectIndex.update((v) => v - 1)}
+			disabled={isFirstProject}
 			class="btn-icon btn-icon-lg variant-filled"
 		>
 			<Icon icon="mdi:arrow-left" />
 		</button>
 		<button
 			type="button"
-			on:click={() => (currentProject = projects[projects.indexOf(currentProject) + 1])}
-			disabled={projects.indexOf(currentProject) === projects.length - 1}
+			on:click={() => currentProjectIndex.update((v) => v + 1)}
+			disabled={isLastProject}
 			class="btn-icon btn-icon-lg variant-filled"
 		>
 			<Icon icon="mdi:arrow-right" />
