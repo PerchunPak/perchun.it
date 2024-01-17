@@ -37,34 +37,24 @@
 					>
 						<Icon icon="mdi:menu" class="w-6 h-6" />
 					</button>
-					<strong class="text-xl uppercase">Skeleton</strong>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+				{#each [
+					["mdi:github", "https://github.com/PerchunPak"],
+					["ic:baseline-discord", "https://discord.com/users/Perchun_Pak#3530"],
+					["ic:baseline-telegram", "https://t.me/perchun"],
+					["mdi:email", "mailto:hi@perchun.it"],
+				] as data}
+					<a
+						class="btn-icon variant-ghost-surface"
+						href={data[1]}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<Icon icon={data[0]} class="w-full h-full p-1" />
+					</a>
+				{/each}
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>

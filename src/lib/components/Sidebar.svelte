@@ -13,13 +13,7 @@
 	<div>
 		<div class="flex mb-4">
 			<Avatar src="/avatar.png" width="w-32" rounded="rounded-xl" />
-			<div class="ml-5 grid">
-				<p class="text-xl text-surface-500-400-token">she/her</p>
-				<p class="text-sm">
-					Contact me at
-					<a class="anchor" href="mailto:hi@perchun.it">hi@perchun.it</a>
-				</p>
-			</div>
+			<p class="text-xl ml-5 text-surface-500-400-token">she/her</p>
 		</div>
 		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
