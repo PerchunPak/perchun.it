@@ -9,7 +9,7 @@
 	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsInfo[v].name));
 </script>
 
-<AppRail width="w-[30rem]" class="p-4">
+<AppRail width="w-fit max-w-[30rem]" class="p-4">
 	<div>
 		<div class="flex mb-4">
 			<Avatar src="/avatar.png" width="w-32" rounded="rounded-xl" />

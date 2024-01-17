@@ -33,7 +33,7 @@
 				<div class="flex items-center">
 					<button
 						class="xl:hidden btn btn-sm mr-1"
-						on:click={() => drawerStore.open({ width: 'w-fit' })}
+						on:click={() => drawerStore.open({ width: 'w-fit', padding: 'pr-10' })}
 					>
 						<Icon icon="mdi:menu" class="w-6 h-6" />
 					</button>
