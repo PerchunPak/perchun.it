@@ -1,17 +1,12 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import Icon from '@iconify/svelte';
 	import projectsInfo from '$lib/projects-info';
 	import { currentProjectIndex } from '$lib/stores';
+	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
 
 	let selectedProjectInSidebar: string = projectsInfo[0].name;
 	$: currentProjectIndex.set(projectsInfo.findIndex((v) => v.name === selectedProjectInSidebar));
-	currentProjectIndex.subscribe((v) => selectedProjectInSidebar = projectsInfo[v].name)
-
-	let isFirstProject: boolean;
-	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
-	let isLastProject: boolean;
-	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
+	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsInfo[v].name));
 </script>
 
 <AppRail width="w-[30rem]" class="p-4">
@@ -46,22 +41,5 @@
 			</ListBoxItem>
 		{/each}
 	</ListBox>
-	<div class="flex justify-between mt-3">
-		<button
-			type="button"
-			on:click={() => currentProjectIndex.update((v) => v - 1)}
-			disabled={isFirstProject}
-			class="btn-icon btn-icon-lg variant-filled"
-		>
-			<Icon icon="mdi:arrow-left" />
-		</button>
-		<button
-			type="button"
-			on:click={() => currentProjectIndex.update((v) => v + 1)}
-			disabled={isLastProject}
-			class="btn-icon btn-icon-lg variant-filled"
-		>
-			<Icon icon="mdi:arrow-right" />
-		</button>
-	</div>
+	<NavigationButtons />
 </AppRail>

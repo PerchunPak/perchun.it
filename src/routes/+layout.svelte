@@ -1,8 +1,16 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar, autoModeWatcher, initializeStores, Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+	import {
+		AppShell,
+		AppBar,
+		autoModeWatcher,
+		initializeStores,
+		Drawer,
+		getDrawerStore
+	} from '@skeletonlabs/skeleton';
 	import Sidebar from '$lib/components/Sidebar.svelte';
-	import Icon from "@iconify/svelte";
+	import Icon from '@iconify/svelte';
+	import NavigationButtons from "$lib/components/NavigationButtons.svelte";
 
 	initializeStores();
 
@@ -21,8 +29,11 @@
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
-					<button class="xl:hidden btn btn-sm mr-1" on:click={() => drawerStore.open({width: 'w-fit'})}>
-							<Icon icon="mdi:menu" class="w-6 h-6" />
+					<button
+						class="xl:hidden btn btn-sm mr-1"
+						on:click={() => drawerStore.open({ width: 'w-fit' })}
+					>
+						<Icon icon="mdi:menu" class="w-6 h-6" />
 					</button>
 					<strong class="text-xl uppercase">Skeleton</strong>
 				</div>
@@ -62,4 +73,11 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+	<!-- TODO when it will be necessary
+	<svelte:fragment slot="footer">
+		<div class="contents xl:hidden">
+			<NavigationButtons />
+		</div>
+	</svelte:fragment>
+	-->
 </AppShell>
