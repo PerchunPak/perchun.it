@@ -1,5 +1,5 @@
 import type { Invalidator, Subscriber, Unsubscriber, Updater, Writable } from 'svelte/store';
-import { writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
 import projectsInfo from '$lib/projects-info';
 import { goto } from '$app/navigation';
 import { browser } from '$app/environment';
@@ -21,7 +21,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 			return;
 		}
 
-		// if (get(this.#store) !== value) this.#goto(value); // todo goto
+		if (get(this.#store) !== value) this.#goto(value);
 		this.#store.set(value);
 	}
 
@@ -33,7 +33,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 				return value;
 			}
 
-			// if (value !== newValue) this.#goto(newValue); // todo goto
+			if (value !== newValue) this.#goto(newValue);
 			return newValue;
 		});
 	}
