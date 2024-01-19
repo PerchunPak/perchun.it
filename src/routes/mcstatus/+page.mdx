@@ -8,11 +8,19 @@ I have been a core maintainer of the library for almost a year now and have adde
 
 And one more interesting fact: the library was created by [Dinnerbone](https://minecraft.wiki/w/Nathan_Adams), who is a technical director at Mojang Studios now, [13 years ago](https://github.com/py-mine/mcstatus/commit/b463a4b9196d7e34883be33a4322e095b1073a41).
 
-### Technologies that I have used here:
+#### Features of the library made by me:
+
+- New fancy [dataclasses](https://docs.python.org/3/library/dataclasses.html) as return values, instead of [10-year-old](https://github.com/py-mine/mcstatus/commit/94264f22ea70cf8c07bbab6f97f647cde3b1cde2) unpythonic nested classes. (**[#306](https://github.com/py-mine/mcstatus/pull/306)**)
+- Completely new parsing system for server description (MOTD). Before, you could only get string of it with some Minecraft color codes, and now you can transform it to anything! As an example, we implemented [24bit ANSI transformer and HTML transformer](https://github.com/py-mine/mcstatus/blob/48d786889fc0ab3ad36f4367ae580c50ff155e96/mcstatus/motd/transformers.py). (**[#335](https://github.com/py-mine/mcstatus/pull/335)**)
+- Documentation that describes every public (and not only) method, as well as examples how to use it and FAQ. Can you imagine that before like a year ago this library didn't have **any** docs and we (maintainers) suggested users to read source code to know how to use a library? (**[#477](https://github.com/py-mine/mcstatus/pull/477)**)
+- Using the [`with` block](https://peps.python.org/pep-0343/) to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).
+- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.
+
+### Technologies that are used here:
 
 - [dnspython](https://dnspython.readthedocs.io/en/latest/) - for DNS SRV record lookup
-- [pyright](https://github.com/microsoft/pyright#readme) - linter for supporting statically typed Python. Much faster than [mypy](https://www.mypy-lang.org/) because it is written in Node.js. See [this document](https://github.com/microsoft/pyright/blob/main/docs/mypy-comparison.md) if you are interesting in how it is different from mypy, [this GitHub issue](https://github.com/py-mine/mcstatus/issues/699) to read why we don't use mypy and [this page](https://www.google.com/search?q=what+is+typed+python) to know what is typed Python
-- and all other features from [python-template](/python-template)
+- [pyright](https://github.com/microsoft/pyright#readme) - linter for supporting statically typed Python. Was chosen instead of [mypy](https://www.mypy-lang.org/) because it was faster, not true anymore though. See [this document](https://github.com/microsoft/pyright/blob/main/docs/mypy-comparison.md) if you are interested in how it is different from mypy, [this GitHub issue](https://github.com/py-mine/mcstatus/issues/699) to read why we don't use mypy and [this page](https://www.google.com/search?q=what+is+typed+python) to know what is typed Python.
+- And a few more features like [poetry](https://python-poetry.org/) (I mean, it is a standard for all my projects now), [poetry-dynamic-versioning](https://pypi.org/project/poetry-dynamic-versioning/) to control package version with git tags, instead of just committing `Bump version` before every release. I won't go on details much, because I wasn't really involved in those decisions. It was done before I became a maintainer.
 
 ### Links
 
@@ -25,11 +33,3 @@ And one more interesting fact: the library was created by [Dinnerbone](https://m
 	<Icon icon="simple-icons:readthedocs" />
 	See ReadTheDocs!
 </a>
-
-**Features of the library made by me:**
-
-- Rewriting of response objects to the latest system using the [`dataclasses`](https://docs.python.org/3/library/dataclasses.html) module (**[#306](https://github.com/py-mine/mcstatus/pull/306)**).
-- Completely new parsing system for server description (MOTD) (**[#335](https://github.com/py-mine/mcstatus/pull/335)**).
-- Documentation (almost from scratch) (**[#477](https://github.com/py-mine/mcstatus/pull/477)**).
-- Using the `with` block to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).
-- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.

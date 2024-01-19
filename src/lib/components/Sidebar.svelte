@@ -17,9 +17,12 @@
 		</div>
 		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
-			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.<br />
-			Below you can find some of my main projects. They're all available on
-			<a href="https://s.perchun.it/github" class="anchor">my GitHub</a>!
+			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
+		</p>
+		<p class="mt-2 block">
+			Below you can find some of my main projects. Worth noting that all my
+			work is open-source and everything is available on
+			<a href="https://github.com/PerchunPak" class="anchor">my GitHub</a>.
 		</p>
 		<p class="mt-2 block">
 			I often find that technologies used in project often can say more about it, than its README. I
