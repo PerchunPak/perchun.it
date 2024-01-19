@@ -33,7 +33,16 @@
 			technologies on the site, as well as link to docs and GitHub.
 		</p>
 	</div>
-	<ListBox class="mt-10">
+	<p class="hidden xl:block mt-6">
+		Tip: you can use
+		<kbd class="kbd">◀︎</kbd> /
+		<kbd class="kbd">▶︎</kbd>
+		and
+		<kbd class="kbd">A</kbd> /
+		<kbd class="kbd">D</kbd>
+		to switch between projects.
+	</p>
+	<ListBox class="mt-6 xl:mt-3">
 		{#each projectsMetadata as project}
 			<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
 				{project.name}
