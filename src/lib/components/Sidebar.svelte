@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import projectsInfo from '$lib/projects-info';
+	import { projectsMetadata } from "$lib/projects-metadata";
 	import { currentProjectIndex } from '$lib/stores';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
-	let selectedProjectInSidebar: string = projectsInfo[0].name;
-	$: currentProjectIndex.set(projectsInfo.findIndex((v) => v.name === selectedProjectInSidebar));
-	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsInfo[v].name));
+	let selectedProjectInSidebar: string = projectsMetadata[0].name;
+	$: currentProjectIndex.set(projectsMetadata.findIndex((v) => v.name === selectedProjectInSidebar));
+	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
 </script>
 
 <AppRail width="w-fit max-w-[30rem]" class="p-4">
@@ -29,7 +29,7 @@
 		</p>
 	</div>
 	<ListBox class="mt-10">
-		{#each projectsInfo as project}
+		{#each projectsMetadata as project}
 			<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
 				{project.name}
 			</ListBoxItem>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { currentProjectIndex } from '$lib/stores';
-	import projectsInfo from '$lib/projects-info';
+	import { projectsMetadata } from "$lib/projects-metadata";
 
 	let isADown = false;
 	let isDDown = false;
@@ -44,7 +44,7 @@
 		}
 		if (isDDown || isArrowRightDown) {
 			currentProjectIndex.update((v) => {
-				if (v === projectsInfo.length - 1) return v;
+				if (v === projectsMetadata.length - 1) return v;
 				return v + 1;
 			});
 		}

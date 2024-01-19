@@ -1,12 +1,12 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { currentProjectIndex } from '$lib/stores.js';
-	import projectsInfo from '$lib/projects-info.js';
+	import { projectsMetadata } from "$lib/projects-metadata";
 
 	let isFirstProject: boolean;
 	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
 	let isLastProject: boolean;
-	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
+	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsMetadata.length - 1));
 </script>
 
 <div class="flex justify-between mt-3">
