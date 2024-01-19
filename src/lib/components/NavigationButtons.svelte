@@ -1,27 +1,29 @@
 <script lang="ts">
+	import Icon from '@iconify/svelte';
 	import { currentProjectIndex } from '$lib/stores.js';
-	import projectsInfo from '$lib/projects-info.js';
-	import { shortcut } from '$lib/shortcut.ts';
+	import { projectsMetadata } from '$lib/projects-metadata';
 
 	let isFirstProject: boolean;
 	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
 	let isLastProject: boolean;
-	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsInfo.length - 1));
+	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsMetadata.length - 1));
 </script>
 
-<div class="flex justify-between m-3">
+<div class="flex justify-between mt-3">
 	<button
-		class="btn bg-base-300 text-4xl w-20 h-20 text-center"
-		class:btn-disabled={isFirstProject}
-		use:shortcut={{ code: 'ArrowLeft' }}
-		use:shortcut={{ code: 'KeyA' }}
-		on:click={() => currentProjectIndex.update((v) => v - 1)}>{'<'}</button
+		type="button"
+		on:click={() => currentProjectIndex.update((v) => v - 1)}
+		disabled={isFirstProject}
+		class="btn-icon btn-icon-lg variant-filled"
 	>
+		<Icon icon="mdi:arrow-left" />
+	</button>
 	<button
-		class="btn bg-base-300 text-4xl w-20 h-20 text-center"
-		class:btn-disabled={isLastProject}
-		use:shortcut={{ code: 'ArrowRight' }}
-		use:shortcut={{ code: 'KeyD' }}
-		on:click={() => currentProjectIndex.update((v) => v + 1)}>{'>'}</button
+		type="button"
+		on:click={() => currentProjectIndex.update((v) => v + 1)}
+		disabled={isLastProject}
+		class="btn-icon btn-icon-lg variant-filled"
 	>
+		<Icon icon="mdi:arrow-right" />
+	</button>
 </div>

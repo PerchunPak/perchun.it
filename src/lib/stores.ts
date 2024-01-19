@@ -1,6 +1,6 @@
 import type { Invalidator, Subscriber, Unsubscriber, Updater, Writable } from 'svelte/store';
 import { writable, get } from 'svelte/store';
-import projectsInfo from '$lib/projects-info.ts';
+import { projectsMetadata } from '$lib/projects-metadata';
 import { goto } from '$app/navigation';
 import { browser } from '$app/environment';
 
@@ -16,7 +16,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 	}
 
 	set(value: number): void {
-		if (value < 0 || value > projectsInfo.length - 1) {
+		if (value < 0 || value > projectsMetadata.length - 1) {
 			console.error(`Invalid project index: ${value}`);
 			return;
 		}
@@ -28,7 +28,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 	update(updater: Updater<number>): void {
 		this.#store.update((value: number): number => {
 			const newValue = updater(value);
-			if (newValue < 0 || newValue > projectsInfo.length - 1) {
+			if (newValue < 0 || newValue > projectsMetadata.length - 1) {
 				console.error(`Invalid project index: ${newValue}`);
 				return value;
 			}
@@ -40,7 +40,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 
 	#goto(id: number): void {
 		if (!browser) return;
-		goto('/' + (projectsInfo[id].name === 'This site!' ? 'perchun.it' : projectsInfo[id].name));
+		goto('/' + projectsMetadata[id].slug);
 	}
 }
 

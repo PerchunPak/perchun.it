@@ -1,34 +1,30 @@
 <script lang="ts">
-	import projectsInfo from '$lib/projects-info.ts';
-	import { currentProjectIndex } from '$lib/stores.ts';
+	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { projectsMetadata } from '$lib/projects-metadata';
+	import { currentProjectIndex } from '$lib/stores';
+	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
-	export let isOpen = true;
+	let selectedProjectInSidebar: string = projectsMetadata[0].name;
+	$: currentProjectIndex.set(
+		projectsMetadata.findIndex((v) => v.name === selectedProjectInSidebar)
+	);
+	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
 </script>
 
-<div class="relative bg-base-200 h-full min-h-screen">
-	<!-- bio -->
-	<div class="p-3">
-		<div class="flex">
-			<img
-				src="/avatar.png"
-				width="150"
-				height="150"
-				alt="My avatar"
-				class="mb-4 bg-white rounded-[2rem]"
-			/>
-			<div class="ml-5 grid">
-				<p class="text-xl text-gray-600">she/her</p>
-				<p class="text-sm">
-					Contact me at
-					<a href="mailto:hi@perchun.it">hi@perchun.it</a>
-				</p>
-			</div>
+<AppRail width="w-fit max-w-[30rem]" class="p-4">
+	<div>
+		<div class="flex mb-4">
+			<Avatar src="/avatar.png" width="w-32" rounded="rounded-xl" />
+			<p class="text-xl ml-5 text-surface-500-400-token">she/her</p>
 		</div>
 		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
-			<a href="https://s.perchun.it/ukraine" class="link-primary">Ukraine 🇺🇦</a>.<br />
-			Below you can find some of my main projects. They're all available on
-			<a href="https://s.perchun.it/github" class="link-primary">my GitHub</a>!
+			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
+		</p>
+		<p class="mt-2 block">
+			Below you can find some of my main projects. Worth noting that all my work is open-source and
+			everything is available on
+			<a href="https://github.com/PerchunPak" class="anchor">my GitHub</a>.
 		</p>
 		<p class="mt-2 block">
 			I often find that technologies used in project often can say more about it, than its README. I
@@ -37,28 +33,12 @@
 			technologies on the site, as well as link to docs and GitHub.
 		</p>
 	</div>
-	<!-- close sidebar -->
-	<div class="absolute right-2 top-2 md:hidden">
-		<button class="btn btn-square btn-ghost" on:click={() => (isOpen = !isOpen)}>
-			<iconify-icon icon="mdi:menu" class="p-1.5 w-full h-full" width="unset" height="unset" />
-		</button>
-	</div>
-	<!-- project list -->
-	<div class="mt-10 pb-28">
-		<ul class="list-disc list-inside p-3">
-			{#each projectsInfo as project, index}
-				<li
-					class="p-[0.35rem] mt-1 rounded"
-					class:bg-base-300={index === $currentProjectIndex}
-					class:dark:bg-neutral={index === $currentProjectIndex}
-				>
-					<a href={`/${project.name === 'This site!' ? 'perchun.it' : project.name}`}>
-						{project.name}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</div>
-	<!-- navigation -->
-	<slot />
-</div>
+	<ListBox class="mt-10">
+		{#each projectsMetadata as project}
+			<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
+				{project.name}
+			</ListBoxItem>
+		{/each}
+	</ListBox>
+	<NavigationButtons />
+</AppRail>
