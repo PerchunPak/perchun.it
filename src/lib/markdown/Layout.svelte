@@ -12,10 +12,8 @@
 	import pre from './elements/pre.svelte';
 	import code from './elements/code.svelte';
 	import kbd from './elements/kbd.svelte';
-	import del from './elements/del.svelte';
-	import ins from './elements/ins.svelte';
 
-	export { h1, h2, h3, h4, h5, h6, a, ol, ul, blockquote, pre, code, kbd, del, ins };
+	export { h1, h2, h3, h4, h5, h6, a, ol, ul, blockquote, pre, code, kbd };
 </script>
 
 <div class="m-5 md:m-10 mb-20 xl:mb-10 space-y-2">
