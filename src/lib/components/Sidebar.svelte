@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import { projectsMetadata } from "$lib/projects-metadata";
+	import { projectsMetadata } from '$lib/projects-metadata';
 	import { currentProjectIndex } from '$lib/stores';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	let selectedProjectInSidebar: string = projectsMetadata[0].name;
-	$: currentProjectIndex.set(projectsMetadata.findIndex((v) => v.name === selectedProjectInSidebar));
+	$: currentProjectIndex.set(
+		projectsMetadata.findIndex((v) => v.name === selectedProjectInSidebar)
+	);
 	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
 </script>
 
@@ -20,8 +22,8 @@
 			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
 		</p>
 		<p class="mt-2 block">
-			Below you can find some of my main projects. Worth noting that all my
-			work is open-source and everything is available on
+			Below you can find some of my main projects. Worth noting that all my work is open-source and
+			everything is available on
 			<a href="https://github.com/PerchunPak" class="anchor">my GitHub</a>.
 		</p>
 		<p class="mt-2 block">

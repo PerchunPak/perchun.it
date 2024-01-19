@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { currentProjectIndex } from '$lib/stores.js';
-	import { projectsMetadata } from "$lib/projects-metadata";
+	import { projectsMetadata } from '$lib/projects-metadata';
 
 	let isFirstProject: boolean;
 	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));

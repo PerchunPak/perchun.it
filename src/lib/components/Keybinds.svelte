@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { currentProjectIndex } from '$lib/stores';
-	import { projectsMetadata } from "$lib/projects-metadata";
+	import { projectsMetadata } from '$lib/projects-metadata';
 
 	let isADown = false;
 	let isDDown = false;

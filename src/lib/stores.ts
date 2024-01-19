@@ -1,6 +1,6 @@
 import type { Invalidator, Subscriber, Unsubscriber, Updater, Writable } from 'svelte/store';
 import { writable, get } from 'svelte/store';
-import { projectsMetadata } from "$lib/projects-metadata";
+import { projectsMetadata } from '$lib/projects-metadata';
 import { goto } from '$app/navigation';
 import { browser } from '$app/environment';
 
