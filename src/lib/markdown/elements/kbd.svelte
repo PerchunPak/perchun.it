@@ -1,3 +1,3 @@
-<kbd class="kbd">
+<kbd {...$$props} class="kbd">
 	<slot />
 </kbd>

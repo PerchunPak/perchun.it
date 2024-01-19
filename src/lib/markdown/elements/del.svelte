@@ -1,3 +1,3 @@
-<del class="del">
+<del {...$$props} class="del">
 	<slot />
 </del>

@@ -1,3 +1,3 @@
-<a class="anchor">
+<a {...$$props} class="anchor">
 	<slot />
 </a>

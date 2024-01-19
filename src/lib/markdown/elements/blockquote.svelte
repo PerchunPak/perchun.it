@@ -1,3 +1,3 @@
-<blockquote class="blockquote">
+<blockquote {...$$props} class="blockquote">
 	<slot />
 </blockquote>

@@ -31,7 +31,7 @@ for (let element of elements) {
 	const additionalStyles = element[0].startsWith('h') ? ' mb-5' : '';
 	fs.writeFile(
 		`./src/lib/markdown/elements/${element[0]}.svelte`,
-		`<${element[0]} class="${element[1]}${additionalStyles}">
+		`<${element[0]} {...$$props} class="${element[1]}${additionalStyles}">
 \t<slot />
 </${element[0]}>
 `,

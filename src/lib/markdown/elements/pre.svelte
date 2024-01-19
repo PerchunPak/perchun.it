@@ -1,3 +1,3 @@
-<pre class="pre">
+<pre {...$$props} class="pre">
 	<slot />
 </pre>

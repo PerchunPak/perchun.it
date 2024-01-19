@@ -1,3 +1,3 @@
-<ins class="ins">
+<ins {...$$props} class="ins">
 	<slot />
 </ins>
