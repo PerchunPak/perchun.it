@@ -11,10 +11,12 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
 	import Keybinds from '$lib/components/Keybinds.svelte';
+	import { currentProjectIndex } from "$lib/stores";
 
 	initializeStores();
 
 	const drawerStore = getDrawerStore();
+	currentProjectIndex.subscribe(() => drawerStore.close());
 </script>
 
 <svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
