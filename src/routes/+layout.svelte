@@ -6,18 +6,30 @@
 		autoModeWatcher,
 		initializeStores,
 		Drawer,
+		type DrawerSettings,
 		getDrawerStore
 	} from '@skeletonlabs/skeleton';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
 	import Keybinds from '$lib/components/Keybinds.svelte';
 	import { currentProjectIndex } from "$lib/stores";
+	import { page } from "$app/stores";
+	import { onMount } from "svelte";
 
 	initializeStores();
 
 	const drawerStore = getDrawerStore();
 	currentProjectIndex.subscribe(() => drawerStore.close());
+
+	const drawerSettings: DrawerSettings = { width: 'w-fit', padding: 'pr-10' };
+
+	let innerWidth: number;
+	onMount(() => {
+		if ($page.url.pathname === '/' && innerWidth < 1280) drawerStore.open(drawerSettings);
+	})
 </script>
+
+<svelte:window bind:innerWidth />
 
 <svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
@@ -35,7 +47,7 @@
 				<div class="flex items-center">
 					<button
 						class="xl:hidden btn btn-sm mr-1"
-						on:click={() => drawerStore.open({ width: 'w-fit', padding: 'pr-10' })}
+						on:click={() => drawerStore.open(drawerSettings)}
 					>
 						<Icon icon="mdi:menu" class="w-6 h-6" />
 					</button>
@@ -57,11 +69,4 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
-	<!-- TODO when it will be necessary
-	<svelte:fragment slot="footer">
-		<div class="contents xl:hidden">
-			<NavigationButtons />
-		</div>
-	</svelte:fragment>
-	-->
 </AppShell>
