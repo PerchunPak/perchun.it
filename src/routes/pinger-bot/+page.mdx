@@ -4,15 +4,17 @@
 
 Discord bot to get status from (and collect statistics of) Minecraft servers, which is my first ever created project, that lived more than a few days and is done from scratch. I often test here new tools or even architectures.
 
-It's my longest project that's still being supported. I started writing it when I have first started programming. It's a Discord bot that receives public information from Minecraft servers and can generate statistics on the number of players. But this is not the most important thing, the most important thing is that it is my testing ground for new ideas and libraries. I often find interesting tools or even ecosystem sites and test them with this bot.
+As it was written in sidebar, I enjoy connecting a lot of different new technologies into one, small on the first look, project. This one is not an exception, I actually got my first expirience with i18n (translation of the app) here. There is also used apscheduler (although I now prefer simpler solution, like `while True:` loop in the background with calling my function and `asyncio.sleep` (async is georgueos in Python btw)).
+
+You can also notice that I used fairly complex and powerful library [SQLAlchemy (ORM version)](https://sqlalchemy.org/) (and alembic for something called migrations - automatic DB updates without any loss of data and manual intervention). I also used an advantage of this ORM and the bot supports all 3 popular SQL databases (SQLite, MySQL and PostreSQL), even CI tests all possible combinations of ~4 supported different Python versions and DBs.
 
 ### Technologies that I have used here:
 
 - [Hikari-py](https://www.hikari-py.dev/) - library for connecting to Discord.
 - [APScheduler](https://pypi.org/project/APScheduler/) - for collecting statistics once in a while.
-- [mcstatus](https://mcstatus.readthedocs.io/) - for getting data from servers.
+- [mcstatus](https://mcstatus.readthedocs.io/) - for getting data from servers (I'm [a maintainer of this library](/mcstatus) now).
 - [SQLAlchemy ORM](https://sqlalchemy.org/) - for connecting to the database (I currently support [SQLite](https://sqlite.org/), [MySQL](https://www.mysql.com/) and [PostgreSQL](https://postgresql.org)).
-- [alembic](https://alembic.sqlalchemy.org/) - for database migrations.
+- [alembic](https://alembic.sqlalchemy.org/) - for database migrations.0
 - [matplotlib](https://matplotlib.org/) - for creating statistics graphs.
 - [gettext](https://docs.python.org/3/library/gettext.html) - for translating into different languages.
 - [Babel](https://babel.pocoo.org/) - for helping in translating.
