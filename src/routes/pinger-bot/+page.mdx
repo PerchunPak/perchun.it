@@ -2,22 +2,22 @@
 
 # pinger-bot
 
-Discord bot to get status from (and collect statistics of) Minecraft servers, which is my first ever created project, that lived more than a few days and is done from scratch. I often test here new tools or even architectures.
+Discord bot to get status from (and collect statistics of) Minecraft servers, which is my first ever created project, that lived more than a few days. I often test here new tools or even architectures.
 
-As it was written in sidebar, I enjoy connecting a lot of different new technologies into one, small on the first look, project. This one is not an exception, I actually got my first expirience with i18n (translation of the app) here. There is also used apscheduler (although I now prefer simpler solution, like `while True:` loop in the background with calling my function and `asyncio.sleep` (async is georgueos in Python btw)).
+As it was written in sidebar, I enjoy connecting a lot of different new technologies into one, small on the first look, project. This one is not an exception, I actually got my first experience with i18n (translation of the app) here. There is also used [APScheduler](https://pypi.org/project/APScheduler/) (although I now prefer simpler solution, like `while True:` loop in the background with calling my function and `asyncio.sleep` (async is gorgeous in Python btw)).
 
-You can also notice that I used fairly complex and powerful library [SQLAlchemy (ORM version)](https://sqlalchemy.org/) (and alembic for something called migrations - automatic DB updates without any loss of data and manual intervention). I also used an advantage of this ORM and the bot supports all 3 popular SQL databases (SQLite, MySQL and PostreSQL), even CI tests all possible combinations of ~4 supported different Python versions and DBs.
+You can also notice that I used fairly complex and powerful library [SQLAlchemy (ORM version)](https://sqlalchemy.org/) (and [alembic](https://alembic.sqlalchemy.org/) for something called migrations - automatic DB updates without any loss of data and manual intervention during adding a new table or even a row into already existing table). I also used an advantage of this libraries and the bot supports all 3 popular SQL databases ([SQLite](https://sqlite.org/), [MySQL](https://www.mysql.com/) and [PostgreSQL](https://postgresql.org)), even CI tests all possible combinations of ~4 supported different Python versions and DBs.
 
 ### Technologies that I have used here:
 
-- [Hikari-py](https://www.hikari-py.dev/) - library for connecting to Discord.
-- [APScheduler](https://pypi.org/project/APScheduler/) - for collecting statistics once in a while.
+- [Hikari-py](https://www.hikari-py.dev/) - library for connecting to Discord. Similar to [discord.py](https://discordpy.readthedocs.io/en/stable/), but [different](https://www.reddit.com/r/Discord_Bots/comments/o6jj55/discordpy_vs_hikari/).
+- [APScheduler](https://pypi.org/project/APScheduler/) - for scheduling execution of a function. Here it is used to collect statistics once in a while.
 - [mcstatus](https://mcstatus.readthedocs.io/) - for getting data from servers (I'm [a maintainer of this library](/mcstatus) now).
 - [SQLAlchemy ORM](https://sqlalchemy.org/) - for connecting to the database (I currently support [SQLite](https://sqlite.org/), [MySQL](https://www.mysql.com/) and [PostgreSQL](https://postgresql.org)).
-- [alembic](https://alembic.sqlalchemy.org/) - for database migrations.0
+- [alembic](https://alembic.sqlalchemy.org/) - for database migrations.
 - [matplotlib](https://matplotlib.org/) - for creating statistics graphs.
-- [gettext](https://docs.python.org/3/library/gettext.html) - for translating into different languages.
-- [Babel](https://babel.pocoo.org/) - for helping in translating.
+- [gettext](https://docs.python.org/3/library/gettext.html) - for translating into different languages (i18n).
+- [Babel](https://babel.pocoo.org/) - for helping in translating. It adds a bit of tooling to e.g. fetch strings for translations.
 - [Docker](https://docker.com/) - for running on my server.
 
 ### Links
