@@ -2,18 +2,22 @@
 
 # the-war-tracker-bot
 
-The Telegram bot that doom-scrolls through the war news for you!
+A Telegram bot, that was intended to prevent me from doomscrolling, but actually just fed me with russian propaganda.
 
-I'm a person who often finds myself doomscrolling, and I'm not a big fan of it. But I really want to follow the latest news in Ukraine (more specifically, about the war). Instead of following hundreds of telegram channels - I can finally use this bot! This bot follows a bunch of telegram channels and sends you the news you need!
+Bot logged in as a user and was subscribed to 500 channels with war news (from both sides). Then news were filtered by keyword and sent to me. There were some shinanigans in between, but those are technical details.
 
-Example: When I saw the news that a missile had landed in Poland, I wanted to follow the news, but I didn't want to scroll through the night.
+Unfortunately, turns out that russians just spam with whatever thing they think (what a surprise). This makes my bot just useless, as on one true news were 10 russian fakes and propaganda. As well as there were a lot of just duplicates of the same thing, and I couldn't look into the past, looking for news on the interesting theme that were filtered out.
 
-I'm sure this happens with a lot of news. At the time, I wanted a channel that reported only the most important news - but this has its drawbacks. The line of the "importance" is subjective for everyone, and such a channel would require the authors to reveal a lot of their thoughts, which I didn't want, so I didn't create something like that.
+After I realized that this project is a fail, to me came a new idea: global archiver of the war news. It is not a secret that news about the war are mostly shared on Telegram, and I expect that after Ukrainians win, bad people will cover up traces. So archiving their crimes now should be helpful in the future.
+
+My idea was to create a public website, that will provide easy methods to see global news from both sides at the given time. Half of the project (or at least one third) is already written as this bot, but I expected that data would eat a lot of space (I approximated expenses to 20$/month on storage, and not speaking about Telegram accounts or hosting.
+
+I even wrote an email to one popular war-crimes archiver (though they archived only photos at the time), but got no response. If you're interested in something like this, please [contact me](mailto:twtb@perchun.it).
 
 ### Technologies that I have used here:
 
-- [Telethon](https://pypi.org/project/Telethon/) - library for connecting to Telegram with MTProto protocol, which is what use mobile apps
-- [Redis](https://redis.io) - key-value database, mostly used for caching
+- [Telethon](https://pypi.org/project/Telethon/) - library for connecting to Telegram with MTProto protocol, which is what mobile apps use. So basically connecting as a user-bot.
+- [Redis](https://redis.io) - key-value database, usually used for caching, but here used as a primary database (because it is ⚡blazingly⚡ fast and I felt that SQL is overkill for this project)
 
 ### Links
 
