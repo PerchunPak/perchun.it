@@ -12,9 +12,9 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
 	import Keybinds from '$lib/components/Keybinds.svelte';
-	import { currentProjectIndex } from "$lib/stores";
-	import { page } from "$app/stores";
-	import { onMount } from "svelte";
+	import { currentProjectIndex } from '$lib/stores';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	initializeStores();
 
@@ -26,7 +26,7 @@
 	let innerWidth: number;
 	onMount(() => {
 		if ($page.url.pathname === '/' && innerWidth < 1280) drawerStore.open(drawerSettings);
-	})
+	});
 </script>
 
 <svelte:window bind:innerWidth />
