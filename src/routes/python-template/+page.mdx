@@ -2,24 +2,28 @@
 
 # python-template
 
-Cookiecutter template for my every Python project. The collection of fundamental things for all of them. Check it to see most of my coding habits!
+[`pinger-bot`](/pinger-bot) teached me, that rewriting something for third time is not fun. This is why I generally try to create a new project using some new shiny technology instead of rewriting old project again.
 
-I spend little time creating a new project. It's all thanks to this project - it's my personal template. It contains a set of the best tools I've found in all my experience.
+But quickly I found a problem in such approach: configs. I needed my [black](https://pypi.org/project/black/), [isort](https://pypi.org/project/isort/), etc. configs (preferably synced) at all my projects. And I found a solution - template.
+
+[Cookiecutter](https://pypi.org/project/cookiecutter/) is an incredible project that allows to easily share configs between many projects and [`cruft`](https://pypi.org/project/cruft/) keeps it everything synced. This is why even my smallest projects have a ton of files with configuration, and I love it!
 
 ### Technologies that I have used here:
 
-- [cookiecutter](https://github.com/cookiecutter/cookiecutter#readme) - for easy template creation
-- [lice](https://pypi.org/project/lice/) - for generating the project license
-- [cruft](https://cruft.github.io/cruft/) - for auto-updating template
-- [OmegaConf](https://omegaconf.readthedocs.io/) - for configuration files with Yaml
-- [structlog](https://structlog.org) - for beautiful and structed logging
-- [mypy](https://www.mypy-lang.org/) - linter for supporting statically typed Python
-- [poetry](https://python-poetry.org/) - advanced package manager, my favorite tool
-- [Github Actions](https://github.com/features/actions) - for running automatic testing on every commit
-- [pytest](https://pytest.org/) - for testing with easy-to-write unit-tests
-- QA with **[flake8](https://flake8.pycqa.org/)** and about five addons to it
-- [Sphinx](https://python-poetry.org/) - for generating documentation from [.RST](https://en.wikipedia.org/wiki/ReStructuredText) files
-- documentation with **[Sphinx](https://pypi.org/project/Sphinx/)**, **[Furo](https://pypi.org/project/furo/)** theme and **[ReadTheDocs.org](https://readthedocs.org)** for hosting
+- [cookiecutter](https://pypi.org/project/cookiecutter/) - for easy template creation. For example, I can run one command and get fully configured project in no time. Not even talking that cookiecutter supports Jinja to optionally turn on and off some features (like i18n).
+- [lice](https://pypi.org/project/lice/) - for generating the project license. I just input any license I want during the project creation, and it automatically fills `LICENSE` file.
+- [cruft](https://pypi.org/project/cruft/) - for auto-updating template.
+
+And here are technologies used in generated project:
+
+- [OmegaConf](https://omegaconf.readthedocs.io/) - really convinient tool for keeping configuration in YAML files. As an ex-minecraft server admin, I am really used to YAML.
+- [loguru](https://github.com/Delgan/loguru#readme) - for logging that just works from the box. For some time, I didn't even configure it.
+- [mypy](https://www.mypy-lang.org/) - linter for static typing in Python. Even though it sounds absurd for somes.
+- [poetry](https://python-poetry.org/) - advanced package manager. It is like someone rewrote `npm` for Python, the first time I saw this - I knew, it's love for an entire life.
+- [Github Actions](https://github.com/features/actions) - for running automatic testing on every commit.
+- [pytest](https://pytest.org/) - for testing with easy-to-write unit-tests.
+- [Sphinx](https://python-poetry.org/) - for generating documentation from [.RST](https://en.wikipedia.org/wiki/ReStructuredText) files.
+- documentation with [Sphinx](https://pypi.org/project/Sphinx/), [Furo](https://pypi.org/project/furo/) theme and [ReadTheDocs.org](https://readthedocs.org) for hosting.
 
 ### Links
 
