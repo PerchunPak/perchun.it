@@ -16,5 +16,6 @@ export const projectsMetadata: ProjectMetadata[] = [
 	construct({ name: 'czech-plus' }),
 	construct({ name: 'python-template' }),
 	construct({ name: 'This site!', slug: 'perchun.it' }),
-	construct({ name: 'the-war-tracker-bot' })
+	construct({ name: 'the-war-tracker-bot' }),
+	construct({ name: 'Other projects', slug: 'other' }),
 ];
