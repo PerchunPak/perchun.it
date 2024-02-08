@@ -15,6 +15,7 @@
 	import { currentProjectIndex } from '$lib/stores';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 
 	initializeStores();
 
@@ -24,8 +25,10 @@
 	const drawerSettings: DrawerSettings = { width: 'w-fit', padding: 'pr-10' };
 
 	let innerWidth: number;
+	let loaded: boolean = false;
 	onMount(() => {
 		if ($page.url.pathname === '/' && innerWidth < 1280) drawerStore.open(drawerSettings);
+		loaded = true;
 	});
 </script>
 
@@ -69,4 +72,11 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+	<svelte:fragment slot="pageFooter">
+		{#if innerWidth < 1280 && loaded}
+			<div class="absolute bottom-2 variant-filled-surface rounded-token p-2 w-full">
+				<NavigationButtons />
+			</div>
+		{/if}
+	</svelte:fragment>
 </AppShell>
