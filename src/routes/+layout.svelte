@@ -74,7 +74,7 @@
 	<slot />
 	<svelte:fragment slot="pageFooter">
 		{#if innerWidth < 1280 && loaded}
-			<div class="absolute bottom-2 variant-filled-surface rounded-token p-2 w-full">
+			<div class="absolute bottom-4 variant-filled-surface rounded-token p-2 w-full">
 				<NavigationButtons />
 			</div>
 		{/if}
