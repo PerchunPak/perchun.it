@@ -35,8 +35,8 @@
 	</div>
 	<p class="hidden xl:block mt-6">
 		Tip: you can use
-		<kbd class="kbd">◀︎</kbd> /
-		<kbd class="kbd">▶︎</kbd>
+		<kbd class="kbd">&larr;︎</kbd> /
+		<kbd class="kbd">&rarr;︎</kbd>
 		and
 		<kbd class="kbd">A</kbd> /
 		<kbd class="kbd">D</kbd>
