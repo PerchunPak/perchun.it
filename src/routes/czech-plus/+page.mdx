@@ -1,0 +1,34 @@
+<script lang="ts">import Icon from '@iconify/svelte';</script>
+
+# czech-plus
+
+Since the start of [the russian invasion of Ukraine](https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine),
+I've moved to the Czech Republic.
+And so when you move to another country, you probably will have to learn their language sooner or later.
+This is what I have been doing for last year and a half.
+
+To speed up this process, I wrote an addon for [Anki] (a simple application with a large community for learning foreign words). It really helps me to organize words into structure, and half-automatically describe their gender, quantity, etc. in a simple manner (e.g. background color). For example, I have a word `židle` (chair in Czech), it is a female gender and singular. I can write `F` to special field "Gender", and get on the result `ta židle` with a pink background! It works for adjectives and verbs as well (e.g. it adds [case questions](https://github.com/PerchunPak/czech-plus/blob/140e18373f130a59af4d9bbc0d05b9689a9cb051/czech_plus/models.py#L56-L62) for verbs).
+
+I also kind of over-engineered with tests; some of them can test up to 20 different scenarios with random generated data (words, cases, etc.; using [faker](https://pypi.org/project/Faker/)) and everything ([literally everything](https://github.com/PerchunPak/czech-plus/blob/140e18373f130a59af4d9bbc0d05b9689a9cb051/tests/test_logic/test_processors.py#L680-L683)) parametrized. A bit of antipattern, but I wanted to mention it here.
+
+### Why is there a [lexer](https://en.wikipedia.org/wiki/Lexical_analysis)?
+
+> Lexer — code that divides pure string to tokens, which later are used by parser to create an output.
+>
+> In this way, for programming languages, it is much easier to create meaningfulness for the computer.
+
+Although it is not a compiler, I created [own lexer from scratch](https://github.com/PerchunPak/czech-plus/blob/140e18373f130a59af4d9bbc0d05b9689a9cb051/czech_plus/logic/lexer/__init__.py)! It is not based on any library (I tried a few, writing everything from scratch was easier). Why such a small project needs a lexer? Well, I did too many features, that I rarely use (e.g. a few words in one card, so the addon has to keep track of a few genders and separate words. It is not enough to just `if gender == "F": result = "ta " + word`). Though, it was a great and fun experience.
+
+And yeah, with a lexer always comes [parser](https://github.com/PerchunPak/czech-plus/tree/140e18373f130a59af4d9bbc0d05b9689a9cb051/czech_plus/logic/processor).
+
+### Links
+
+<a href="https://s.perchun.it/czech-plus/github" class="btn variant-filled">
+	<Icon icon="mdi:github" />
+	Check the GitHub!
+</a>
+
+<a href="https://s.perchun.it/czech-plus/readthedocs" class="btn variant-filled">
+	<Icon icon="simple-icons:readthedocs" />
+	See ReadTheDocs!
+</a>

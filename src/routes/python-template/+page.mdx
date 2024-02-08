@@ -1,0 +1,36 @@
+<script lang="ts">import Icon from '@iconify/svelte';</script>
+
+# python-template
+
+[`pinger-bot`](/pinger-bot) teached me, that rewriting something for third time is not fun. This is why I generally try to create a new project using some new shiny technology instead of rewriting old project again.
+
+But quickly I found a problem in such an approach: configs.
+I needed my [black](https://pypi.org/project/black/),
+[isort](https://pypi.org/project/isort/), etc. configs (preferably synced) at all my projects.
+And I found a solution - template.
+
+[Cookiecutter](https://pypi.org/project/cookiecutter/) is an incredible project that allows to easily share configs between many projects and [`cruft`](https://pypi.org/project/cruft/) keeps it everything synced. This is why even my smallest projects have a ton of files with configuration, and I love it!
+
+### Technologies that I have used here:
+
+- [cookiecutter](https://pypi.org/project/cookiecutter/) - for easy template creation. For example, I can run one command and get a fully configured project in no time. Not even talking that cookiecutter supports Jinja to optionally turn on and off some features (like i18n).
+- [lice](https://pypi.org/project/lice/) - for generating the project license. I just input any license I want during the project creation, and it automatically fills `LICENSE` file.
+- [cruft](https://pypi.org/project/cruft/) - for auto-updating template.
+
+And here are technologies used in a generated project:
+
+- [OmegaConf](https://omegaconf.readthedocs.io/) - really convenient tool for keeping configuration in YAML files. As an ex-minecraft server admin, I am really used to YAML.
+- [loguru](https://github.com/Delgan/loguru#readme) - for logging that just works from the box. For some time, I didn't even configure it.
+- [mypy](https://www.mypy-lang.org/) - linter for static typing in Python. Even though it sounds absurd for somes.
+- [poetry](https://python-poetry.org/) - advanced package manager. It is like someone rewrote `npm` for Python, the first time I saw this - I knew, it's love for an entire life.
+- [GitHub Actions](https://github.com/features/actions) - for running automatic testing on every commit.
+- [pytest](https://pytest.org/) - for testing with easy-to-write unit-tests.
+- [Sphinx](https://python-poetry.org/) - for generating documentation from [.RST](https://en.wikipedia.org/wiki/ReStructuredText) files.
+- documentation with [Sphinx](https://pypi.org/project/Sphinx/), [Furo](https://pypi.org/project/furo/) theme and [ReadTheDocs.org](https://readthedocs.org) for hosting.
+
+### Links
+
+<a href="https://s.perchun.it/python-template/github" class="btn variant-filled">
+	<Icon icon="mdi:github" />
+	Check the GitHub!
+</a>

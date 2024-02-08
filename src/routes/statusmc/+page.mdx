@@ -1,0 +1,54 @@
+<script lang="ts">import Icon from '@iconify/svelte';</script>
+
+# StatusMC
+
+You maybe know other same services for pinging Minecraft servers, like https://mcstatus.io or https://mcsrvstat.us.
+And you may ask, why do we need another one? Well, the answer is not so simple. Firstly, I wanted to write this project
+to resolve [this feature request](https://github.com/py-mine/mcstatus/issues/157) and add another project to my portfolio.
+But the idea of building the same service as there are wasn't accepted. Anyway, I started to build this project by myself,
+and during the development, I found the feature to add, that it will not look like just the same service.
+
+This feature is modules system. At other services, you can only get the server status (java or bedrock), but here you can
+get Java status, Bedrock status and Query answer in _one_ request! These three requests are done in parallel on the backend
+(aka our API), so you don't need to even know how does asynchronous programming work or what are threads. You can also
+set different IPs for each module, so you can get Java status from one server and Bedrock status from another one.
+
+Also, each answer is hardly typed with [pydantic](https://docs.pydantic.dev)'s models, so user can always look at sources
+if I forget to update docs. This also ensures the stability of the API, because if there is any mistake in
+types - there will be an error on our side, not users! (We track those with [Sentry](https://sentry.io), so we have a guy who will spam my email if something goes wrong).
+
+I would also like to say big "Thank you!" to https://mcstatus.io and https://mcsrvstat.us, as I used some of their assets
+and ideas to create this project.
+
+### Technologies that I have used here:
+
+#### Backend
+
+- [mcstatus](/mcstatus) - StatusMC is just a wrapper of mcstatus, so you can use this library from the web.
+- [FastAPI](https://fastapi.tiangolo.com/) - incredibly fast and pythonicly easy backend framework.
+- [Pydantic](https://docs.pydantic.dev/latest/) - powerful and strict library to validate data (e.g. what server returns to us or what we return).
+- [cachetools](https://pypi.org/project/cachetools/) & [asyncache](https://pypi.org/project/asyncache/) - for caching backend answers, so we won't spam the server behind if status was requested by two independent users at the same time.
+
+#### Frontend
+
+At the time of the writing site, I was annoyed of my Next.js portfolio, so I chose to use as less as possible JS. It resulted into total of ~200 kilobytes of compresed JS.
+
+- [Astro](https://astro.build/) - JS meta-framework for creating HTML with as less as possible JS (it renders everything during build, which is different to e.g. React which renders everything on every request).
+- [AlpineJS](https://alpinejs.dev/) - extremely simple and small JS framework.
+- [Tailwind CSS](https://tailwindcss.com) - the new awesome approach to CSS. If you're currently using only vanilla CSS, highly recommend trying this out. It even inserts some weird legacy fixes to your CSS.
+- [TypeScript](https://www.typescriptlang.org) - JavaScript with types.
+
+### Links
+
+<a href="https://statusmc.perchun.it" class="btn variant-filled">
+	Check the site!
+</a>
+
+<a href="https://github.com/StatusMC" class="btn variant-filled">
+	<Icon icon="mdi:github" />
+	Check the GitHub!
+</a>
+
+<a href="https://statusmc.perchun.it/api" class="btn variant-filled">
+	Check the Docs!
+</a>
