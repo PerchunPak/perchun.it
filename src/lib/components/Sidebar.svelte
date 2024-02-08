@@ -49,5 +49,9 @@
 			</ListBoxItem>
 		{/each}
 	</ListBox>
-	<NavigationButtons />
+	<div class="sticky bottom-0 w-full mt-3">
+		<div class="variant-filled-surface rounded-token p-2">
+			<NavigationButtons />
+		</div>
+	</div>
 </AppRail>

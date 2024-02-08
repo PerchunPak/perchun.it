@@ -9,7 +9,7 @@
 	currentProjectIndex.subscribe((v) => (isLastProject = v === projectsMetadata.length - 1));
 </script>
 
-<div class="flex justify-between mt-3">
+<div class="flex justify-between">
 	<button
 		type="button"
 		on:click={() => currentProjectIndex.update((v) => v - 1)}
