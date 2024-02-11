@@ -51,6 +51,7 @@
 					<button
 						class="xl:hidden btn btn-sm mr-1"
 						on:click={() => drawerStore.open(drawerSettings)}
+						aria-label="Open Sidebar"
 					>
 						<Icon icon="mdi:menu" class="w-6 h-6" />
 					</button>
@@ -58,7 +59,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				{#each [['mdi:github', 'https://github.com/PerchunPak'], ['ic:baseline-discord', 'https://discord.com/users/perchun'], ['ic:baseline-telegram', 'https://t.me/perchun'], ['mdi:email', 'mailto:hi@perchun.it']] as data}
-					<a class="btn-icon variant-ghost-surface" href={data[1]} target="_blank" rel="noreferrer">
+					<a class="btn-icon variant-ghost-surface" href={data[1]} target="_blank" rel="noreferrer" aria-label={`My ${data[0].split("-").at(-1)?.split(":").at(-1)}`}>
 						<Icon icon={data[0]} class="w-full h-full p-1" />
 					</a>
 				{/each}

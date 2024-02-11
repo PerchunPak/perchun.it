@@ -14,7 +14,7 @@
 <AppRail width="w-fit max-w-[30rem]" class="p-4">
 	<div>
 		<div class="flex mb-4">
-			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl" />
+			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl" alt="My avatar" />
 			<p class="text-xl ml-5 text-surface-500-400-token">she/her</p>
 		</div>
 		<p>

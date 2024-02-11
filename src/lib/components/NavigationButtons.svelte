@@ -15,6 +15,7 @@
 		on:click={() => currentProjectIndex.update((v) => v - 1)}
 		disabled={isFirstProject}
 		class="btn-icon btn-icon-lg variant-filled"
+		aria-label="Previous project"
 	>
 		<Icon icon="mdi:arrow-left" />
 	</button>
@@ -23,6 +24,7 @@
 		on:click={() => currentProjectIndex.update((v) => v + 1)}
 		disabled={isLastProject}
 		class="btn-icon btn-icon-lg variant-filled"
+		aria-label="Next project"
 	>
 		<Icon icon="mdi:arrow-right" />
 	</button>
