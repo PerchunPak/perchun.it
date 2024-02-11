@@ -27,10 +27,10 @@
 			<a href="https://github.com/PerchunPak" class="anchor">my GitHub</a>.
 		</p>
 		<p class="mt-2 block">
-			I often find that technologies used in project often can say more about it, than its README. I
+			I often find that technologies used in a project can say more about it, than its README. I
 			also find a small satisfaction in connecting a lot of different technologies, libraries and
 			frameworks together to create one, quite messy, but working piece of art. This is why I list
-			technologies on the site, as well as link to docs and GitHub.
+			technologies on the site, as well as links to docs and GitHub.
 		</p>
 	</div>
 	<p class="hidden xl:block mt-6">
