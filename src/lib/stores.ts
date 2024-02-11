@@ -1,7 +1,7 @@
 import type { Invalidator, Subscriber, Unsubscriber, Updater, Writable } from 'svelte/store';
 import { writable, get } from 'svelte/store';
 import { projectsMetadata } from '$lib/projects-metadata';
-import { goto } from '$app/navigation';
+import { pushState } from '$app/navigation';
 import { browser } from '$app/environment';
 
 class CurrentProjectIndexStore implements Writable<number> {
@@ -21,7 +21,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 			return;
 		}
 
-		if (get(this.#store) !== value) this.#goto(value);
+		if (get(this.#store) !== value) this.#pushState(value);
 		this.#store.set(value);
 	}
 
@@ -33,14 +33,14 @@ class CurrentProjectIndexStore implements Writable<number> {
 				return value;
 			}
 
-			if (value !== newValue) this.#goto(newValue);
+			if (value !== newValue) this.#pushState(newValue);
 			return newValue;
 		});
 	}
 
-	#goto(id: number): void {
+	#pushState(id: number): void {
 		if (!browser) return;
-		goto('/' + projectsMetadata[id].slug);
+		pushState('/' + projectsMetadata[id].slug, { project: projectsMetadata[id] });
 	}
 }
 
