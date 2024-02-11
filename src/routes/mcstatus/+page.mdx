@@ -7,7 +7,7 @@ Python library to ping and get status from Minecraft servers. It doesn't just re
 I have been a core maintainer of the library for almost a year now and have added a lot of new stuff there.
 One of my biggest contributions was the first one.
 I [rewrote](https://github.com/py-mine/mcstatus/pull/306) the entire system of interaction between the library and users using [dataclasses](https://docs.python.org/3/library/dataclasses.html)
-(if you are not familiar what it is, it is just a simpler,
+(if you are not familiar with what it is, it is just a simpler,
 faster way to write simple classes that only store data; much nicer and typed than dicts;
 everyone should try it).
 Since this rewrite took a lot of time,
@@ -21,13 +21,13 @@ And one more interesting fact: the library was created by [Dinnerbone](https://m
 - Completely new parsing system for server description (MOTD). Before, you could only get a string of it with some Minecraft color codes, and now you can transform it to anything! As an example, we implemented [24bit ANSI transformer and HTML transformer](https://github.com/py-mine/mcstatus/blob/48d786889fc0ab3ad36f4367ae580c50ff155e96/mcstatus/motd/transformers.py). (**[#335](https://github.com/py-mine/mcstatus/pull/335)**)
 - Documentation that describes every public (and not only) method, as well as examples of how to use it and FAQ. Can you imagine that before like a year ago, this library didn't have **any** docs and we (maintainers) suggested that users read source code to know how to use a library? (**[#477](https://github.com/py-mine/mcstatus/pull/477)**)
 - Using the [`with` block](https://peps.python.org/pep-0343/) to open and close connections (**[#422](https://github.com/py-mine/mcstatus/pull/422)**).
-- And about [50 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.
+- And about [60 other PRs](https://github.com/py-mine/mcstatus/pulls/PerchunPak) that are not important enough to mention here.
 
 ### Technologies that are used here:
 
 - [dnspython](https://dnspython.readthedocs.io/en/latest/) - for DNS SRV record lookup
 - [pyright](https://github.com/microsoft/pyright#readme) - linter for supporting statically typed Python. Was chosen instead of [mypy](https://www.mypy-lang.org/) because it was faster, not true anymore though. See [this document](https://github.com/microsoft/pyright/blob/main/docs/mypy-comparison.md) if you are interested in how it is different from mypy, [this GitHub issue](https://github.com/py-mine/mcstatus/issues/699) to read why we don't use mypy and [this page](https://www.google.com/search?q=what+is+typed+python) to know what is typed Python.
-- And a few more features like [poetry](https://python-poetry.org/) (I mean, it is a standard for all my projects now), [poetry-dynamic-versioning](https://pypi.org/project/poetry-dynamic-versioning/) to control package version with git tags, instead of just committing `Bump version` before every release. I won't go on details much, because I wasn't really involved in those decisions. It was done before I became a maintainer.
+- And a few more features like [poetry](https://python-poetry.org/) (I mean, it is a standard for all my projects now), [poetry-dynamic-versioning](https://pypi.org/project/poetry-dynamic-versioning/) to control package version with git tags, instead of just committing `Bump version` before every release. I won't go into details much, because I wasn't really involved in those decisions. It was done before I became a maintainer.
 
 ### Links
 
