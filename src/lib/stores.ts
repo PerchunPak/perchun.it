@@ -17,7 +17,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 
 	set(value: number): void {
 		if (value < 0 || value > projectsMetadata.length - 1) {
-			console.error(`Invalid project index: ${value}`);
+			console.error(`Invalid project index (set): ${value}`);
 			return;
 		}
 
@@ -29,7 +29,7 @@ class CurrentProjectIndexStore implements Writable<number> {
 		this.#store.update((value: number): number => {
 			const newValue = updater(value);
 			if (newValue < 0 || newValue > projectsMetadata.length - 1) {
-				console.error(`Invalid project index: ${newValue}`);
+				console.error(`Invalid project index (update): ${newValue}`);
 				return value;
 			}
 
