@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { currentProjectIndex } from '$lib/stores';
-	import { projectsMetadata } from '$lib/projects-metadata';
+	import { nextProject, previousProject } from '$lib/projects-metadata';
 
 	let isADown = false;
 	let isDDown = false;
@@ -36,18 +35,8 @@
 				break;
 		}
 
-		if (isADown || isArrowLeftDown) {
-			currentProjectIndex.update((v) => {
-				if (v === 0) return v;
-				return v - 1;
-			});
-		}
-		if (isDDown || isArrowRightDown) {
-			currentProjectIndex.update((v) => {
-				if (v === projectsMetadata.length - 1) return v;
-				return v + 1;
-			});
-		}
+		if (isADown || isArrowLeftDown) previousProject();
+		if (isDDown || isArrowRightDown) nextProject();
 	}
 	function onKeyUp(event: KeyboardEvent) {
 		switch (event.key) {

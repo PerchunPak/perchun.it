@@ -1,14 +1,19 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import { projectsMetadata } from '$lib/projects-metadata';
+	import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
 	import { currentProjectIndex } from '$lib/stores';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	let selectedProjectInSidebar: string = projectsMetadata[0].name;
-	$: currentProjectIndex.set(
-		projectsMetadata.findIndex((v) => v.name === selectedProjectInSidebar)
-	);
 	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
+
+	function navigateToProject(name: string) {
+		if (!browser) return;
+		goto('/' + (projectsMetadata.find((v) => v.name === name) as ProjectMetadata).slug);
+	}
+	$: navigateToProject(selectedProjectInSidebar);
 </script>
 
 <AppRail width="w-fit max-w-[30rem]" class="p-4">
@@ -44,9 +49,11 @@
 	</p>
 	<ListBox class="mt-6 xl:mt-3">
 		{#each projectsMetadata as project}
-			<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
-				{project.name}
-			</ListBoxItem>
+			<a href="/{project.slug}" class="!font-normal">
+				<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
+					{project.name}
+				</ListBoxItem>
+			</a>
 		{/each}
 	</ListBox>
 	<div class="sticky bottom-0 w-full mt-3">

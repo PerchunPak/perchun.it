@@ -1,11 +1,11 @@
-import { currentProjectIndex } from '$lib/stores';
-import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
+import { projectsMetadata } from '$lib/projects-metadata';
 
-export function load({ params }): { index: number; project: ProjectMetadata } {
-	const newProjectIndex = projectsMetadata.findIndex((project) => {
+export async function load({ params }): Promise<void> {
+	const newProject = projectsMetadata.find((project) => {
 		return project.slug === params.project;
 	});
+	if (newProject === undefined) return;
 
-	currentProjectIndex.set(newProjectIndex);
-	return { index: newProjectIndex, project: projectsMetadata[newProjectIndex] };
+	// preload mdx file; this function activates when a user hovers over a link to a page
+	await import(`../../lib/markdown/projects/${newProject.slug}.mdx`);
 }
