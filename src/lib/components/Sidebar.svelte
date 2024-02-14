@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
 	import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
-	import { currentProjectIndex } from '$lib/stores';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
+	import { getContext } from 'svelte';
+	import type { Readable } from 'svelte/store';
+
+	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 
 	let selectedProjectInSidebar: string = projectsMetadata[0].name;
 	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));

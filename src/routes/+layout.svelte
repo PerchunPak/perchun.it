@@ -12,12 +12,29 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
 	import Keybinds from '$lib/components/Keybinds.svelte';
-	import { currentProjectIndex } from '$lib/stores';
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { onMount, setContext } from 'svelte';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
+	import { derived, type Readable } from 'svelte/store';
+	import { projectsMetadata } from '$lib/projects-metadata';
 
 	initializeStores();
+
+	const currentProjectIndex: Readable<number> = derived(page, ({ route: { id: routeId }, url }) => {
+		if (routeId === null) {
+			throw new Error('No route id ' + url.pathname);
+		}
+
+		const projectSlug = url.pathname.split('/')[1];
+		if (!projectSlug) return 0;
+
+		const newIndex = projectsMetadata.findIndex((project) => project.slug === projectSlug);
+		if (newIndex === -1) {
+			throw new Error('No project found with slug ' + projectSlug);
+		}
+		return newIndex;
+	});
+	setContext('currentProjectIndex', currentProjectIndex);
 
 	const drawerStore = getDrawerStore();
 	currentProjectIndex.subscribe(() => drawerStore.close());

@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { getContext } from 'svelte';
 	import { nextProject, previousProject } from '$lib/projects-metadata';
+	import type { Readable } from 'svelte/store';
 
+	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 	let isADown = false;
 	let isDDown = false;
 	let isArrowLeftDown = false;
@@ -35,8 +38,8 @@
 				break;
 		}
 
-		if (isADown || isArrowLeftDown) previousProject();
-		if (isDDown || isArrowRightDown) nextProject();
+		if (isADown || isArrowLeftDown) previousProject($currentProjectIndex);
+		if (isDDown || isArrowRightDown) nextProject($currentProjectIndex);
 	}
 	function onKeyUp(event: KeyboardEvent) {
 		switch (event.key) {

@@ -1,6 +1,4 @@
 import { goto } from '$app/navigation';
-import { currentProjectIndex } from '$lib/stores';
-import { get } from 'svelte/store';
 
 export interface ProjectMetadata {
 	name: string;
@@ -24,18 +22,16 @@ export const projectsMetadata: ProjectMetadata[] = [
 	construct({ name: 'Other projects', slug: 'other' })
 ];
 
-export function nextProject(): Promise<void> | null {
-	const currentIndex = get(currentProjectIndex);
+export function nextProject(currentIndex: number): Promise<void> | null {
 	if (currentIndex === projectsMetadata.length - 1) {
 		return null;
 	}
-	return goto(`/${projectsMetadata[get(currentProjectIndex) + 1].slug}`);
+	return goto(`/${projectsMetadata[currentIndex + 1].slug}`);
 }
 
-export function previousProject(): Promise<void> | null {
-	const currentIndex = get(currentProjectIndex);
+export function previousProject(currentIndex: number): Promise<void> | null {
 	if (currentIndex === 0) {
 		return null;
 	}
-	return goto(`/${projectsMetadata[get(currentProjectIndex) - 1].slug}`);
+	return goto(`/${projectsMetadata[currentIndex - 1].slug}`);
 }

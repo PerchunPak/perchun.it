@@ -1,7 +1,10 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { currentProjectIndex } from '$lib/stores';
 	import { nextProject, previousProject, projectsMetadata } from '$lib/projects-metadata';
+	import { getContext } from 'svelte';
+	import type { Readable } from 'svelte/store';
+
+	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 
 	let isFirstProject: boolean;
 	currentProjectIndex.subscribe((v) => (isFirstProject = v === 0));
@@ -12,7 +15,7 @@
 <div class="flex justify-between">
 	<button
 		type="button"
-		on:click={previousProject}
+		on:click={() => previousProject($currentProjectIndex)}
 		disabled={isFirstProject}
 		class="btn-icon btn-icon-lg variant-filled"
 		aria-label="Previous project"
@@ -21,7 +24,7 @@
 	</button>
 	<button
 		type="button"
-		on:click={nextProject}
+		on:click={() => nextProject($currentProjectIndex)}
 		disabled={isLastProject}
 		class="btn-icon btn-icon-lg variant-filled"
 		aria-label="Next project"

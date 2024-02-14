@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { type ComponentType, onMount } from 'svelte';
-	import { currentProjectIndex } from '$lib/stores';
+	import { type ComponentType, getContext, onMount } from 'svelte';
 	import { projectsMetadata } from '$lib/projects-metadata';
 	import Icon from '@iconify/svelte';
+	import type { Readable } from 'svelte/store';
+
+	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 
 	let pageContents: ComponentType;
 
