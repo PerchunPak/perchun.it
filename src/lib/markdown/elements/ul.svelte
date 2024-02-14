@@ -1,3 +1,3 @@
-<ul {...$$props} class="list-disc list-inside space-y-1">
+<ul {...$$props} class="list-inside list-disc space-y-1">
 	<slot />
 </ul>

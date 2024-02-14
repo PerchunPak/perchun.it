@@ -21,9 +21,9 @@
 
 <AppRail width="w-fit max-w-[30rem]" class="p-4">
 	<div>
-		<div class="flex mb-4">
+		<div class="mb-4 flex">
 			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl" alt="My avatar" />
-			<p class="text-xl ml-5 text-surface-500-400-token">she/her</p>
+			<p class="text-surface-500-400-token ml-5 text-xl">she/her</p>
 		</div>
 		<p>
 			Hello there! I'm 16 years old Junior+ Backend/Software developer from
@@ -41,7 +41,7 @@
 			technologies on the site, as well as links to docs and GitHub.
 		</p>
 	</div>
-	<p class="hidden xl:block mt-6">
+	<p class="mt-6 hidden xl:block">
 		Tip: you can use
 		<kbd class="kbd">&larr;︎</kbd> /
 		<kbd class="kbd">&rarr;︎</kbd>
@@ -59,8 +59,8 @@
 			</a>
 		{/each}
 	</ListBox>
-	<div class="sticky bottom-0 w-full mt-3">
-		<div class="variant-filled-surface rounded-token p-2">
+	<div class="sticky bottom-0 mt-3 w-full">
+		<div class="variant-filled-surface p-2 rounded-token">
 			<NavigationButtons />
 		</div>
 	</div>

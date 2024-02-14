@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center w-full">
+<div class="flex w-full flex-col items-center">
 	<h1 {...$$props} class="h1 mb-5">
 		<slot />
 	</h1>

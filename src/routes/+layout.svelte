@@ -67,24 +67,24 @@
 			<svelte:fragment slot="lead">
 				<div class="flex items-center">
 					<button
-						class="xl:hidden btn btn-sm mr-1"
+						class="btn btn-sm mr-1 xl:hidden"
 						on:click={() => drawerStore.open(drawerSettings)}
 						aria-label="Open Sidebar"
 					>
-						<Icon icon="mdi:menu" class="w-6 h-6" />
+						<Icon icon="mdi:menu" class="h-6 w-6" />
 					</button>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				{#each [['mdi:github', 'https://github.com/PerchunPak'], ['ic:baseline-discord', 'https://discord.com/users/perchun'], ['ic:baseline-telegram', 'https://t.me/perchun'], ['mdi:email', 'mailto:hi@perchun.it']] as data}
 					<a
-						class="btn-icon variant-ghost-surface"
+						class="variant-ghost-surface btn-icon"
 						href={data[1]}
 						target="_blank"
 						rel="noreferrer"
 						aria-label={`My ${data[0].split('-').at(-1)?.split(':').at(-1)}`}
 					>
-						<Icon icon={data[0]} class="w-full h-full p-1" />
+						<Icon icon={data[0]} class="h-full w-full p-1" />
 					</a>
 				{/each}
 			</svelte:fragment>
@@ -99,7 +99,7 @@
 	<slot />
 	<svelte:fragment slot="pageFooter">
 		{#if innerWidth < 1280 && loaded}
-			<div class="absolute bottom-0 variant-filled-surface p-2 w-full">
+			<div class="variant-filled-surface absolute bottom-0 w-full p-2">
 				<NavigationButtons />
 			</div>
 		{/if}

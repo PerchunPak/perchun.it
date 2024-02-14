@@ -21,7 +21,7 @@
 	<a
 		type="button"
 		href={previousProjectLink}
-		class="btn-icon btn-icon-lg variant-filled"
+		class="variant-filled btn-icon btn-icon-lg"
 		class:btn-disabled={isFirstProject}
 		aria-label="Previous project"
 	>
@@ -30,7 +30,7 @@
 	<a
 		type="button"
 		href={nextProjectLink}
-		class="btn-icon btn-icon-lg variant-filled"
+		class="variant-filled btn-icon btn-icon-lg"
 		class:btn-disabled={isLastProject}
 		aria-label="Next project"
 	>

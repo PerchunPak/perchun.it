@@ -21,7 +21,7 @@
 {:else}
 	<div class="flex h-full">
 		<div class="m-auto">
-			<Icon icon="mdi:loading" class="animate-spin h-16 w-16" />
+			<Icon icon="mdi:loading" class="h-16 w-16 animate-spin" />
 		</div>
 	</div>
 {/if}

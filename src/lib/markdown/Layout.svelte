@@ -16,6 +16,6 @@
 	export { h1, h2, h3, h4, h5, h6, a, ol, ul, blockquote, pre, code, kbd };
 </script>
 
-<div class="m-5 mb-20 xl:mb-10 space-y-2">
+<div class="m-5 mb-20 space-y-2 xl:mb-10">
 	<slot />
 </div>
