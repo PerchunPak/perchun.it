@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Icon from '@iconify/svelte';
 	import { goto } from '$app/navigation';
 	import { projectsMetadata } from '$lib/projects-metadata';
-	import Icon from '@iconify/svelte';
 
 	onMount(() => goto('/' + projectsMetadata[0].name));
 </script>

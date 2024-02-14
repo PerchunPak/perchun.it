@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { getContext } from 'svelte';
+	import type { Readable } from 'svelte/store';
 	import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
-	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
 
 	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 

@@ -9,15 +9,15 @@
 		type DrawerSettings,
 		getDrawerStore
 	} from '@skeletonlabs/skeleton';
-	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Icon from '@iconify/svelte';
+	import { onMount, setContext } from 'svelte';
+	import { derived, type Readable } from 'svelte/store';
+	import { error } from '@sveltejs/kit';
+	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Keybinds from '$lib/components/Keybinds.svelte';
 	import { page } from '$app/stores';
-	import { onMount, setContext } from 'svelte';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
-	import { derived, type Readable } from 'svelte/store';
 	import { projectsMetadata } from '$lib/projects-metadata';
-	import { error } from '@sveltejs/kit';
 
 	initializeStores();
 
@@ -52,6 +52,7 @@
 
 <svelte:window bind:innerWidth />
 
+<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 <svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
 <Keybinds />

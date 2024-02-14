@@ -5,10 +5,12 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:svelte/recommended',
-		'prettier'
+		'prettier',
+		'plugin:import/recommended',
+		'plugin:import/typescript'
 	],
 	parser: '@typescript-eslint/parser',
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'import'],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
@@ -27,5 +29,14 @@ module.exports = {
 				parser: '@typescript-eslint/parser'
 			}
 		}
-	]
+	],
+	rules: {
+		'import/order': ['warn'],
+		'import/no-unresolved': ['off']
+	},
+	settings: {
+		'import/resolver': {
+			typescript: {}
+		}
+	}
 };

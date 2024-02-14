@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import { nextProject, previousProject } from '$lib/projects-metadata';
 	import type { Readable } from 'svelte/store';
+	import { nextProject, previousProject } from '$lib/projects-metadata';
 
 	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 	let isADown = false;

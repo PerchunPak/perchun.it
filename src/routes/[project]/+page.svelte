@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { type ComponentType, getContext, onMount } from 'svelte';
-	import { projectsMetadata } from '$lib/projects-metadata';
+	import { type ComponentType, getContext, onMount, Readable } from 'svelte';
 	import Icon from '@iconify/svelte';
-	import type { Readable } from 'svelte/store';
+	import { projectsMetadata } from '$lib/projects-metadata';
 
 	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
 
