@@ -17,12 +17,13 @@
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 	import { derived, type Readable } from 'svelte/store';
 	import { projectsMetadata } from '$lib/projects-metadata';
+	import { error } from "@sveltejs/kit";
 
 	initializeStores();
 
 	const currentProjectIndex: Readable<number> = derived(page, ({ route: { id: routeId }, url }) => {
 		if (routeId === null) {
-			throw new Error('No route id ' + url.pathname);
+			error(404, 'Page not found');
 		}
 
 		const projectSlug = url.pathname.split('/')[1];
@@ -30,7 +31,7 @@
 
 		const newIndex = projectsMetadata.findIndex((project) => project.slug === projectSlug);
 		if (newIndex === -1) {
-			throw new Error('No project found with slug ' + projectSlug);
+			error(404, 'Project not found');
 		}
 		return newIndex;
 	});
