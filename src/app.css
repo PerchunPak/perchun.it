@@ -7,3 +7,7 @@ html,
 body {
 	@apply h-full overflow-hidden;
 }
+
+.btn-disabled {
+	@apply !opacity-50 !cursor-not-allowed active:scale-100 hover:brightness-100 pointer-events-none;
+}

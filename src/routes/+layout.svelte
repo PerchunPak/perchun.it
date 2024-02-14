@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.postcss';
+	import '../app.css';
 	import {
 		AppShell,
 		AppBar,
@@ -17,7 +17,7 @@
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
 	import { derived, type Readable } from 'svelte/store';
 	import { projectsMetadata } from '$lib/projects-metadata';
-	import { error } from "@sveltejs/kit";
+	import { error } from '@sveltejs/kit';
 
 	initializeStores();
 
