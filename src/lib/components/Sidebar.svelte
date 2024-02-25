@@ -22,7 +22,7 @@
 <AppRail width="w-fit max-w-[30rem]" class="p-4">
 	<div>
 		<div class="mb-4 flex">
-			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl" alt="My avatar" />
+			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
 			<p class="text-surface-500-400-token ml-5 text-xl has-tooltip h-fit flex">
 				she/her
 				<span class="tooltip rounded shadow-lg p-1 variant-filled-surface mt-8">
