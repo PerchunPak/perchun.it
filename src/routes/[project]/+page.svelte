@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { type ComponentType, getContext, onMount, Readable } from 'svelte';
+	// eslint-disable-next-line import/no-duplicates
+	import { type ComponentType, getContext, onMount } from 'svelte';
+	// eslint-disable-next-line import/no-duplicates
+	import type { Readable } from 'svelte/store';
 	import Icon from '@iconify/svelte';
 	import { projectsMetadata } from '$lib/projects-metadata';
 
