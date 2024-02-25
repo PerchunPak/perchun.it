@@ -11,3 +11,11 @@ body {
 .btn-disabled {
 	@apply pointer-events-none !cursor-not-allowed !opacity-50 hover:brightness-100 active:scale-100;
 }
+
+.tooltip {
+	@apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+	@apply visible z-50;
+}
