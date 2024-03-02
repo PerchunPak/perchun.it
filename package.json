@@ -13,7 +13,6 @@
 	},
 	"devDependencies": {
 		"@iconify/svelte": "^3.1.6",
-		"@sentry/sveltekit": "^7.104.0",
 		"@skeletonlabs/skeleton": "2.7.0",
 		"@skeletonlabs/tw-plugin": "0.3.1",
 		"@sveltejs/adapter-node": "^4.0.1",
@@ -44,5 +43,8 @@
 		"vite": "^5.1.1",
 		"vite-plugin-tailwind-purgecss": "0.2.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@sentry/sveltekit": "^7.104.0"
+	}
 }

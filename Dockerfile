@@ -23,6 +23,7 @@ RUN pnpm build
 FROM node:18-slim AS final
 
 WORKDIR /app
+COPY package.json ./
 COPY --from=base /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
 
