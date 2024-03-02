@@ -1,27 +1,29 @@
-FROM oven/bun:1 AS base
+FROM node:18 AS base
 
 ARG SENTRY_AUTH_TOKEN
 ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 WORKDIR /app
 
-COPY package.json bun.lockb ./
-RUN bun install --prod
+RUN npm install -g pnpm@8.6.x
+
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --prod
 
 FROM base AS build
 
-RUN bun install
+RUN pnpm install
 
 COPY svelte.config.js tsconfig.json tailwind.config.ts postcss.config.cjs vite.config.ts ./
 COPY static/ static/
 COPY src/ src/
 # for sentry auto version
 COPY .git/ .git/
-RUN bun run build
+RUN pnpm build
 
-FROM oven/bun:1-slim AS final
+FROM node:18-slim AS final
 
 WORKDIR /app
 COPY --from=base /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
 
-ENTRYPOINT ["bun", "./build/index.js"]
+ENTRYPOINT ["node", "./build/index.js"]
