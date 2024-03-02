@@ -23,10 +23,10 @@
 	<div>
 		<div class="mb-4 flex">
 			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
-			<p class="text-surface-500-400-token ml-5 text-xl has-tooltip h-fit flex">
+			<p class="has-tooltip text-surface-500-400-token ml-5 flex h-fit text-xl">
 				she/her
-				<span class="tooltip rounded shadow-lg p-1 variant-filled-surface mt-8">
-					<img src="/blahaj.svg" alt="blahaj" class="w-20 h-20" />
+				<span class="tooltip variant-filled-surface mt-8 rounded p-1 shadow-lg">
+					<img src="/blahaj.svg" alt="blahaj" class="h-20 w-20" />
 				</span>
 			</p>
 		</div>
