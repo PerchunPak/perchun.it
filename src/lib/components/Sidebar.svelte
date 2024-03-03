@@ -26,7 +26,7 @@
 			<p class="has-tooltip text-surface-500-400-token ml-5 flex h-fit text-xl">
 				she/her
 				<span class="tooltip variant-filled-surface mt-8 rounded p-1 shadow-lg">
-					<img src="/blahaj.svg" alt="blahaj" class="h-20 w-20" />
+					<img src="/shark.svg" alt="shark" class="h-20 w-20" />
 				</span>
 			</p>
 		</div>
