@@ -31,7 +31,7 @@
 			</p>
 		</div>
 		<p>
-			Hello there! I'm Junior+ Backend/Software developer from
+			Hello there! I'm 16 years old Junior+ Backend/Software developer from
 			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
 		</p>
 		<p class="mt-2 block">
