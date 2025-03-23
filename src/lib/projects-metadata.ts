@@ -12,6 +12,7 @@ function construct(args: { name: string; slug?: string }): ProjectMetadata {
 }
 
 export const projectsMetadata: ProjectMetadata[] = [
+	construct({ name: 'nixpkgs' }),
 	construct({ name: 'mcstatus' }),
 	construct({ name: 'StatusMC' }),
 	construct({ name: 'pinger-bot' }),

@@ -1,0 +1,35 @@
+# [nixpkgs](https://github.com/NixOS/nixpkgs)/[NixOS](https://nixos.org)
+
+nixpkgs is a package registry for NixOS, fully declarative (there are no hidden dependencies) reproducible (you can built exactly the same binary even with the same hash on completely different systems) OS built on top of Nix package manager.
+
+I've done over [70 different Pull Requests](https://github.com/NixOS/nixpkgs/pulls/PerchunPak) to this project (the biggest repository on GitHub btw), most of them touch Vim/Neovim ecosystem. Here are the highlights on the moment of writing this:
+
+### Rewrite Vim plugins updater
+
+Firstly, I've vastly changed the code in their [previous updater](https://github.com/NixOS/nixpkgs/pull/336137), that was in a very bad state. By working out my way in the legacy mess, I've successfully added some nice features even though design was never supposed to support this.
+
+After that, I started my work on library named [nupd](https://github.com/PerchunPak/nixpkgs-updaters-library): **N**ixpkgs **Upd**aters library. It is supposed to be *the* library for bulk-updaters in nixpkgs, but as a first thing to do, I chose to rewrite all Vim-related bulk-updaters to use this library. The [first one](https://github.com/NixOS/nixpkgs/pull/380691) was for the Vim plugins, later I will create PRs for nvim-treesitter grammars and Lua packages.
+
+### Port [hyprpanel](https://github.com/Jas-SinghFSU/HyprPanel) and related libraries to nixpkgs
+
+Hyprpanel is a great and beautiful panel for [Hyprland](https://hyprland.org/), my window manager by choice. I love this project because it *just works* from the box, it doesn't require you to write your own CSS styles, or writing 500-lines config. It. Just. Works.
+
+Anyway, it already has a support for NixOS, but it is in a very bad state. I had to rewrite almost everything, as it pulled a lot off unnecessary dependencies (e.g. [fish](https://fishshell.com/) which was mentioned only in a single file - `.nix` file).
+
+- Firstly, I [updated](https://github.com/NixOS/nixpkgs/pull/373562) `ags` package to version 2.0. I had to rewrite everything from scratch, as `ags` was completely rewritten as well. It is a CLI to manage your Astal project.
+- Then I [added](https://github.com/NixOS/nixpkgs/pull/368338) an `astal` namespace for [Astal](https://github.com/Aylur/astal) packages. Those are just building blocks for the Astal ecosystem.
+- I also had to [add](https://github.com/NixOS/nixpkgs/pull/368312) a fork of [cava](https://github.com/karlstav/cava) named `libcava`, which allows to use cava as a C library, as it was a required dependency for `astal.cava` module.
+- Then I also [added](https://github.com/NixOS/nixpkgs/pull/374302) [`vala-panel-appmenu`](https://gitlab.com/vala-panel-project/vala-panel-appmenu) for `astal.tray` module.
+- And finally I could create [a PR for hyprpanel](https://github.com/NixOS/nixpkgs/pull/379994) after so much work.
+
+On the moment of writing, I am using [some Nix magic](https://github.com/PerchunPak/nixos-dotfiles/tree/main/packages) to add not-yet-merged PRs and daily-drive all those changes for a few month already.
+
+### Heavily [refactored](https://github.com/NixOS/nixpkgs/pull/379380) [bat-extras](https://github.com/eth-p/bat-extras)
+
+These are Bash scripts that integrate bat with various command line tools. Basically, I just took my experience of creating `astal` namespace and applied it to `bat-extras`.
+
+### [Ported](https://github.com/NixOS/nixpkgs/pull/362352) [VLC](https://www.videolan.org/) v4 to Nix
+
+VLC is a great video player with everything you would ever need. But its older v3 version doesn't have support for [Wayland](https://en.wikipedia.org/wiki/Wayland_(protocol)), so I wanted to use beta v4 version.
+
+#### [And many many more contributions...](https://github.com/NixOS/nixpkgs/pulls/PerchunPak)
