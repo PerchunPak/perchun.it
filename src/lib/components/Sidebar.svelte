@@ -23,12 +23,6 @@
 	<div>
 		<div class="mb-4 flex">
 			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
-			<p class="has-tooltip text-surface-500-400-token ml-5 flex h-fit text-xl">
-				she/her
-				<span class="tooltip variant-filled-surface mt-8 rounded p-1 shadow-lg">
-					<img src="/shark.svg" alt="shark" class="h-20 w-20" />
-				</span>
-			</p>
 		</div>
 		<p>
 			Hello there! I'm Junior+ Backend/Software developer from
