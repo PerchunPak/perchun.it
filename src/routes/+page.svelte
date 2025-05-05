@@ -4,7 +4,7 @@
 	import { goto } from '$app/navigation';
 	import { projectsMetadata } from '$lib/projects-metadata';
 
-	onMount(() => goto('/' + projectsMetadata[0].name));
+	onMount(() => goto('/' + projectsMetadata[0].name, { replaceState: true }));
 </script>
 
 <div class="flex h-full">
