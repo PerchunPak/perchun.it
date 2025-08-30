@@ -25,7 +25,7 @@
 			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
 		</div>
 		<p>
-			Hello there! I'm Junior+ Backend/Software developer from
+			Hello there! I'm Senior Backend/Software developer from
 			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
 		</p>
 		<p class="mt-2 block">
