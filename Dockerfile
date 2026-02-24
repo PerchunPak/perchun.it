@@ -4,9 +4,9 @@ ARG SENTRY_AUTH_TOKEN
 ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 WORKDIR /app
 
-RUN npm install -g pnpm@8.6.x
+RUN npm install -g pnpm@10.28.x
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN pnpm install --prod
 
 FROM base AS build
