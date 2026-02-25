@@ -3,7 +3,6 @@
 	import {
 		AppShell,
 		AppBar,
-		autoModeWatcher,
 		initializeStores,
 		Drawer,
 		type DrawerSettings,
@@ -51,9 +50,6 @@
 </script>
 
 <svelte:window bind:innerWidth />
-
-<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-<svelte:head>{@html '<script>(' + autoModeWatcher.toString() + ')();</script>'}</svelte:head>
 
 <Keybinds />
 <Drawer>
