@@ -12,7 +12,7 @@
 <Navigation layout="sidebar" class="h-full w-fit max-w-[30rem] overflow-y-auto p-4">
 	<Navigation.Header>
 		<div class="mb-4 flex">
-			<Avatar class="size-32 rounded-xl bg-[#6366f1]! shadow-2xl">
+			<Avatar class="preset-filled-surface-500 size-32 rounded-xl shadow-2xl">
 				<Avatar.Image src="/avatar.webp" alt="My avatar" class="rounded-xl" />
 				<Avatar.Fallback class="rounded-xl">PP</Avatar.Fallback>
 			</Avatar>
@@ -61,7 +61,7 @@
 		</Navigation.Menu>
 	</Navigation.Content>
 	<Navigation.Footer class="sticky bottom-0 mt-3 w-full">
-		<div class="rounded-full bg-[#6366f1] p-2">
+		<div class="preset-filled-surface-500 rounded-full p-2">
 			<NavigationButtons />
 		</div>
 	</Navigation.Footer>

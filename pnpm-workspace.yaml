@@ -2,6 +2,7 @@ autoInstallPeers: false
 
 allowBuilds:
   '@sentry/cli': true
+  '@sveltejs/kit': true
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - '@sentry/browser-utils@10.65.0'

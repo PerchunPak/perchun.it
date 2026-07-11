@@ -98,7 +98,7 @@
 			</aside>
 			<main class="relative min-w-0 flex-1 overflow-y-auto">
 				{@render children()}
-				<footer class="sticky bottom-0 w-full bg-[#6366f1] p-2 xl:hidden">
+				<footer class="preset-filled-surface-500 sticky bottom-0 w-full p-2 xl:hidden">
 					<NavigationButtons />
 				</footer>
 			</main>
