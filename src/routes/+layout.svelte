@@ -80,13 +80,13 @@
 			<div class="ml-auto flex items-center gap-1">
 				{#each socialLinks as [icon, href, label] (href)}
 					<a
-						class="preset-outlined-surface-800-200 btn-icon btn-icon-xl rounded-full"
+						class="preset-outlined-surface-800-200 btn-icon btn-icon-xl rounded-full p-1"
 						{href}
 						target="_blank"
 						rel="noreferrer"
 						aria-label={`My ${label}`}
 					>
-						<Icon {icon} class="size-6!" />
+						<Icon {icon} class="size-full" />
 					</a>
 				{/each}
 			</div>
