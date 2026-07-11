@@ -50,11 +50,11 @@
 					aria-current={projectsMetadata[navigation.currentIndex]?.slug === project.slug
 						? 'page'
 						: undefined}
-					class="font-normal! {projectsMetadata[navigation.currentIndex]?.slug === project.slug
+					class="font-normal {projectsMetadata[navigation.currentIndex]?.slug === project.slug
 						? 'preset-filled'
 						: 'hover:preset-tonal-surface'}"
 				>
-					<Navigation.TriggerText class="text-lg!">{project.name}</Navigation.TriggerText>
+					<Navigation.TriggerText class="text-lg">{project.name}</Navigation.TriggerText>
 				</Navigation.TriggerAnchor>
 			{/each}
 		</Navigation.Menu>
