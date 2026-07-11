@@ -1,73 +1,27 @@
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
-	import { nextProject, previousProject } from '$lib/projects-metadata';
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { useProjectNavigation } from '$lib/project-navigation';
+	import { projectsMetadata } from '$lib/projects-metadata';
 
-	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
-	let isADown = false;
-	let isDDown = false;
-	let isArrowLeftDown = false;
-	let isArrowRightDown = false;
+	const navigation = useProjectNavigation();
+
+	function navigate(offset: -1 | 1): void {
+		const project = projectsMetadata[navigation.currentIndex + offset];
+		if (project) void goto(resolve('/[project]', { project: project.slug }));
+	}
 
 	function onKeyDown(event: KeyboardEvent) {
 		if (event.repeat) return;
 
-		switch (event.key) {
-			case 'a':
-				isADown = true;
-
-				event.preventDefault();
-				break;
-
-			case 'd':
-				isDDown = true;
-
-				event.preventDefault();
-				break;
-
-			case 'ArrowLeft':
-				isArrowLeftDown = true;
-
-				event.preventDefault();
-				break;
-
-			case 'ArrowRight':
-				isArrowRightDown = true;
-
-				event.preventDefault();
-				break;
-		}
-
-		if (isADown || isArrowLeftDown) previousProject($currentProjectIndex);
-		if (isDDown || isArrowRightDown) nextProject($currentProjectIndex);
-	}
-	function onKeyUp(event: KeyboardEvent) {
-		switch (event.key) {
-			case 'a':
-				isADown = false;
-
-				event.preventDefault();
-				break;
-
-			case 'd':
-				isDDown = false;
-
-				event.preventDefault();
-				break;
-
-			case 'ArrowLeft':
-				isArrowLeftDown = false;
-
-				event.preventDefault();
-				break;
-
-			case 'ArrowRight':
-				isArrowRightDown = false;
-
-				event.preventDefault();
-				break;
+		if (event.key === 'a' || event.key === 'ArrowLeft') {
+			event.preventDefault();
+			navigate(-1);
+		} else if (event.key === 'd' || event.key === 'ArrowRight') {
+			event.preventDefault();
+			navigate(1);
 		}
 	}
 </script>
 
-<svelte:window on:keydown={onKeyDown} on:keyup={onKeyUp} />
+<svelte:window onkeydown={onKeyDown} />

@@ -1,25 +1,25 @@
 <script lang="ts">
-	// eslint-disable-next-line import/no-duplicates
-	import { type ComponentType, getContext, onMount } from 'svelte';
-	// eslint-disable-next-line import/no-duplicates
-	import type { Readable } from 'svelte/store';
+	import type { Component } from 'svelte';
 	import Icon from '@iconify/svelte';
+	import { useProjectNavigation } from '$lib/project-navigation';
 	import { projectsMetadata } from '$lib/projects-metadata';
 
-	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
+	const navigation = useProjectNavigation();
+	let PageContents = $state<Component>();
 
-	let pageContents: ComponentType;
-
-	onMount(async () => {
-		currentProjectIndex.subscribe(async (value) => {
-			const project = projectsMetadata[value];
-			pageContents = (await import(`../../lib/markdown/projects/${project.slug}.mdx`)).default;
+	$effect(() => {
+		const project = projectsMetadata[navigation.currentIndex];
+		PageContents = undefined;
+		void import(`../../lib/markdown/projects/${project.slug}.mdx`).then((module) => {
+			if (projectsMetadata[navigation.currentIndex].slug === project.slug) {
+				PageContents = module.default;
+			}
 		});
 	});
 </script>
 
-{#if pageContents}
-	<svelte:component this={pageContents} />
+{#if PageContents}
+	<PageContents />
 {:else}
 	<div class="flex h-full">
 		<div class="m-auto">

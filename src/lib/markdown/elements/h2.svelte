@@ -1,3 +1,14 @@
-<h2 {...$$props} class="h2 mb-5">
-	<slot />
-</h2>
+<script lang="ts">
+	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
+
+	let {
+		children,
+		class: className,
+		...rest
+	}: HTMLAttributes<HTMLHeadingElement> & {
+		children: Snippet;
+	} = $props();
+</script>
+
+<h2 {...rest} class={['h2 mb-5', className]}>{@render children()}</h2>

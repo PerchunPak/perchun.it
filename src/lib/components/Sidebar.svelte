@@ -1,28 +1,21 @@
 <script lang="ts">
-	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
-	import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
+	import { Avatar, Navigation } from '@skeletonlabs/skeleton-svelte';
+	import { resolve } from '$app/paths';
+	import { useProjectNavigation } from '$lib/project-navigation';
+	import { projectsMetadata } from '$lib/projects-metadata';
 	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
-	import { goto } from '$app/navigation';
-	import { browser } from '$app/environment';
 
-	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
-
-	let selectedProjectInSidebar: string = projectsMetadata[0].name;
-	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
-
-	function navigateToProject(name: string) {
-		if (!browser) return;
-		goto('/' + (projectsMetadata.find((v) => v.name === name) as ProjectMetadata).slug);
-	}
-	$: navigateToProject(selectedProjectInSidebar);
+	let { onnavigate }: { onnavigate?: () => void } = $props();
+	const navigation = useProjectNavigation();
 </script>
 
-<AppRail width="w-fit max-w-[30rem]" class="p-4">
-	<div>
+<Navigation layout="sidebar" class="h-full w-fit max-w-[30rem] overflow-y-auto p-4">
+	<Navigation.Header>
 		<div class="mb-4 flex">
-			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
+			<Avatar class="size-32 rounded-xl shadow-2xl">
+				<Avatar.Image src="/avatar.webp" alt="My avatar" class="rounded-xl" />
+				<Avatar.Fallback class="rounded-xl">PP</Avatar.Fallback>
+			</Avatar>
 		</div>
 		<p>
 			Hello there! I'm 18 years old Backend/Software developer from
@@ -39,7 +32,7 @@
 			frameworks together to create one, quite messy, but working piece of art. This is why I list
 			technologies on the site, as well as links to docs and GitHub.
 		</p>
-	</div>
+	</Navigation.Header>
 	<p class="mt-6 hidden xl:block">
 		Tip: you can use
 		<kbd class="kbd">&larr;︎</kbd> /
@@ -49,18 +42,27 @@
 		<kbd class="kbd">D</kbd>
 		to switch between projects.
 	</p>
-	<ListBox class="mt-6 xl:mt-3">
-		{#each projectsMetadata as project}
-			<a href="/{project.slug}" class="!font-normal">
-				<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
-					{project.name}
-				</ListBoxItem>
-			</a>
-		{/each}
-	</ListBox>
-	<div class="sticky bottom-0 mt-3 w-full">
-		<div class="variant-filled-surface p-2 rounded-token">
+	<Navigation.Content class="mt-6 xl:mt-3">
+		<Navigation.Menu>
+			{#each projectsMetadata as project (project.slug)}
+				<Navigation.TriggerAnchor
+					href={resolve('/[project]', { project: project.slug })}
+					onclick={onnavigate}
+					aria-current={projectsMetadata[navigation.currentIndex]?.slug === project.slug
+						? 'page'
+						: undefined}
+					class="font-normal! {projectsMetadata[navigation.currentIndex]?.slug === project.slug
+						? 'preset-filled rounded-full'
+						: 'hover:preset-tonal-surface'}"
+				>
+					<Navigation.TriggerText>{project.name}</Navigation.TriggerText>
+				</Navigation.TriggerAnchor>
+			{/each}
+		</Navigation.Menu>
+	</Navigation.Content>
+	<Navigation.Footer class="sticky bottom-0 mt-3 w-full">
+		<div class="preset-filled-surface-100-900 rounded-base p-2">
 			<NavigationButtons />
 		</div>
-	</div>
-</AppRail>
+	</Navigation.Footer>
+</Navigation>
