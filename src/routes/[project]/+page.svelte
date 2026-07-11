@@ -8,7 +8,6 @@
 
 	$effect(() => {
 		const project = projectsMetadata[navigation.currentIndex];
-		PageContents = undefined;
 		void import(`../../lib/markdown/projects/${project.slug}.mdx`).then((module) => {
 			if (projectsMetadata[navigation.currentIndex].slug === project.slug) {
 				PageContents = module.default;
