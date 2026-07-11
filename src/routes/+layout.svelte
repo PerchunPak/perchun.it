@@ -66,7 +66,7 @@
 	closeOnEscape={true}
 	closeOnInteractOutside={true}
 >
-	<div class="flex h-full min-h-0 flex-col text-surface-950-50">
+	<div class="text-surface-950-50 flex h-full min-h-0 flex-col">
 		<header
 			class="preset-filled-surface-50-950 flex min-h-16 shrink-0 items-center justify-between p-2 shadow-sm"
 		>
@@ -106,7 +106,7 @@
 	</div>
 
 	<Portal>
-		<Dialog.Backdrop class="pointer-events-auto fixed inset-0 z-50 bg-surface-950/75" />
+		<Dialog.Backdrop class="bg-surface-950/75 pointer-events-auto fixed inset-0 z-50" />
 		<Dialog.Positioner class="pointer-events-none fixed inset-0 z-50 flex justify-start">
 			<Dialog.Content
 				class="preset-filled-surface-100-900 pointer-events-auto relative h-dvh max-w-[calc(100vw-2rem)] overflow-y-auto pr-10 shadow-2xl"
