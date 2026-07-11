@@ -12,6 +12,10 @@ body {
 	overflow: hidden;
 }
 
+body {
+	font-size: 1.125rem;
+}
+
 .btn-disabled {
 	pointer-events: none;
 	cursor: not-allowed !important;

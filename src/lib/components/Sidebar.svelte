@@ -55,7 +55,7 @@
 						? 'preset-filled rounded-full'
 						: 'hover:preset-tonal-surface'}"
 				>
-					<Navigation.TriggerText>{project.name}</Navigation.TriggerText>
+					<Navigation.TriggerText class="text-lg!">{project.name}</Navigation.TriggerText>
 				</Navigation.TriggerAnchor>
 			{/each}
 		</Navigation.Menu>
