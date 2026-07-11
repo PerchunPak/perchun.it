@@ -14,7 +14,6 @@
 		<div class="mb-4 flex">
 			<Avatar class="preset-filled-surface-500 size-32 rounded-xl shadow-2xl">
 				<Avatar.Image src="/avatar.webp" alt="My avatar" class="rounded-xl" />
-				<Avatar.Fallback class="rounded-xl">PP</Avatar.Fallback>
 			</Avatar>
 		</div>
 		<p>
