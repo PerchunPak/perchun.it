@@ -43,7 +43,7 @@
 		to switch between projects.
 	</p>
 	<Navigation.Content class="mt-6 xl:mt-3">
-		<Navigation.Menu>
+		<Navigation.Menu class="gap-1">
 			{#each projectsMetadata as project (project.slug)}
 				<Navigation.TriggerAnchor
 					href={resolve('/[project]', { project: project.slug })}
@@ -52,7 +52,7 @@
 						? 'page'
 						: undefined}
 					class="font-normal! {projectsMetadata[navigation.currentIndex]?.slug === project.slug
-						? 'preset-filled rounded-full'
+						? 'preset-filled'
 						: 'hover:preset-tonal-surface'}"
 				>
 					<Navigation.TriggerText class="text-lg!">{project.name}</Navigation.TriggerText>
