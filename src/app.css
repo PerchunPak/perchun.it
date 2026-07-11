@@ -12,6 +12,17 @@ body {
 	overflow: hidden;
 }
 
+html.dark[data-theme='modern'] {
+	background-image:
+		radial-gradient(at 76% 0%, hsla(189, 100%, 56%, 0.2) 0, transparent 50%),
+		radial-gradient(at 1% 0%, hsla(340, 100%, 76%, 0.15) 0, transparent 50%),
+		radial-gradient(at 20% 100%, hsla(241, 100%, 70%, 0.3) 0, transparent 50%);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 body {
 	font-size: 1.125rem;
 }

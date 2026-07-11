@@ -66,7 +66,7 @@
 	closeOnEscape={true}
 	closeOnInteractOutside={true}
 >
-	<div class="flex h-full min-h-0 flex-col bg-surface-50-950 text-surface-950-50">
+	<div class="flex h-full min-h-0 flex-col text-surface-950-50">
 		<header
 			class="preset-filled-surface-50-950 flex min-h-16 shrink-0 items-center justify-between p-2 shadow-sm"
 		>
