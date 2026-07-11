@@ -61,7 +61,7 @@
 		</Navigation.Menu>
 	</Navigation.Content>
 	<Navigation.Footer class="sticky bottom-0 mt-3 w-full">
-		<div class="preset-filled-surface-100-900 rounded-base p-2">
+		<div class="rounded-full bg-[#6366f1] p-2">
 			<NavigationButtons />
 		</div>
 	</Navigation.Footer>
