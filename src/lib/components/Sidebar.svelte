@@ -12,7 +12,7 @@
 <Navigation layout="sidebar" class="h-full w-fit max-w-[30rem] overflow-y-auto p-4">
 	<Navigation.Header>
 		<div class="mb-4 flex">
-			<Avatar class="size-32 rounded-xl shadow-2xl">
+			<Avatar class="size-32 rounded-xl bg-[#6366f1]! shadow-2xl">
 				<Avatar.Image src="/avatar.webp" alt="My avatar" class="rounded-xl" />
 				<Avatar.Fallback class="rounded-xl">PP</Avatar.Fallback>
 			</Avatar>

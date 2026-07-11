@@ -86,7 +86,7 @@
 						rel="noreferrer"
 						aria-label={`My ${label}`}
 					>
-						<Icon {icon} class="size-full p-1" />
+						<Icon {icon} class="size-6!" />
 					</a>
 				{/each}
 			</div>
