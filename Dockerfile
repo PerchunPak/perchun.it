@@ -1,26 +1,25 @@
-FROM node:18 AS base
+FROM node:26 AS base
 
 ARG SENTRY_AUTH_TOKEN
-ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 WORKDIR /app
 
-RUN npm install -g pnpm@10.28.x
+RUN npm install -g pnpm@11.11.0
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --prod
+RUN pnpm install --prod --frozen-lockfile
 
 FROM base AS build
 
-RUN pnpm install
+RUN pnpm install --frozen-lockfile
 
-COPY svelte.config.js tsconfig.json tailwind.config.ts postcss.config.cjs vite.config.ts ./
+COPY svelte.config.js tsconfig.json vite.config.ts ./
 COPY static/ static/
 COPY src/ src/
 # for sentry auto version
 COPY .git/ .git/
 RUN pnpm build
 
-FROM node:18-slim AS final
+FROM node:26-slim AS final
 
 WORKDIR /app
 COPY package.json ./

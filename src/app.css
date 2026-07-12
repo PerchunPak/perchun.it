@@ -1,21 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@skeletonlabs/skeleton/themes/modern';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
 
 html,
 body {
-	@apply h-full overflow-hidden;
+	height: 100%;
+	overflow: hidden;
+}
+
+html.dark[data-theme='modern'] {
+	background-image:
+		radial-gradient(at 76% 0%, hsla(189, 100%, 56%, 0.2) 0, transparent 50%),
+		radial-gradient(at 1% 0%, hsla(340, 100%, 76%, 0.15) 0, transparent 50%),
+		radial-gradient(at 20% 100%, hsla(241, 100%, 70%, 0.3) 0, transparent 50%);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+body {
+	font-size: 1.125rem;
 }
 
 .btn-disabled {
-	@apply pointer-events-none !cursor-not-allowed !opacity-50 hover:brightness-100 active:scale-100;
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+
+.anchor {
+	text-decoration-line: underline;
 }
 
 .tooltip {
-	@apply invisible absolute;
+	position: absolute;
+	visibility: hidden;
 }
 
 .has-tooltip:hover .tooltip {
-	@apply visible z-50;
+	z-index: 50;
+	visibility: visible;
 }

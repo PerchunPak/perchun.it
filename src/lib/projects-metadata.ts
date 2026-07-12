@@ -1,5 +1,3 @@
-import { goto } from '$app/navigation';
-
 export interface ProjectMetadata {
 	name: string;
 	slug: string;
@@ -22,17 +20,3 @@ export const projectsMetadata: ProjectMetadata[] = [
 	construct({ name: 'the-war-tracker-bot' }),
 	construct({ name: 'Other projects', slug: 'other' })
 ];
-
-export function nextProject(currentIndex: number): Promise<void> | null {
-	if (currentIndex === projectsMetadata.length - 1) {
-		return null;
-	}
-	return goto(`/${projectsMetadata[currentIndex + 1].slug}`);
-}
-
-export function previousProject(currentIndex: number): Promise<void> | null {
-	if (currentIndex === 0) {
-		return null;
-	}
-	return goto(`/${projectsMetadata[currentIndex - 1].slug}`);
-}

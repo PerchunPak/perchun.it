@@ -1,3 +1,24 @@
+autoInstallPeers: false
+
+allowBuilds:
+  '@sentry/cli': true
+  '@sveltejs/kit': true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@sentry/browser-utils@10.65.0'
+  - '@sentry/browser@10.65.0'
+  - '@sentry/cloudflare@10.65.0'
+  - '@sentry/core@10.65.0'
+  - '@sentry/feedback@10.65.0'
+  - '@sentry/node-core@10.65.0'
+  - '@sentry/node@10.65.0'
+  - '@sentry/opentelemetry@10.65.0'
+  - '@sentry/replay-canvas@10.65.0'
+  - '@sentry/replay@10.65.0'
+  - '@sentry/server-utils@10.65.0'
+  - '@sentry/svelte@10.65.0'
+  - '@sentry/sveltekit@10.65.0'
+  - eslint@10.7.0
 onlyBuiltDependencies:
   - '@sentry/cli'
   - '@sveltejs/kit'

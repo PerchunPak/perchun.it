@@ -31,8 +31,15 @@ for (let element of elements) {
 	const additionalStyles = element[0].startsWith('h') ? ' mb-5' : '';
 	fs.writeFile(
 		`./src/lib/markdown/elements/${element[0]}.svelte`,
-		`<${element[0]} {...$$props} class="${element[1]}${additionalStyles}">
-\t<slot />
+		`<script lang="ts">
+\timport type { Snippet } from 'svelte';
+\timport type { HTMLAttributes } from 'svelte/elements';
+
+\tlet { children, class: className, ...rest }: HTMLAttributes<HTMLElement> & { children: Snippet } = $props();
+</script>
+
+<${element[0]} {...rest} class={[\`${element[1]}${additionalStyles}\`, className]}>
+\t{@render children()}
 </${element[0]}>
 `,
 		(err) => {
