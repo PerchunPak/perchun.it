@@ -109,7 +109,7 @@
 		<Dialog.Backdrop class="bg-surface-950/75 pointer-events-auto fixed inset-0 z-50" />
 		<Dialog.Positioner class="pointer-events-none fixed inset-0 z-50 flex justify-start">
 			<Dialog.Content
-				class="preset-filled-surface-100-900 pointer-events-auto relative h-dvh max-w-[calc(100vw-2rem)] overflow-y-auto pr-10 shadow-2xl"
+				class="preset-filled-surface-100-900 pointer-events-auto relative h-dvh max-w-[calc(100vw-2rem)] overflow-y-auto shadow-2xl"
 			>
 				<Dialog.Title class="sr-only">Project navigation</Dialog.Title>
 				<Dialog.CloseTrigger
