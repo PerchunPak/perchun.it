@@ -9,7 +9,7 @@
 	const navigation = useProjectNavigation();
 </script>
 
-<Navigation layout="sidebar" class="h-full w-fit max-w-[30rem] overflow-y-auto p-4">
+<Navigation layout="sidebar" class="h-full w-fit max-w-120 overflow-y-auto p-4">
 	<Navigation.Header>
 		<div class="mb-4 flex">
 			<Avatar class="preset-filled-surface-500 size-32 rounded-xl shadow-2xl">
