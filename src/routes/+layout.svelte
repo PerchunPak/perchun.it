@@ -50,6 +50,11 @@
 		if (enteredThroughRoot && window.innerWidth < 1280) drawerOpen = true;
 	});
 
+	const animBackdrop =
+		'transition transition-discrete opacity-0 starting:data-[state=open]:opacity-0 data-[state=open]:opacity-100';
+	const animModal =
+		'transition transition-discrete opacity-0 -translate-x-full starting:data-[state=open]:opacity-0 starting:data-[state=open]:-translate-x-full data-[state=open]:opacity-100 data-[state=open]:translate-x-0';
+
 	const socialLinks = [
 		['mdi:github', 'https://github.com/PerchunPak', 'GitHub'],
 		['ic:baseline-discord', 'https://discord.com/users/perchun', 'Discord'],
@@ -106,10 +111,12 @@
 	</div>
 
 	<Portal>
-		<Dialog.Backdrop class="bg-surface-950/75 pointer-events-auto fixed inset-0 z-50" />
+		<Dialog.Backdrop
+			class="bg-surface-950/75 pointer-events-auto fixed inset-0 z-50 {animBackdrop}"
+		/>
 		<Dialog.Positioner class="pointer-events-none fixed inset-0 z-50 flex justify-start">
 			<Dialog.Content
-				class="preset-filled-surface-100-900 pointer-events-auto relative h-dvh max-w-[calc(100vw-2rem)] overflow-y-auto shadow-2xl"
+				class="preset-filled-surface-100-900 pointer-events-auto relative h-dvh max-w-[calc(100vw-2rem)] overflow-y-auto shadow-2xl {animModal}"
 			>
 				<Dialog.Title class="sr-only">Project navigation</Dialog.Title>
 				<Dialog.CloseTrigger
