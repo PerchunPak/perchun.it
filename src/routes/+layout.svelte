@@ -108,10 +108,10 @@
 			<Dialog.Trigger class="btn btn-sm mr-1 xl:hidden" aria-label="Open sidebar">
 				<Icon icon="mdi:menu" class="size-6" />
 			</Dialog.Trigger>
-			<div class="ml-auto flex items-center gap-1">
+			<div class="ml-auto flex items-center gap-2">
 				{#each socialLinks as [icon, href, label] (href)}
 					<a
-						class="preset-outlined-surface-800-200 btn-icon btn-icon-xl rounded-full p-1"
+						class="preset-tonal-surface btn-icon btn-icon-2xl rounded-full p-1"
 						{href}
 						target="_blank"
 						rel="noreferrer"
