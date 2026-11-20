@@ -9,7 +9,8 @@
 
 <nav class="flex h-full w-fit max-w-120 flex-col overflow-y-auto bg-surface-200-800 p-4">
 	<div>
-		<Avatar class="mb-4 size-32 rounded-xl shadow-2xl">
+		<!-- Skeleton 5 paints avatars in the brand colour, Skeleton 2 used surface-500 in dark mode. -->
+		<Avatar class="mb-4 size-32 rounded-xl bg-surface-500 shadow-2xl">
 			<Avatar.Image src="/avatar.webp" alt="My avatar" />
 			<Avatar.Fallback>PP</Avatar.Fallback>
 		</Avatar>
@@ -45,7 +46,10 @@
 					href={projectHref(index)}
 					class={[
 						'block rounded-base px-4 py-2',
-						index === current ? 'preset-filled-primary-500' : 'hover:preset-tonal'
+						// Skeleton 2 ListBox colours in dark mode: `variant-filled` and `hover:variant-soft`
+						index === current
+							? 'bg-surface-50 text-surface-900'
+							: 'hover:bg-surface-500/20 hover:text-surface-200'
 					]}
 					aria-current={index === current ? 'page' : undefined}
 				>
