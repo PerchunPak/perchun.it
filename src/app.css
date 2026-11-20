@@ -34,7 +34,10 @@ body {
 	@apply align-top;
 }
 
-/* mdsvex 0.x left a space between buttons on separate lines, mdsvex 1.0 puts them right next to each other. */
-.btn + .btn {
-	@apply ml-2;
+/*
+ * mdsvex 0.x left a space between buttons on separate lines, mdsvex 1.0 puts them right next to
+ * each other. The gap goes on the right, so a button that wraps onto a new line is not indented.
+ */
+.btn:has(+ .btn) {
+	@apply mr-2;
 }
