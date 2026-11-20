@@ -9,7 +9,7 @@
 <div class="flex justify-between">
 	<a
 		href={previousHref}
-		class="btn-icon preset-filled btn-icon-lg"
+		class="btn-icon preset-filled btn-icon-2xl xl:btn-icon-lg"
 		class:btn-disabled={!previousHref}
 		aria-disabled={!previousHref}
 		aria-label="Previous project"
@@ -18,7 +18,7 @@
 	</a>
 	<a
 		href={nextHref}
-		class="btn-icon preset-filled btn-icon-lg"
+		class="btn-icon preset-filled btn-icon-2xl xl:btn-icon-lg"
 		class:btn-disabled={!nextHref}
 		aria-disabled={!nextHref}
 		aria-label="Next project"
