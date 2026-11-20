@@ -36,6 +36,45 @@
 		if (page.url.pathname === '/' && innerWidth < DESKTOP_WIDTH) drawerOpen = true;
 		mounted = true;
 	});
+
+	/** How far (in px) a finger must move before the gesture counts as a swipe or a scroll. */
+	const SWIPE_SLOP = 10;
+	/** How far (in px) the drawer must be dragged to the left to close on release. */
+	const SWIPE_CLOSE_DISTANCE = 80;
+
+	let touchStart: { x: number; y: number } | null = null;
+	let swiping = false;
+	/** Horizontal offset of the drawer while the user drags it, always <= 0. */
+	let dragOffset = $state<number | null>(null);
+
+	function onTouchStart(event: TouchEvent) {
+		if (event.touches.length !== 1) return;
+		touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+		swiping = false;
+	}
+
+	function onTouchMove(event: TouchEvent) {
+		if (!touchStart) return;
+		const dx = event.touches[0].clientX - touchStart.x;
+		const dy = event.touches[0].clientY - touchStart.y;
+		if (!swiping) {
+			if (Math.abs(dx) < SWIPE_SLOP && Math.abs(dy) < SWIPE_SLOP) return;
+			// The first clear movement decides: vertical scrolls the sidebar, horizontal drags it.
+			if (Math.abs(dy) >= Math.abs(dx)) {
+				touchStart = null;
+				return;
+			}
+			swiping = true;
+		}
+		dragOffset = Math.min(0, dx);
+	}
+
+	function onTouchEnd() {
+		if (swiping && dragOffset !== null && dragOffset <= -SWIPE_CLOSE_DISTANCE) drawerOpen = false;
+		touchStart = null;
+		swiping = false;
+		dragOffset = null;
+	}
 </script>
 
 <svelte:window bind:innerWidth />
@@ -47,9 +86,17 @@
 		<Dialog.Backdrop
 			class="fixed inset-0 z-50 bg-surface-50-950/50 opacity-0 transition transition-discrete data-[state=open]:opacity-100 starting:data-[state=open]:opacity-0"
 		/>
-		<Dialog.Positioner class="fixed inset-0 z-50 flex justify-start">
+		<Dialog.Positioner
+			class="fixed inset-0 z-50 flex justify-start"
+			ontouchstart={onTouchStart}
+			ontouchmove={onTouchMove}
+			ontouchend={onTouchEnd}
+			ontouchcancel={onTouchEnd}
+		>
+			<!-- A margin, not padding: taps in the gap must land outside the content to close it. -->
 			<Dialog.Content
-				class="h-full -translate-x-full pr-10 shadow-xl transition transition-discrete data-[state=open]:translate-x-0 starting:data-[state=open]:-translate-x-full"
+				class="mr-10 h-full -translate-x-full shadow-xl transition transition-discrete data-[state=open]:translate-x-0 starting:data-[state=open]:-translate-x-full"
+				style={dragOffset === null ? undefined : `translate: ${dragOffset}px 0; transition: none`}
 			>
 				<Dialog.Title class="sr-only">Sidebar</Dialog.Title>
 				<Sidebar />
