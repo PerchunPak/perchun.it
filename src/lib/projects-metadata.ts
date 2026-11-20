@@ -1,17 +1,13 @@
-import { goto } from '$app/navigation';
-
 export interface ProjectMetadata {
 	name: string;
 	slug: string;
 }
 
-function construct(args: { name: string; slug?: string }): ProjectMetadata {
-	if (args.slug === undefined) args.slug = args.name.toLowerCase();
-
-	return args as ProjectMetadata;
+function construct({ name, slug }: { name: string; slug?: string }): ProjectMetadata {
+	return { name, slug: slug ?? name.toLowerCase() };
 }
 
-export const projectsMetadata: ProjectMetadata[] = [
+export const projectsMetadata: readonly ProjectMetadata[] = [
 	construct({ name: 'nixpkgs' }),
 	construct({ name: 'mcstatus' }),
 	construct({ name: 'StatusMC' }),
@@ -23,16 +19,6 @@ export const projectsMetadata: ProjectMetadata[] = [
 	construct({ name: 'Other projects', slug: 'other' })
 ];
 
-export function nextProject(currentIndex: number): Promise<void> | null {
-	if (currentIndex === projectsMetadata.length - 1) {
-		return null;
-	}
-	return goto(`/${projectsMetadata[currentIndex + 1].slug}`);
-}
-
-export function previousProject(currentIndex: number): Promise<void> | null {
-	if (currentIndex === 0) {
-		return null;
-	}
-	return goto(`/${projectsMetadata[currentIndex - 1].slug}`);
+export function projectIndex(slug: string | undefined): number {
+	return projectsMetadata.findIndex((project) => project.slug === slug);
 }

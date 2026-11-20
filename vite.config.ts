@@ -1,17 +1,28 @@
-import { sentrySvelteKit } from '@sentry/sveltekit';
-import { purgeCss } from 'vite-plugin-tailwind-purgecss';
+import adapter from '@sveltejs/adapter-node';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { sentrySvelteKit } from '@sentry/sveltekit/vite';
+import tailwindcss from '@tailwindcss/vite';
+import { mdsvex } from 'mdsvex';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [
 		sentrySvelteKit({
-			sourceMapsUploadOptions: {
-				org: 'perchunpak',
-				project: 'new-perchun-it'
-			}
+			org: 'perchunpak',
+			project: 'new-perchun-it',
+			authToken: process.env.SENTRY_AUTH_TOKEN
 		}),
-		sveltekit(),
-		purgeCss()
+		tailwindcss(),
+		mdsvex({
+			extensions: ['.mdx'],
+			templates: { default: '#lib/markdown/Layout.svelte' },
+			components: '#lib/markdown/elements.ts'
+		}),
+		sveltekit({
+			extensions: ['.svelte', '.mdx'],
+			adapter: adapter(),
+			tracing: { server: true },
+			inspector: true
+		})
 	]
 });

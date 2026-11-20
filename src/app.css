@@ -1,7 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@tailwind variants;
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+@import '@skeletonlabs/skeleton/themes/modern';
+
+/* The site is dark-only: the `dark` class on <html> turns dark mode on. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Skeleton 5 has no inline code style, so this one matches Skeleton 2's `.code`. */
+@utility code {
+	@apply rounded-container bg-primary-500/20 px-1 py-0.5 font-mono text-xs whitespace-nowrap text-primary-400;
+}
 
 html,
 body {
@@ -9,13 +17,5 @@ body {
 }
 
 .btn-disabled {
-	@apply pointer-events-none !cursor-not-allowed !opacity-50 hover:brightness-100 active:scale-100;
-}
-
-.tooltip {
-	@apply invisible absolute;
-}
-
-.has-tooltip:hover .tooltip {
-	@apply visible z-50;
+	@apply pointer-events-none cursor-not-allowed! opacity-50! hover:brightness-100 active:scale-100;
 }

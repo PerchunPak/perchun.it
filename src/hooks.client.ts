@@ -1,4 +1,3 @@
-import { handleErrorWithSentry } from '@sentry/sveltekit';
 import * as Sentry from '@sentry/sveltekit';
 
 Sentry.init({
@@ -8,4 +7,4 @@ Sentry.init({
 });
 
 // If you have a custom error handler, pass it to `handleErrorWithSentry`
-export const handleError = handleErrorWithSentry();
+export const handleError = Sentry.handleErrorWithSentry();

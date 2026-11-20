@@ -1,42 +1,43 @@
-/* Generate all those dump files in ./elements */
+/* Generates the element components in ./elements, run from the project root. */
 
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 
 /*
-  first element is HTML element name, second is styles to apply
+  First element is the HTML element name, second is the classes to apply.
+  A plain string is shorthand for `[value, value]`.
 
-  if type is string, it is equal to `[value, value]`
+  `h1` (centred) and `a` (picks `target`) are written by hand.
 */
 const elements = [
-	'h1',
 	'h2',
 	'h3',
 	'h4',
 	'h5',
 	'h6',
-	['a', 'anchor'],
 	['ol', 'list-decimal list-inside space-y-1'],
 	['ul', 'list-disc list-inside space-y-1'],
 	'blockquote',
 	'pre',
 	'code',
-	'kbd',
-	'del',
-	'ins'
+	'kbd'
 ];
 
 for (let element of elements) {
 	if (typeof element === 'string') element = [element, element];
+	const [name, classes] = element;
 
-	const additionalStyles = element[0].startsWith('h') ? ' mb-5' : '';
-	fs.writeFile(
-		`./src/lib/markdown/elements/${element[0]}.svelte`,
-		`<${element[0]} {...$$props} class="${element[1]}${additionalStyles}">
-\t<slot />
-</${element[0]}>
-`,
-		(err) => {
-			if (err) console.log(err);
-		}
+	// mdsvex passes headings a `level` prop, which must not end up as an HTML attribute.
+	const isHeading = /^h\d$/.test(name);
+	const props = isHeading ? '{ children, level: _, ...rest }' : '{ children, ...rest }';
+	const extraClasses = isHeading ? ' mb-5' : '';
+
+	fs.writeFileSync(
+		`./src/lib/markdown/elements/${name}.svelte`,
+		`<script lang="ts">
+\tlet ${props} = $props();
+</script>
+
+<${name} {...rest} class="${classes}${extraClasses}">{@render children?.()}</${name}>
+`
 	);
 }

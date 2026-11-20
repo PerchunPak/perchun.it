@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { projectsMetadata } from '$lib/projects-metadata';
+	import { projectHref } from '#lib/current-project.svelte.ts';
 
-	onMount(() => goto('/' + projectsMetadata[0].name, { replaceState: true }));
+	// Redirect on the client, so the layout sees `/` and opens the sidebar on small screens.
+	onMount(() => goto(projectHref(0)!, { replace: true }));
 </script>
 
 <div class="flex h-full">

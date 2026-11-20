@@ -1,3 +1,5 @@
-<h5 {...$$props} class="h5 mb-5">
-	<slot />
-</h5>
+<script lang="ts">
+	let { children, level: _, ...rest } = $props();
+</script>
+
+<h5 {...rest} class="mb-5 h5">{@render children?.()}</h5>

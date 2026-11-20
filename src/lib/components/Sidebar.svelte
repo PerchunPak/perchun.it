@@ -1,29 +1,18 @@
 <script lang="ts">
-	import { Avatar, AppRail, ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
-	import { getContext } from 'svelte';
-	import type { Readable } from 'svelte/store';
-	import { type ProjectMetadata, projectsMetadata } from '$lib/projects-metadata';
-	import NavigationButtons from '$lib/components/NavigationButtons.svelte';
-	import { goto } from '$app/navigation';
-	import { browser } from '$app/environment';
+	import { Avatar } from '@skeletonlabs/skeleton-svelte';
+	import NavigationButtons from '#lib/components/NavigationButtons.svelte';
+	import { currentProjectIndex, projectHref } from '#lib/current-project.svelte.ts';
+	import { projectsMetadata } from '#lib/projects-metadata.ts';
 
-	const currentProjectIndex = getContext<Readable<number>>('currentProjectIndex');
-
-	let selectedProjectInSidebar: string = projectsMetadata[0].name;
-	currentProjectIndex.subscribe((v) => (selectedProjectInSidebar = projectsMetadata[v].name));
-
-	function navigateToProject(name: string) {
-		if (!browser) return;
-		goto('/' + (projectsMetadata.find((v) => v.name === name) as ProjectMetadata).slug);
-	}
-	$: navigateToProject(selectedProjectInSidebar);
+	const current = $derived(currentProjectIndex());
 </script>
 
-<AppRail width="w-fit max-w-[30rem]" class="p-4">
+<nav class="flex h-full w-fit max-w-120 flex-col overflow-y-auto bg-surface-200-800 p-4">
 	<div>
-		<div class="mb-4 flex">
-			<Avatar src="/avatar.webp" width="w-32" rounded="rounded-xl shadow-2xl" alt="My avatar" />
-		</div>
+		<Avatar class="mb-4 size-32 rounded-xl shadow-2xl">
+			<Avatar.Image src="/avatar.webp" alt="My avatar" />
+			<Avatar.Fallback>PP</Avatar.Fallback>
+		</Avatar>
 		<p>
 			Hello there! I'm 18 years old Backend/Software developer from
 			<a href="https://s.perchun.it/ukraine" class="anchor">Ukraine 🇺🇦</a>.
@@ -49,18 +38,25 @@
 		<kbd class="kbd">D</kbd>
 		to switch between projects.
 	</p>
-	<ListBox class="mt-6 xl:mt-3">
-		{#each projectsMetadata as project}
-			<a href="/{project.slug}" class="!font-normal">
-				<ListBoxItem bind:group={selectedProjectInSidebar} name="medium" value={project.name}>
+	<ul class="mt-6 space-y-1 xl:mt-3">
+		{#each projectsMetadata as project, index (project.slug)}
+			<li>
+				<a
+					href={projectHref(index)}
+					class={[
+						'block rounded-base px-4 py-2',
+						index === current ? 'preset-filled-primary-500' : 'hover:preset-tonal'
+					]}
+					aria-current={index === current ? 'page' : undefined}
+				>
 					{project.name}
-				</ListBoxItem>
-			</a>
+				</a>
+			</li>
 		{/each}
-	</ListBox>
+	</ul>
 	<div class="sticky bottom-0 mt-3 w-full">
-		<div class="variant-filled-surface p-2 rounded-token">
+		<div class="rounded-container preset-filled-surface-500 p-2">
 			<NavigationButtons />
 		</div>
 	</div>
-</AppRail>
+</nav>

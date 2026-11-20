@@ -1,30 +1,29 @@
-FROM node:18 AS base
+FROM oven/bun:1.4-slim AS deps
 
-ARG SENTRY_AUTH_TOKEN
-ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
 WORKDIR /app
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile --production
 
-RUN npm install -g pnpm@10.28.x
+FROM oven/bun:1.4-slim AS build
 
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --prod
+WORKDIR /app
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 
-FROM base AS build
-
-RUN pnpm install
-
-COPY svelte.config.js tsconfig.json tailwind.config.ts postcss.config.cjs vite.config.ts ./
+COPY vite.config.ts tsconfig.json ./
 COPY static/ static/
 COPY src/ src/
 # for sentry auto version
 COPY .git/ .git/
-RUN pnpm build
+# An ARG (not ENV) is visible to `RUN` but does not stay in the image
+ARG SENTRY_AUTH_TOKEN
+RUN bun run build
 
-FROM node:18-slim AS final
+FROM node:26-slim AS final
 
 WORKDIR /app
 COPY package.json ./
-COPY --from=base /app/node_modules ./node_modules
+COPY --from=deps /app/node_modules ./node_modules
 COPY --from=build /app/build ./build
 
 ENTRYPOINT ["node", "./build/index.js"]
