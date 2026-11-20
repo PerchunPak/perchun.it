@@ -19,3 +19,13 @@ body {
 .btn-disabled {
 	@apply pointer-events-none cursor-not-allowed! opacity-50! hover:brightness-100 active:scale-100;
 }
+
+/* Skeleton 5 buttons are much tighter than the Skeleton 2 ones this site was designed with. */
+.btn:not(.btn-sm) {
+	@apply px-5 py-[9px] leading-6;
+}
+
+/* mdsvex 0.x left a space between buttons on separate lines, mdsvex 1.0 puts them right next to each other. */
+.btn + .btn {
+	@apply ml-2;
+}
