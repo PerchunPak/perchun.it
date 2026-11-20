@@ -91,6 +91,19 @@
 			<Sidebar />
 		</aside>
 		<main class="min-w-0 flex-1 overflow-y-auto">
+			<aside
+				class="m-5 mb-0 flex items-center gap-3 card preset-tonal-warning p-4"
+				aria-label="Outdated information"
+			>
+				<Icon icon="mdi:alert" class="size-6 shrink-0" />
+				<p>
+					Most of this was written a few years ago and I haven't updated it since. For what I'm
+					working on now, check
+					<a href="https://github.com/PerchunPak" class="anchor" target="_blank" rel="noreferrer">
+						my GitHub
+					</a>.
+				</p>
+			</aside>
 			{@render children()}
 		</main>
 	</div>
