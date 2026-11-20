@@ -25,6 +25,15 @@ body {
 	@apply px-5 py-[9px] leading-6;
 }
 
+/*
+ * Keep inline buttons in a row at the same height. On the text baseline, a button that starts with
+ * an icon sticks out above the others. Centred, the bottom margin `space-y-*` gives every button
+ * but the last pushes them up. Top alignment avoids both, as buttons have no top margin.
+ */
+.btn {
+	@apply align-top;
+}
+
 /* mdsvex 0.x left a space between buttons on separate lines, mdsvex 1.0 puts them right next to each other. */
 .btn + .btn {
 	@apply ml-2;
