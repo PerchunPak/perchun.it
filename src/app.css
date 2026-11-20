@@ -16,6 +16,22 @@ body {
 	@apply h-full overflow-hidden;
 }
 
+/*
+ * The dark mode background of Skeleton 2's modern theme: its surface-900 (Skeleton 5's is brighter,
+ * and its body uses 950) under a gradient Skeleton 5 dropped.
+ */
+body {
+	background-color: rgb(49 50 118);
+	background-image:
+		radial-gradient(at 76% 0%, hsla(189, 100%, 56%, 0.2) 0px, transparent 50%),
+		radial-gradient(at 1% 0%, hsla(340, 100%, 76%, 0.15) 0px, transparent 50%),
+		radial-gradient(at 20% 100%, hsla(241, 100%, 70%, 0.3) 0px, transparent 50%);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .btn-disabled {
 	@apply pointer-events-none cursor-not-allowed! opacity-50! hover:brightness-100 active:scale-100;
 }
