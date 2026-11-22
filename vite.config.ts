@@ -8,9 +8,8 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [
 		sentrySvelteKit({
-			org: 'perchunpak',
-			project: 'new-perchun-it',
-			authToken: process.env.SENTRY_AUTH_TOKEN
+			sourcemaps: { upload: false, delete: false },
+			telemetry: false
 		}),
 		tailwindcss(),
 		mdsvex({

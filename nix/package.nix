@@ -90,6 +90,11 @@ let
   };
 in
 stdenvNoCC.mkDerivation {
+  outputs = [
+    "out"
+    "sourcemaps"
+  ];
+
   inherit
     pname
     version
@@ -127,6 +132,10 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     runHook preInstall
+
+    mkdir -p $sourcemaps
+    (cd build && find . -name '*.map' -exec cp --parents {} $sourcemaps \;)
+    find build -name '*.map' -o -name '*.map.br' -o -name '*.map.gz' | xargs rm
 
     mkdir -p $out/lib/perchun-it
     cp -R build package.json $out/lib/perchun-it

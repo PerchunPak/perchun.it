@@ -21,7 +21,23 @@ jobs:
         uses: cachix/install-nix-action@v32
 
       - name: Build package
-        run: nix build -L
+        run: nix build -L .#perchun-it.out .#perchun-it.sourcemaps
 
       - name: Check that the build is reproducible
-        run: nix build -L --rebuild
+        run: nix build -L --rebuild .#perchun-it.out .#perchun-it.sourcemaps
+
+      - name: Upload source maps to Sentry
+        if: github.event_name != 'pull_request'
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+        run: |
+          mkdir sourcemaps
+          cp -rL result/lib/perchun-it/build/. sourcemaps
+          chmod -R u+w sourcemaps
+          cp -r result-1-sourcemaps/. sourcemaps
+          nix shell --inputs-from . nixpkgs#sentry-cli --command \
+            sentry-cli sourcemaps upload \
+              --org perchunpak \
+              --project new-perchun-it \
+              --release ${{ github.sha }} \
+              sourcemaps
