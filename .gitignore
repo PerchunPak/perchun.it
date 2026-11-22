@@ -1,3 +1,8 @@
+outputs/
+result-*
+result
+repl-result-*
+
 # Created by https://www.toptal.com/developers/gitignore/api/node,linux,python,vercel,windows,webstorm+all,visualstudiocode,svelte
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,linux,python,vercel,windows,webstorm+all,visualstudiocode,svelte
 

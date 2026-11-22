@@ -9,6 +9,7 @@ node_modules
 
 # Lockfiles
 bun.lock
+flake.lock
 package-lock.json
 yarn.lock
 
