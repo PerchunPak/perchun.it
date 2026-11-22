@@ -22,3 +22,6 @@ jobs:
 
       - name: Build package
         run: nix build -L
+
+      - name: Check that the build is reproducible
+        run: nix build -L --rebuild
