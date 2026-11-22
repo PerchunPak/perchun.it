@@ -21,6 +21,8 @@ export default defineConfig({
 		sveltekit({
 			extensions: ['.svelte', '.mdx'],
 			adapter: adapter(),
+			// Defaults to the build time, which makes builds not reproducible
+			version: { name: process.env.SENTRY_RELEASE },
 			tracing: { server: true },
 			inspector: true
 		})
